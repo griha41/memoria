@@ -1,0 +1,4 @@
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.dll
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.pdb
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo\obj\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.dll
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo\obj\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.pdb

@@ -1,0 +1,11 @@
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Consola.Test\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Consola.Test.exe
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Consola.Test\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Consola.Test.pdb
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Consola.Test\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.dll
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Consola.Test\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3.dll
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Consola.Test\bin\Debug\NAudio.dll
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Consola.Test\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3.pdb
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Consola.Test\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.pdb
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Consola.Test\bin\Debug\NAudio.xml
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Consola.Test\obj\x86\Debug\Usach.Civil.Memoria.AudioEntrevista.Consola.Test.csprojResolveAssemblyReference.cache
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Consola.Test\obj\x86\Debug\Usach.Civil.Memoria.AudioEntrevista.Consola.Test.exe
+C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Consola.Test\obj\x86\Debug\Usach.Civil.Memoria.AudioEntrevista.Consola.Test.pdb
