@@ -1,0 +1,24 @@
+﻿Compilación iniciada a las 01/04/2013 22:20:52.
+     1>Proyecto "C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\speakers\speakers.vcxproj" en el nodo 5 (build destinos).
+     1>InitializeBuildStatus:
+         Se creará "Release\speakers.unsuccessfulbuild" porque se especificó "AlwaysCreate".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.. /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt speakers.c
+         speakers.c
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /l"0x0409" /nologo /fo"Release\speakers.res" speakers.rc 
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\bin\speakers.exe" /NOLOGO user32.lib comdlg32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\speakers.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\bin\speakers.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\bin\speakers.lib" /MACHINE:X86 Release\speakers.res
+         Release\speakers.obj
+         ..\bass.lib
+         speakers.vcxproj -> C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\speakers\..\bin\speakers.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"..\bin\speakers.exe;#1" /manifest Release\speakers.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Se eliminará el archivo "Release\speakers.unsuccessfulbuild".
+         Aplicando tarea Touch a "Release\speakers.lastbuildstate".
+     1>Compilación del proyecto terminada "C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\speakers\speakers.vcxproj" (build destinos).
+
+Compilación correcta.
+
+Tiempo transcurrido 00:00:02.24

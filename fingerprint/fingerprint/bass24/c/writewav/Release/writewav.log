@@ -1,0 +1,21 @@
+﻿Compilación iniciada a las 01/04/2013 22:20:51.
+     1>Proyecto "C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\writewav\writewav.vcxproj" en el nodo 2 (build destinos).
+     1>InitializeBuildStatus:
+         Se creará "Release\writewav.unsuccessfulbuild" porque se especificó "AlwaysCreate".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.. /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt writewav.c
+         writewav.c
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\bin\writewav.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\writewav.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\bin\writewav.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\bin\writewav.lib" /MACHINE:X86 Release\writewav.obj
+         ..\bass.lib
+         writewav.vcxproj -> C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\writewav\..\bin\writewav.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"..\bin\writewav.exe;#1" /manifest Release\writewav.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Se eliminará el archivo "Release\writewav.unsuccessfulbuild".
+         Aplicando tarea Touch a "Release\writewav.lastbuildstate".
+     1>Compilación del proyecto terminada "C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\writewav\writewav.vcxproj" (build destinos).
+
+Compilación correcta.
+
+Tiempo transcurrido 00:00:02.48

@@ -1,0 +1,21 @@
+﻿Compilación iniciada a las 01/04/2013 22:20:51.
+     1>Proyecto "C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\spectrum\spectrum.vcxproj" en el nodo 4 (build destinos).
+     1>InitializeBuildStatus:
+         Se creará "Release\spectrum.unsuccessfulbuild" porque se especificó "AlwaysCreate".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.. /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt spectrum.c
+         spectrum.c
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\bin\spectrum.exe" /NOLOGO user32.lib gdi32.lib comdlg32.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\spectrum.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\bin\spectrum.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\bin\spectrum.lib" /MACHINE:X86 Release\spectrum.obj
+         ..\bass.lib
+         spectrum.vcxproj -> C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\spectrum\..\bin\spectrum.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"..\bin\spectrum.exe;#1" /manifest Release\spectrum.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Se eliminará el archivo "Release\spectrum.unsuccessfulbuild".
+         Aplicando tarea Touch a "Release\spectrum.lastbuildstate".
+     1>Compilación del proyecto terminada "C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\spectrum\spectrum.vcxproj" (build destinos).
+
+Compilación correcta.
+
+Tiempo transcurrido 00:00:02.31

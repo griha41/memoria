@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Presentation.Web", "RecNote.Presentation.Web\RecNote.Presentation.Web.csproj", "{092FB7E8-5C7C-42C3-AF61-306C8F37CAAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Entities", "RecNote.Entities\RecNote.Entities.csproj", "{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Utils.I18n", "RecNote.Utils.I18n\RecNote.Utils.I18n.csproj", "{7475DC38-C99B-4D4D-BA90-DA8A1E5DE0C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Utils.I18n.ResourcesFile", "RecNote.Utils.I18n.ResourcesFileImpl\RecNote.Utils.I18n.ResourcesFile.csproj", "{11501FD5-97E6-4268-A946-5C8DEEF9D55A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Domain.Core", "RecNote.Domain.Core\RecNote.Domain.Core.csproj", "{ABB70E6D-FEA3-4B71-B3AA-9B529E9C2C7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{092FB7E8-5C7C-42C3-AF61-306C8F37CAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{092FB7E8-5C7C-42C3-AF61-306C8F37CAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{092FB7E8-5C7C-42C3-AF61-306C8F37CAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{092FB7E8-5C7C-42C3-AF61-306C8F37CAAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7475DC38-C99B-4D4D-BA90-DA8A1E5DE0C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7475DC38-C99B-4D4D-BA90-DA8A1E5DE0C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7475DC38-C99B-4D4D-BA90-DA8A1E5DE0C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7475DC38-C99B-4D4D-BA90-DA8A1E5DE0C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11501FD5-97E6-4268-A946-5C8DEEF9D55A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11501FD5-97E6-4268-A946-5C8DEEF9D55A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11501FD5-97E6-4268-A946-5C8DEEF9D55A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11501FD5-97E6-4268-A946-5C8DEEF9D55A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABB70E6D-FEA3-4B71-B3AA-9B529E9C2C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABB70E6D-FEA3-4B71-B3AA-9B529E9C2C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABB70E6D-FEA3-4B71-B3AA-9B529E9C2C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABB70E6D-FEA3-4B71-B3AA-9B529E9C2C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

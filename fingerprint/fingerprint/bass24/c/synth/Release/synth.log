@@ -1,0 +1,21 @@
+﻿Compilación iniciada a las 01/04/2013 22:20:51.
+     1>Proyecto "C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\synth\synth.vcxproj" en el nodo 3 (build destinos).
+     1>InitializeBuildStatus:
+         Se creará "Release\synth.unsuccessfulbuild" porque se especificó "AlwaysCreate".
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.. /Zi /nologo /W1 /WX- /O2 /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt synth.c
+         synth.c
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\bin\synth.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\synth.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\bin\synth.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\bin\synth.lib" /MACHINE:X86 Release\synth.obj
+         ..\bass.lib
+         synth.vcxproj -> C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\synth\..\bin\synth.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"..\bin\synth.exe;#1" /manifest Release\synth.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Se eliminará el archivo "Release\synth.unsuccessfulbuild".
+         Aplicando tarea Touch a "Release\synth.lastbuildstate".
+     1>Compilación del proyecto terminada "C:\Users\Gerardo\dev\fingerprint\fingerprint\bass24\c\synth\synth.vcxproj" (build destinos).
+
+Compilación correcta.
+
+Tiempo transcurrido 00:00:02.42
