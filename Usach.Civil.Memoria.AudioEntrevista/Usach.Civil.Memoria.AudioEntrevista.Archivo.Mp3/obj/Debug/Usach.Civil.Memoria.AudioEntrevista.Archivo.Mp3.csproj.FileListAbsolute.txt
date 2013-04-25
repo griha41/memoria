@@ -1,9 +1,0 @@
-C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3.dll
-C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3.pdb
-C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3\bin\Debug\NAudio.dll
-C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.dll
-C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3\bin\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.pdb
-C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3\bin\Debug\NAudio.xml
-C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3\obj\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3.csprojResolveAssemblyReference.cache
-C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3\obj\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3.dll
-C:\Users\gerardo\dev\audioentrevista\Usach.Civil.Memoria.AudioEntrevista\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3\obj\Debug\Usach.Civil.Memoria.AudioEntrevista.Archivo.Mp3.pdb
