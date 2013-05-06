@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Helpers\I18n.cs" />
     <Compile Include="Helpers\Util.cs" />
+    <Compile Include="Models\DependencyResolver.cs" />
     <Compile Include="Models\Global.cs" />
     <Compile Include="Models\Home\Login.cs" />
     <Compile Include="Models\ViewEngine.cs" />
@@ -91,7 +92,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config\Desa\Presentation.Web.xml" />
+    <Content Include="Config\Desa\Data.xml" />
+    <Content Include="Config\Desa\Domain.xml" />
+    <Content Include="Config\Desa\Presentation.xml" />
     <Content Include="Content\Scripts\less.min.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -135,6 +138,22 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RecNote.Data.MongoDB\RecNote.Data.MongoDB.csproj">
+      <Project>{3B212C30-4F29-4189-82F9-5F1107558362}</Project>
+      <Name>RecNote.Data.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Data\RecNote.Data.csproj">
+      <Project>{C8C0E999-B8D7-48D5-8E37-0B16B27A072A}</Project>
+      <Name>RecNote.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Domain.Core.Base\RecNote.Domain.Core.Base.csproj">
+      <Project>{68B068EA-3EF7-4162-91BA-5A0CB29BA129}</Project>
+      <Name>RecNote.Domain.Core.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Domain.Core\RecNote.Domain.Core.csproj">
+      <Project>{ABB70E6D-FEA3-4B71-B3AA-9B529E9C2C7C}</Project>
+      <Name>RecNote.Domain.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RecNote.Entities\RecNote.Entities.csproj">
       <Project>{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}</Project>
       <Name>RecNote.Entities</Name>
@@ -146,6 +165,10 @@
     <ProjectReference Include="..\RecNote.Utils.I18n\RecNote.Utils.I18n.csproj">
       <Project>{7475DC38-C99B-4D4D-BA90-DA8A1E5DE0C7}</Project>
       <Name>RecNote.Utils.I18n</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Utils.MvcExtensions\RecNote.Utils.MvcExtensions.csproj">
+      <Project>{E6762FA1-F93A-479C-A436-C0FF357827F1}</Project>
+      <Name>RecNote.Utils.MvcExtensions</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

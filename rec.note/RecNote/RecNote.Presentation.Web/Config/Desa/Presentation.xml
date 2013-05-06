@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <!-- Utils -->
+  <object id="TextI18n" type="RecNote.Utils.I18n.ResourcesFile.TextI18n, RecNote.Utils.I18n.ResourcesFile" singleton="true">
+    <property name="ResourcesFolder" value="~/Resources/" />
+    <property name="Culture" ref="CultureInfo" />
+  </object>
+  
+  <object id="CultureInfo" type="System.Globalization.CultureInfo, mscorlib" singleton="true">
+    <constructor-arg name="name" value="es" />
+  </object>
+
+  <object id="FilterProvider" type="RecNote.Utils.MvcExtensions.Providers.FilterProvider, RecNote.Utils.MvcExtensions" singleton="true"></object>
+  
+  <!-- Utils -->
+
+  <object id="HomeController" type="RecNote.Presentation.Web.Controllers.HomeController, RecNote.Presentation.Web" singleton="false" >
+    <property name="UserProvider" ref="UserProvider" />
+    <property name="Number" value="3" />
+  </object>
+  
+  
+</objects>
