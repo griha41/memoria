@@ -6,7 +6,8 @@
   </object>
 
   <object id="GenericDataBase" type="RecNote.Data.MongoDB.GenericDataBase, RecNote.Data.MongoDB" >
-    
+    <property name="ConnectionString" value="mongodb://localhost" />
+    <property name="Database" value="recnote"  />
   </object>
   <!--<object id="MongoDataBase" type="MongoDB.Driver.MongoDatabase, MongoDB.Driver" >
     

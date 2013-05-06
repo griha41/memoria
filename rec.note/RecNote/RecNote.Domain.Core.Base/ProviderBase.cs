@@ -7,21 +7,21 @@ using RecNote.Data;
 
 namespace RecNote.Domain.Core.Base
 {
-    public class ProviderBase : IProviderBase
+    public class ProviderBase<T> : IProviderBase<T> where T : Entities.Base
     {
-        protected IGenericDataBase GenericDataBase { get; set; }
+        private IGenericDataBase GenericDataBase { get; set; }
 
-        public T FindByID<T>(string id) where T : Entities.Base
+        public T FindByID(string id) 
         {
             return this.GenericDataBase.FindByID<T>(id);
         }
 
-        public bool Remove<T>(string id) where T : Entities.Base
+        public bool Remove(string id)
         {
             return this.GenericDataBase.Remove<T>(id);
         }
 
-        public T Save<T>(T entry) where T : Entities.Base
+        public T Save(T entry)
         {
             return this.GenericDataBase.Save<T>(entry);
         }

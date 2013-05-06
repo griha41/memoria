@@ -12,14 +12,21 @@ namespace RecNote.Data.MongoDB
 {
     public class GenericDataBase : IGenericDataBase
     {
-        public MongoDatabase MongoDataBase { get; set; }
+        #region MongoDatabase
+        private MongoDatabase mongoDataBase { get; set; }
+        public MongoDatabase MongoDataBase { get {
+            if (this.mongoDataBase == null)
+            {
+                var client = new MongoClient(this.ConnectionString);
+                this.mongoDataBase = client.GetServer().GetDatabase(this.Database);
+            }
+            return this.mongoDataBase;
+        } set { this.mongoDataBase = value; } }
+        #endregion
+        public string ConnectionString { get; set; }
+        public string Database { get; set; }
 
-        public GenericDataBase()
-        {
-            var client = new MongoClient("mongodb://localhost");
-            this.MongoDataBase = client.GetServer().GetDatabase("recnote");
-        }
-
+        
         protected MongoCollection<Container<T>> GetCollection<T>() where T : RecNote.Entities.Base
         {
             return this.MongoDataBase.GetCollection<Container<T>>(typeof(T).FullName);
