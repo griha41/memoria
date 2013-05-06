@@ -40,11 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IProviderBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users\IUserProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Proyect\" />
-    <Folder Include="User\" />
+    <Folder Include="Proyects\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RecNote.Entities\RecNote.Entities.csproj">
+      <Project>{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}</Project>
+      <Name>RecNote.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

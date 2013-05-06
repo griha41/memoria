@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
+using Spring.Context.Support;
+
 namespace RecNote.Presentation.Web
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -33,8 +35,17 @@ namespace RecNote.Presentation.Web
         {
             AreaRegistration.RegisterAllAreas();
 
+            DependencyResolver.SetResolver(new Models.DependencyResolver(ContextRegistry.GetContext()));
+            var resolver = (Models.DependencyResolver)DependencyResolver.Current;
+
+
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+
+            // Controladores vía spring
+            FilterProviders.Providers.Clear();
+            FilterProviders.Providers.Add((IFilterProvider)resolver.springContext.GetObject("FilterProvider"));
+
 
             // Se añade el controlador para páginas Jeronimo
             System.Web.Mvc.ViewEngines.Engines.Clear();

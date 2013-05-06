@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RecNote.Entities.Users
 {
-    public class User
+    public class User : Base
     {
         public string Email { get; set; }
         public string Name { get; set; }

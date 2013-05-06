@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}</ProjectGuid>
+    <ProjectGuid>{3B212C30-4F29-4189-82F9-5F1107558362}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RecNote.Entities</RootNamespace>
-    <AssemblyName>RecNote.Entities</AssemblyName>
+    <RootNamespace>RecNote.Data.MongoDB</RootNamespace>
+    <AssemblyName>RecNote.Data.MongoDB</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,6 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\libs\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\libs\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,9 +49,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base.cs" />
+    <Compile Include="Container.cs" />
+    <Compile Include="DataBase.cs" />
+    <Compile Include="GenericDataBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Users\User.cs" />
+    <Compile Include="Users\UserData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RecNote.Data\RecNote.Data.csproj">
+      <Project>{C8C0E999-B8D7-48D5-8E37-0B16B27A072A}</Project>
+      <Name>RecNote.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Entities\RecNote.Entities.csproj">
+      <Project>{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}</Project>
+      <Name>RecNote.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
