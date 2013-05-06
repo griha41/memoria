@@ -7,9 +7,9 @@ using RecNote.Data;
 
 namespace RecNote.Domain.Core.Base
 {
-    public class ProviderBase<T> : IProviderBase<T> where T : Entities.Base
+    public abstract class ProviderBase<T> : IProviderBase<T> where T : Entities.Base
     {
-        private IGenericDataBase GenericDataBase { get; set; }
+        protected IGenericDataBase GenericDataBase { get; set; }
 
         public T FindByID(string id) 
         {

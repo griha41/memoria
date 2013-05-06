@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <objects xmlns="http://www.springframework.net">
 
-  <object id="ProviderBase" type="RecNote.Domain.Core.Base.ProviderBase, RecNote.Domain.Core.Base" >
+  <object abstract="true" id="ProviderBase" >
     <property name="GenericDataBase" ref="GenericDataBase" />
   </object>
   
   
   <object id="UserProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Users.UserProvider, RecNote.Domain.Core.Base" >
-    
+    <property name="emailAdmin" value="villarroel.gj@gmail.com" />
+    <property name="passwordAdmin" value="recnote" />
   </object>
   
 </objects>

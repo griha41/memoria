@@ -34,7 +34,7 @@ namespace RecNote.Data.MongoDB
 
         public T FindByID<T>(string id) where T : RecNote.Entities.Base
         {
-            return this.GetCollection<T>().Find(query: Query<Container<T>>.EQ(e => e.Id, new ObjectId( id ))).FirstOrDefault().Object;
+            return this.GetCollection<T>().Find(query: Query<Container<T>>.EQ(e => e.Id, new ObjectId( id ))).FirstOrDefault();
         }
 
         public bool Remove<T>(string id) where T : RecNote.Entities.Base

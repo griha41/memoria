@@ -9,6 +9,6 @@ namespace RecNote.Data.Users
 {
     public interface IUserData : IDataBase<User>
     {
-        
+        User FindByEmail(string email);
     }
 }

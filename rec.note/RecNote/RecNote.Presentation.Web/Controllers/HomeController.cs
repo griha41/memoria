@@ -14,7 +14,6 @@ namespace RecNote.Presentation.Web.Controllers
         //
         // GET: /Home/
         IUserProvider UserProvider { get; set; }
-        int Number { get; set; }
 
         public ActionResult Index()
         {
@@ -29,22 +28,15 @@ namespace RecNote.Presentation.Web.Controllers
             if (model == null) model = new Model.Login { };
             if (!string.IsNullOrEmpty(model.Username))
             {
-                MvcApplication.CurrentUser = new Entities.Users.User
+                if (this.UserProvider.Login(model.Username, model.Password))
                 {
-                    Name = model.Username,
-                    Email = model.Username
-                };
+                    //MvcApplication.CurrentUser = this.UserProvider.FindByEmail(
+                }
+                
                 return RedirectToAction("");
             }
 
             return View("Login", model);
-        }
-
-        public ActionResult AddUser(Model.Login model)
-        {
-
-            var e = this.UserProvider.Save(new Entities.Users.User {Name = model.Username, Email = model.Username });
-            return null;
         }
 
     }

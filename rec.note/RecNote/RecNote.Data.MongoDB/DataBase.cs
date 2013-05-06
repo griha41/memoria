@@ -12,6 +12,11 @@ namespace RecNote.Data.MongoDB
     public class DataBase<T> : IDataBase<T> where T : Entities.Base
     {
         protected IGenericDataBase GenericDataBase { get; set; }
+        
+        protected MongoCollection<Container<T>> GetCollection()
+        {
+            return ((RecNote.Data.MongoDB.GenericDataBase)GenericDataBase).MongoDataBase.GetCollection<Container<T>>(typeof(T).FullName);
+        }
 
         public T FindByID(string id)
         {

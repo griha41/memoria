@@ -9,7 +9,7 @@ namespace RecNote.Domain.Core.Users
 {
     public interface IUserProvider : IProviderBase<User>
     {
-
         bool Login(string email, string password);
+        User FindByEmail(string email);
     }
 }
