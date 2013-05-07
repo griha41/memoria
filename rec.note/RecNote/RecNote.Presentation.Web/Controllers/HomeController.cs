@@ -30,7 +30,7 @@ namespace RecNote.Presentation.Web.Controllers
             {
                 if (this.UserProvider.Login(model.Username, model.Password))
                 {
-                    //MvcApplication.CurrentUser = this.UserProvider.FindByEmail(
+                    MvcApplication.CurrentUser = this.UserProvider.FindByEmail(model.Username);
                 }
                 
                 return RedirectToAction("");

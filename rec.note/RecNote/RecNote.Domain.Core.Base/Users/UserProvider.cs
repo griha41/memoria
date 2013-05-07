@@ -19,7 +19,19 @@ namespace RecNote.Domain.Core.Base.Users
 
         public bool Login(string email, string password)
         {
-            if (email.Equals(this.emailAdmin) && password.Equals(this.passwordAdmin)) return true;
+            if (email.Equals(this.emailAdmin) && password.Equals(this.passwordAdmin))
+            {
+                if (this.FindByEmail(email) == null)
+                {
+                    this.Save(new User
+                    {
+                        Email = this.emailAdmin,
+                        Password = this.passwordAdmin,
+                        Name = "admin"
+                    });
+                }
+                return true;
+            }
             var user = this.FindByEmail(email);
             if (user == null) return false;
 

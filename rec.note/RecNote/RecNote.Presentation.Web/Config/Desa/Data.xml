@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <objects xmlns="http://www.springframework.net">
-
-
-  <object id="UserData" type="RecNote.Data.MongoDB.Users.UserData, RecNote.Data.MongoDB" >
+  
+  <object abstract="true" id="DataBase" >
+    <property name="GenericDataBase" ref="GenericDataBase" />
   </object>
 
+  <object id="UserData" parent="DataBase" type="RecNote.Data.MongoDB.Users.UserData, RecNote.Data.MongoDB" >
+  </object>
+
+  
   <object id="GenericDataBase" type="RecNote.Data.MongoDB.GenericDataBase, RecNote.Data.MongoDB" >
     <property name="ConnectionString" value="mongodb://localhost" />
     <property name="Database" value="recnote"  />
   </object>
-  <!--<object id="MongoDataBase" type="MongoDB.Driver.MongoDatabase, MongoDB.Driver" >
-    
-  </object>
-  -->
+  
 </objects>

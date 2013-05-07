@@ -9,6 +9,7 @@
   <object id="UserProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Users.UserProvider, RecNote.Domain.Core.Base" >
     <property name="emailAdmin" value="villarroel.gj@gmail.com" />
     <property name="passwordAdmin" value="recnote" />
+    <property name="UserData" ref="UserData" />
   </object>
   
 </objects>

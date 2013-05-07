@@ -16,7 +16,6 @@
 
   <object id="HomeController" type="RecNote.Presentation.Web.Controllers.HomeController, RecNote.Presentation.Web" singleton="false" >
     <property name="UserProvider" ref="UserProvider" />
-    <property name="Number" value="3" />
   </object>
   
   
