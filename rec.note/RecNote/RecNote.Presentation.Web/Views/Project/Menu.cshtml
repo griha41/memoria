@@ -2,12 +2,10 @@
     Layout = null;
 }
 <section id="projectMenu">
-    <head>
+    <header>
         @I18n.GetString("project.menu.title")
-        <menu>
-            <button type="button" onclick="project.new()">@I18n.GetString("project.menu.new")</button>
-        </menu>
-    </head>
+        <button type="button" onclick="project.new()">@I18n.GetString("project.menu.new")</button>
+    </header>
     @Html.Action("List", "Project")
     <footer></footer>
 </section>

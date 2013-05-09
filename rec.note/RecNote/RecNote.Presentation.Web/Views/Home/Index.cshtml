@@ -1,3 +1,19 @@
 ﻿@{
     Layout = "~/Views/Shared/Simple.cshtml";
 }
+
+<header>
+    <section id="systemName">@I18n.GetString("systemName")</section>
+    <section id="userActions">@CurrentData.CurrentUser.Name <a class="close"></a></section>
+</header>
+<section id="main">
+    <section id="left">
+        @Html.Action("Menu", "Project")
+    </section>
+    <section id="center" >
+        
+    </section>
+    <section id="right" >a</section>
+</section>
+
+<footer></footer>

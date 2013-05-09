@@ -18,10 +18,12 @@ namespace RecNote.Presentation.Web.Helpers
         public static MvcHtmlString GetDynamicFiles(this UrlHelper urlhelper)
         {
             var views = ViewEngine.CurrentViews;
-            var result = "";
+            var result = string.Empty;
+            var lessResult = string.Empty;
             foreach (var view in views)
             {
                 var match = Regex.Match(view, @"([\w]*\/[\w]*)\.cshtml");
+                var index = views.IndexOf(view);
                 if (match.Success)
                 {
                     var script = Regex.Replace(match.Value, @"([\w]*\/[\w]*)\.cshtml", "~/Content/views/$1.js");
@@ -34,12 +36,18 @@ namespace RecNote.Presentation.Web.Helpers
                     if (!FileExist.ContainsKey(less))
                         FileExist.Add(less, File.Exists(urlhelper.RequestContext.HttpContext.Server.MapPath(less)));
                     if (FileExist[less])
-                        result += "<link type=\"text/css\" rel=\"stylesheet/less\" href=\"" + urlhelper.Content(less) + "\" ></script>";
+                        lessResult += "var e" + index + " = $('<link type=\"text/css\" rel=\"stylesheet/less\" href=\"" + urlhelper.Content(less) + "\" />')[0];"
+                            +"$('head').append(e" + index + ");"
+                            +"less.sheets.push(e" + index+ ");";
                 }
             }
             var port = urlhelper.RequestContext.HttpContext.Request.Url.Port == 80 ? String.Empty : ":" + urlhelper.RequestContext.HttpContext.Request.Url.Port;
             string urlBase = "http://" + urlhelper.RequestContext.HttpContext.Request.Url.Host + port + VirtualPathUtility.ToAbsolute("~/");
-            result += "<script type=\"text/javascript\" >window.baseUrl = '" + urlBase + "';</script>";
+            result += "<script type=\"text/javascript\" >"
+                            + "window.baseUrl = '" + urlBase + "';"
+                            + lessResult
+                            + "less.refresh(true);"
+                        +"</script>";
 
 
             var scriptBuilder = (StringBuilder)urlhelper.RequestContext.HttpContext.Items["ScriptBlockBuilder"] ?? new StringBuilder();

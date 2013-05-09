@@ -28,9 +28,7 @@ namespace RecNote.Presentation.Web.Models
             if (!CurrentViews.Exists(p => p == viewPath))
                 CurrentViews.Add(viewPath);
 
-
             return base.CreateView(controllerContext, viewPath, masterPath);
         }
-
     }
 }

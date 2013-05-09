@@ -123,6 +123,12 @@
   <data name="password" xml:space="preserve">
     <value>Contraseña</value>
   </data>
+  <data name="project.menu.new" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="project.menu.title" xml:space="preserve">
+    <value>Proyectos</value>
+  </data>
   <data name="recoveryPassword" xml:space="preserve">
     <value>Recuperar contraseña</value>
   </data>

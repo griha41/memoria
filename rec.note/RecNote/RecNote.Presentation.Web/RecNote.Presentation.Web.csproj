@@ -125,6 +125,7 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\recnote\common\close.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Web.config" />
@@ -203,6 +204,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Control.cshtml" />
     <Content Include="Views\Project\Menu.cshtml" />
+    <None Include="Content\Views\Project\Menu.less">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
