@@ -8,7 +8,11 @@
   <object id="UserData" parent="DataBase" type="RecNote.Data.MongoDB.Users.UserData, RecNote.Data.MongoDB" >
   </object>
 
+  <object id="ProjectData" parent="DataBase" type="RecNote.Data.MongoDB.Projects.ProjectData, RecNote.Data.MongoDB" >
+  </object>
   
+
+
   <object id="GenericDataBase" type="RecNote.Data.MongoDB.GenericDataBase, RecNote.Data.MongoDB" >
     <property name="ConnectionString" value="mongodb://localhost" />
     <property name="Database" value="recnote"  />

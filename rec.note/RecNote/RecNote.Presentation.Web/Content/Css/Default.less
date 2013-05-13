@@ -58,7 +58,7 @@ body
 		#center
 		{
 			position: absolute;
-			right: 250px;
+			right: 0px;
 			bottom: 0px;
 			left: 225px;
 			top: 50px;
@@ -70,11 +70,10 @@ body
 		}
 		#right
 		{
-			width: 100px;
-			height: 100px;
 			background-color: Red;
 			display: inline-block;
 			vertical-align: top;
+			float: right;
 		}
 	}
 }
@@ -87,15 +86,20 @@ form
 {
     width: 100%;
 }
-input 
+input , select
 {
-    height: 30px; 
+    height: auto;
     width: 100%;
     display: block;
-    color: @textColor;
+    color: @inputColor;
     font-size: 20px;
     margin-bottom: 25px;
     padding: 5px;
+	max-width: 450px;
+	border: 1px solid @borderColor;
+}
+select {
+	
 }
 input[type=submit]
 {
@@ -122,6 +126,15 @@ button {
 	font-weight: bold;
 	color: @textoBoton;
 	background-color: @buttonColor;
+	font-size: 18px;
+	line-height: 40px;
+	padding-left: 12px;
+	padding-right: 12px;
 	.rounded;
 	cursor: pointer;
+}
+h2{
+	margin: 0px;
+	font-size: 20px;
+	color: @textColor;
 }

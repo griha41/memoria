@@ -40,15 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Projects\ProjectProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProviderBase.cs" />
     <Compile Include="Users\UserProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RecNote.Data.MongoDB\RecNote.Data.MongoDB.csproj">
-      <Project>{3B212C30-4F29-4189-82F9-5F1107558362}</Project>
-      <Name>RecNote.Data.MongoDB</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RecNote.Data\RecNote.Data.csproj">
       <Project>{C8C0E999-B8D7-48D5-8E37-0B16B27A072A}</Project>
       <Name>RecNote.Data</Name>

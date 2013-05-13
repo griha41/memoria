@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Entities.Projects.Project
+<section id="projectNew">
+    <h2>@I18n.GetString("project.new.title")</h2>
+    <h3>@I18n.GetString("project.name")</h3>
+    @Html.HiddenFor(m => m.ID)
+    @Html.TextBoxFor(m => m.Name, new { placeholder = I18n.GetString("placeholder.project.name") })
+    <h3>@I18n.GetString("project.actors")</h3>
+    @Html.Action("NewActor", "Project", new { projectID = Model.ID })
+    @Html.Action("ListActors", "Project", new { projectID = Model.ID })
+</section>
+

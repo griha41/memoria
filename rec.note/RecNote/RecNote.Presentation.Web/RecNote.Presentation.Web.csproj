@@ -82,9 +82,11 @@
     <Compile Include="Helpers\CurrentData.cs" />
     <Compile Include="Helpers\I18n.cs" />
     <Compile Include="Helpers\Util.cs" />
+    <Compile Include="Models\ActionType.cs" />
     <Compile Include="Models\DependencyResolver.cs" />
     <Compile Include="Models\Global.cs" />
     <Compile Include="Models\Home\Login.cs" />
+    <Compile Include="Models\Project\Actor.cs" />
     <Compile Include="Models\ViewEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\es.Designer.cs">
@@ -98,6 +100,7 @@
     <Content Include="Config\Desa\Domain.xml" />
     <Content Include="Config\Desa\Presentation.xml" />
     <Content Include="Content\Scripts\less.min.js" />
+    <Content Include="Content\Scripts\Util.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -185,11 +188,11 @@
     <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\es.resx">
+    <Content Include="Resources\es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>es.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Content\Css\Default.less">
@@ -206,6 +209,16 @@
     <Content Include="Views\Shared\Control.cshtml" />
     <Content Include="Views\Project\Menu.cshtml" />
     <None Include="Content\Views\Project\Menu.less">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+    </None>
+    <Content Include="Views\Project\New.cshtml" />
+    <None Include="Content\Views\Project\New.less">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+    </None>
+    <Content Include="Views\Project\NewActor.cshtml" />
+    <None Include="Content\Views\Project\NewActor.less">
       <Compile>True</Compile>
       <Minify>True</Minify>
     </None>

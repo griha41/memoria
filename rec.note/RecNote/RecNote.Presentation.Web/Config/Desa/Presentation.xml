@@ -10,12 +10,17 @@
     <constructor-arg name="name" value="es" />
   </object>
 
-  <object id="FilterProvider" type="RecNote.Utils.MvcExtensions.Providers.FilterProvider, RecNote.Utils.MvcExtensions" singleton="true"></object>
+  <object id="FilterProvider" type="RecNote.Utils.MvcExtensions.Providers.FilterProvider, RecNote.Utils.MvcExtensions" singleton="true">
+  </object>
   
   <!-- Utils -->
 
   <object id="HomeController" type="RecNote.Presentation.Web.Controllers.HomeController, RecNote.Presentation.Web" singleton="false" >
     <property name="UserProvider" ref="UserProvider" />
+  </object>
+
+  <object id="ProjectController" type="RecNote.Presentation.Web.Controllers.ProjectController, RecNote.Presentation.Web" singleton="false" >
+    <property name="ProjectProvider" ref="ProjectProvider" />
   </object>
   
   

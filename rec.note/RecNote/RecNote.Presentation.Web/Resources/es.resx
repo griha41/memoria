@@ -123,11 +123,29 @@
   <data name="password" xml:space="preserve">
     <value>Contraseña</value>
   </data>
+  <data name="placeholder.actor.email" xml:space="preserve">
+    <value>Correo electronico</value>
+  </data>
+  <data name="placeholder.actor.name" xml:space="preserve">
+    <value>Nombre y Apellidos</value>
+  </data>
+  <data name="project.actor.save" xml:space="preserve">
+    <value>Agregar al Proyecto</value>
+  </data>
+  <data name="project.actors" xml:space="preserve">
+    <value>Participantes del Proyecto</value>
+  </data>
   <data name="project.menu.new" xml:space="preserve">
     <value>+</value>
   </data>
   <data name="project.menu.title" xml:space="preserve">
     <value>Proyectos</value>
+  </data>
+  <data name="project.name" xml:space="preserve">
+    <value>Nombre del Proyecto</value>
+  </data>
+  <data name="project.new.title" xml:space="preserve">
+    <value>Nuevo Proyecto</value>
   </data>
   <data name="recoveryPassword" xml:space="preserve">
     <value>Recuperar contraseña</value>

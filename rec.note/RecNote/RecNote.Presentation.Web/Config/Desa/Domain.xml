@@ -11,5 +11,9 @@
     <property name="passwordAdmin" value="recnote" />
     <property name="UserData" ref="UserData" />
   </object>
+
+  <object id="ProjectProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Projects.ProjectProvider, RecNote.Domain.Core.Base" >
+    <property name="ProjectData" ref="ProjectData" />
+  </object>
   
 </objects>

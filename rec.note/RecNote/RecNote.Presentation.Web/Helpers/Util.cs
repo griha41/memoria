@@ -8,6 +8,11 @@ using System.IO;
 using System.Web.WebPages;
 using System.Text;
 using RecNote.Presentation.Web.Models;
+using System.Web.Mvc.Html;
+using System.Linq.Expressions;
+
+using System.Runtime.CompilerServices;
+using System.Web.Mvc;
 
 namespace RecNote.Presentation.Web.Helpers
 {
@@ -71,6 +76,32 @@ namespace RecNote.Presentation.Web.Helpers
             scriptBuilder.Append(template(null).ToHtmlString());
             webPage.Context.Items["ScriptBlockBuilder"] = scriptBuilder;
             return new MvcHtmlString(string.Empty);
+        }
+
+        public static MvcHtmlString DropDownListFor<T,TModel, TProperty>(this HtmlHelper<TModel> htmlHelper, 
+            Expression<Func<TModel, TProperty>> expression,
+            
+            T value) where T : struct
+        {
+            var items = new List<SelectListItem>();
+            
+            items.Add(new SelectListItem
+            {
+                Selected = (string.IsNullOrEmpty(value.ToString())  || value.ToString() == default(T).ToString()),
+                Text = I18n.GetString(default(T)).ToString(),
+                Value = string.Empty
+            });
+
+            items.AddRange(
+            Enum.GetNames(typeof(T)).Select(p => new SelectListItem
+            {
+                Selected = (Enum.Parse(value.GetType(), p).Equals(value)),
+                Text = I18n.GetString((T)Enum.Parse(value.GetType(), p)).ToString(),
+                Value = p
+            })
+            );
+
+            return htmlHelper.DropDownListFor<TModel,TProperty>(expression, items);
         }
 
 
