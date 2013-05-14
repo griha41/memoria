@@ -49,6 +49,10 @@ namespace RecNote.Domain.Core.Base.Users
         public User New(User User)
         {
             // TODO: Enviar el password al usuario
+            var user = this.FindByEmail(User.Email);
+            if (user != null)
+                User.ID = user.ID;
+
             return this.Save(User);
         }
 

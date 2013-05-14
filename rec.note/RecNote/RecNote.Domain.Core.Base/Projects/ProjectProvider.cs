@@ -43,6 +43,7 @@ namespace RecNote.Domain.Core.Base.Projects
             }
             var project = this.ProjectData.FindByID(ProjectID);
             project.Actors = project.Actors.Concat(new[] { Actor }).ToArray();
+            this.Save(project);
         }
     }
 }

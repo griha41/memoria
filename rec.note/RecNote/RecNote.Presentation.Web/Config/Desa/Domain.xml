@@ -14,6 +14,7 @@
 
   <object id="ProjectProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Projects.ProjectProvider, RecNote.Domain.Core.Base" >
     <property name="ProjectData" ref="ProjectData" />
+    <property name="UserProvider" ref="UserProvider" />
   </object>
   
 </objects>
