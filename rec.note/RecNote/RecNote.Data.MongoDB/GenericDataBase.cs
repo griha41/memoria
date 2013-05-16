@@ -28,26 +28,24 @@ namespace RecNote.Data.MongoDB
         public string Database { get; set; }
 
         
-        protected MongoCollection<Container<T>> GetCollection<T>() where T : RecNote.Entities.Base
+        protected MongoCollection<T> GetCollection<T>() where T : RecNote.Entities.Base
         {
-            return this.MongoDataBase.GetCollection<Container<T>>(typeof(T).FullName);
+            return this.MongoDataBase.GetCollection<T>(typeof(T).FullName);
         }
 
         public T FindByID<T>(string id) where T : RecNote.Entities.Base
         {
-            return this.GetCollection<T>().Find(query: Query<Container<T>>.EQ(e => e.Id, new ObjectId( id ))).FirstOrDefault();
+            return this.GetCollection<T>().Find(query: Query<T>.EQ(e => e.ID, id)).FirstOrDefault();
         }
 
         public bool Remove<T>(string id) where T : RecNote.Entities.Base
         {
-            return this.GetCollection<T>().Remove(query: Query<Container<T>>.EQ(e => e.Id, new ObjectId( id ))).Ok;
+            return this.GetCollection<T>().Remove(query: Query<T>.EQ(e => e.ID, id)).Ok;
         }
 
         public T Save<T>(T entry) where T : RecNote.Entities.Base
         {
-            var con = new Container<T>(entry);
-            var e = this.GetCollection<T>().Save(con);
-            entry.ID = con.Id.ToString();
+            var e = this.GetCollection<T>().Save(entry);
             return entry;
         }
     }

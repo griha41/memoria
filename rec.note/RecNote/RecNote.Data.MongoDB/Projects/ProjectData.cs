@@ -13,8 +13,8 @@ namespace RecNote.Data.MongoDB.Projects
         {
             return (
                 from e in this.GetCollection().AsQueryable()
-                        where e.Object.Owner.ID == User.ID
-                        && e.Object.IsTemporal
+                        where e.Owner.ID == User.ID
+                        && e.IsTemporal
                     select e
              ).FirstOrDefault();
         }
@@ -22,7 +22,7 @@ namespace RecNote.Data.MongoDB.Projects
         {
             return (
                 from e in this.GetCollection().AsQueryable()
-                where !e.Object.IsTemporal
+                where !e.IsTemporal
                 select (Entities.Projects.Project)e
                 ).ToList();
         }

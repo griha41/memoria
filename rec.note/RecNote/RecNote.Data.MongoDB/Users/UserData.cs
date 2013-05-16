@@ -12,7 +12,7 @@ namespace RecNote.Data.MongoDB.Users
 
         public Entities.Users.User FindByEmail(string email)
         {
-            return this.GetCollection().Find(Query<Container<Entities.Users.User>>.EQ(p => p.Object.Email, email)).FirstOrDefault();
+            return this.GetCollection().Find(Query<Entities.Users.User>.EQ(p => p.Email, email)).FirstOrDefault();
         }
     }
 }
