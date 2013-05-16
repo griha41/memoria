@@ -35,7 +35,7 @@ namespace RecNote.Data.MongoDB
 
         public T FindByID<T>(string id) where T : RecNote.Entities.Base
         {
-            return this.GetCollection<T>().Find(query: Query<T>.EQ(e => e.ID, id)).FirstOrDefault();
+            return this.GetCollection<T>().FindAs<T>(query: Query<T>.EQ(e => e.ID, id)).FirstOrDefault();
         }
 
         public bool Remove<T>(string id) where T : RecNote.Entities.Base
@@ -45,7 +45,7 @@ namespace RecNote.Data.MongoDB
 
         public T Save<T>(T entry) where T : RecNote.Entities.Base
         {
-            var e = this.GetCollection<T>().Save(entry);
+            var e = this.GetCollection<T>().Save<T>(entry, new MongoInsertOptions { });
             return entry;
         }
     }

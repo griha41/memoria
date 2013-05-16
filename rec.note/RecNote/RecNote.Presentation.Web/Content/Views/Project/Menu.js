@@ -14,22 +14,22 @@ project.saveNewActor = function()
     var id = '#projectNewActor';
     var param = Util.getParams(id);
     var isValid = true;
-    if( !Util.isEmail( param.Email ) )
+    if( !Util.isEmail( param["User.Email"] ) )
     {
         isValid = false;
-        Util.showError(id + ' input[name="Email"]', 'error.emailInvalid');
+        Util.showError(id + ' input[name="User.Email"]', 'error.emailInvalid');
     }
 
-    if ( Util.isNull( param.Name ) )
+    if ( Util.isNull( param["User.Name"] ) )
     {
         isValid = false;
-        Util.showError(id + ' input[name="Name"]', 'error.isNull');
+        Util.showError(id + ' input[name="User.Name"]', 'error.isNull');
     }
 
-    if ( Util.isNull( param.Role ) )
+    if ( Util.isNull( param["User.Role"] ) )
     {
         isValid = false;
-        Util.showError(id + ' input[name="Role"]', 'error.isNull');
+        Util.showError(id + ' input[name="User.Role"]', 'error.isNull');
     }
 
     if(isValid)

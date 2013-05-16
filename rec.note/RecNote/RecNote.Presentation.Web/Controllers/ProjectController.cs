@@ -41,7 +41,7 @@ namespace RecNote.Presentation.Web.Controllers
 
         public ActionResult SaveActor(Model.Actor actor)
         {
-            this.ProjectProvider.NewActor(actor.ProjectID, actor);
+            this.ProjectProvider.NewActor(actor.ProjectID, actor.User);
             return null;
         }
 

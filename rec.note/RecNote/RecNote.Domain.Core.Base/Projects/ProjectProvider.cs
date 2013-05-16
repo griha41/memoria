@@ -38,11 +38,10 @@ namespace RecNote.Domain.Core.Base.Projects
         {
             if (string.IsNullOrEmpty(Actor.ID))
             {
-                var user = this.UserProvider.New(Actor);
-                Actor.ID = user.ID;
+                Actor = (Entities.Projects.Actor)this.UserProvider.New(Actor);
             }
             var project = this.ProjectData.FindByID(ProjectID);
-            project.Actors = project.Actors.Concat(new[] { Actor }).ToArray();
+            project.Actors = project.Actors == null ? new[] { Actor} : project.Actors.Concat(new[] { Actor }).ToArray();
             this.Save(project);
         }
     }

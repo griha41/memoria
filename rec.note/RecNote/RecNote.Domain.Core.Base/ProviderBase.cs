@@ -23,7 +23,7 @@ namespace RecNote.Domain.Core.Base
 
         public T Save(T entry)
         {
-            return this.GenericDataBase.Save<T>(entry);
+            return this.GenericDataBase.Save<T>((T)entry);
         }
     }
 }
