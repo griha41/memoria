@@ -41,7 +41,7 @@ namespace RecNote.Presentation.Web.Helpers
                     if (!FileExist.ContainsKey(less))
                         FileExist.Add(less, File.Exists(urlhelper.RequestContext.HttpContext.Server.MapPath(less)));
                     if (FileExist[less])
-                        lessResult += "var e" + index + " = $('<link type=\"text/css\" rel=\"stylesheet/less\" href=\"" + urlhelper.Content(less) + "\" />')[0];"
+                        lessResult += "var e" + index + " = $('<link type=\"text/css\" rel=\"stylesheet/less\" href=\"" + urlhelper.Content(less) + "?" + DateTime.Now.ToString("hmmssff") + "\" />')[0];"
                             +"$('head').append(e" + index + ");"
                             +"less.sheets.push(e" + index+ ");";
                 }

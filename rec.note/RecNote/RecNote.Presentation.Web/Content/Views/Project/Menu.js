@@ -1,5 +1,10 @@
 ﻿if (project == null) { var project = {}; }
 
+project.currentID = function()
+{
+    return $('input[name="CurrentProject.ID"]').val()
+}
+
 project.new = function()
 {
     if(project._new != null) { return; }
@@ -34,8 +39,14 @@ project.saveNewActor = function()
 
     if(isValid)
     {
+        param["ProjectID"] = project.currentID();
         Util.post('Project/SaveActor', param, function (){
             Util.clear(id);
+            var listActors = '#projectListActors';
+            if( $(listActors).length > 0 )
+            {
+                Util.replaceAction( listActors, 'Project/ListActors', { projectId : project.currentID() } );
+            }
         });
     }
 }

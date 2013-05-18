@@ -61,6 +61,15 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to x.
+        /// </summary>
+        internal static string actor_delete {
+            get {
+                return ResourceManager.GetString("actor.delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Iniciar Sesión.
         /// </summary>
         internal static string login {

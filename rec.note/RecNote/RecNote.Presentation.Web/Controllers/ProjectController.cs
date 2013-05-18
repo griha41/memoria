@@ -25,9 +25,9 @@ namespace RecNote.Presentation.Web.Controllers
             return null;
         }
 
-        public ActionResult New(Entities.Projects.Project project)
-        {    
-            var model = project.ID == null ? this.ProjectProvider.GetTemporalProject(MvcApplication.CurrentUser) : project;
+        public ActionResult New(Model.Project project)
+        {
+            var model = project.CurrentProject == null ? new Model.Project { CurrentProject = this.ProjectProvider.GetTemporalProject(MvcApplication.CurrentUser) } : project;
             return View(model);
         }
 
@@ -48,7 +48,7 @@ namespace RecNote.Presentation.Web.Controllers
         public ActionResult ListActors(string projectID)
         {
             var project = this.ProjectProvider.FindByID(projectID);
-            return null;
+            return View(project);
         }
     }
 }
