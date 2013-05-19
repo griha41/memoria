@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace RecNote.Entities.Projects
 {
@@ -26,5 +27,19 @@ namespace RecNote.Entities.Projects
         /// Actors on this project
         /// </summary>
         public Actor[] Actors { get; set; }
+
+        #region Information 
+        public InformationNode Introduction { get; set; }
+        public InformationNode InformationActors { get; set; }
+        public InformationNode Glossary { get; set; }
+        public InformationNode CurrentSystem { get; set; }
+        public InformationNode Restrictions { get; set; }
+        public InformationNode OverlookedProblems { get; set; }
+
+        public InformationNode InformationRequirements { get; set; }
+        public InformationNode FunctionalRequirements { get; set; }
+        public InformationNode NonFunctionalRequirements { get; set; }
+        #endregion
+
     }
 }

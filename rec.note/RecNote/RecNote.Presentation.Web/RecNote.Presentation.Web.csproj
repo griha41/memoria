@@ -87,6 +87,7 @@
     <Compile Include="Models\Global.cs" />
     <Compile Include="Models\Home\Login.cs" />
     <Compile Include="Models\Project\Actor.cs" />
+    <Compile Include="Models\Project\List.cs" />
     <Compile Include="Models\Project\Project.cs" />
     <Compile Include="Models\ViewEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,6 +131,7 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Content\themes\recnote\common\close.png" />
+    <Content Include="Content\themes\recnote\common\x.png" />
     <Content Include="Content\Views\Project\Menu.js" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -228,6 +230,8 @@
       <Minify>True</Minify>
     </None>
     <Content Include="Views\Project\ListActors.cshtml" />
+    <Content Include="Views\Project\List.cshtml" />
+    <Content Include="Views\Project\View.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

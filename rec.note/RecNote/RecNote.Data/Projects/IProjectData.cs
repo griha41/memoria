@@ -10,5 +10,7 @@ namespace RecNote.Data.Projects
     {
         Project GetTemporalProject(Entities.Users.User User);
         IList<Entities.Projects.Project> GetList();
+        IList<Entities.Projects.Project> GetByOwner(string UserID);
+        IList<Entities.Projects.Project> GetByUserRole(string UserID, RoleType Role);
     }
 }

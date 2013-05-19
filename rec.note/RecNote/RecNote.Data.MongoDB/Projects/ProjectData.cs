@@ -26,5 +26,26 @@ namespace RecNote.Data.MongoDB.Projects
                 select (Entities.Projects.Project)e
                 ).ToList();
         }
+
+
+        public IList<Entities.Projects.Project> GetByOwner(string UserID)
+        {
+            return (
+                from e in this.GetCollection().AsQueryable()
+                where e.Owner.ID == UserID
+                select (Entities.Projects.Project)e
+                ).ToList();
+        }
+
+        public IList<Entities.Projects.Project> GetByUserRole(string UserID, Entities.Projects.RoleType Role)
+        {
+            return (
+                from e in this.GetCollection().AsQueryable()
+                where 
+                e.Actors != null &&
+                e.Actors.Any(a => a.ID == UserID && a.Role == Role)
+                select (Entities.Projects.Project)e
+                ).ToList();
+        }
     }
 }

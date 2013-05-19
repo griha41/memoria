@@ -7,10 +7,10 @@ project.currentID = function()
 
 project.new = function()
 {
-    if(project._new != null) { return; }
+    if(project._current != null) { return; }
     Util.post('Project/New', null, function (html) {
-        project._new = $(html);
-        $('#main #center').append(project._new);
+        project._current = $(html);
+        $('#main #center').append(project._current);
     });
 };
 
@@ -49,4 +49,44 @@ project.saveNewActor = function()
             }
         });
     }
+}
+
+project.removeActor = function(container)
+{
+    var actorID = $('input[name="Actor.ID"]', container).val();
+
+    Util.post('Project/RemoveActor', { projectID : project.currentID(), actorID : actorID },
+    function(){
+        $(container).remove();
+    });
+}
+
+project.save = function(container)
+{
+    var data = Util.getParams(container);
+    if( Util.isNull(data['CurrentProject.Name']) ) { Util.showError('input[name="CurrentProject.Name"]', 'error.isNull'); return; }
+    Util.post('Project/Save', data, function()
+    {
+        var listProjects = '#listProjects';
+        if ( $(listProjects).length > 0 )
+        {
+            Util.replaceAction( listProjects, 'Project/ListProjects', {} );
+            project.cancel(container);
+        }
+    });
+}
+
+project.cancel = function(container)
+{
+    project._current.remove();
+    project._current = null;
+}
+
+project.view = function (projectID)
+{
+    if(project._current != null) { return; }
+    Util.post('Project/View', null, function (html) {
+        project._current = $(html);
+        $('#main #center').append(project._current);
+    });
 }

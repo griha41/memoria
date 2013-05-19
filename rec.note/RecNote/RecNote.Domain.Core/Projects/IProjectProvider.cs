@@ -11,5 +11,8 @@ namespace RecNote.Domain.Core.Projects
         Project GetTemporalProject(Entities.Users.User UserID);
         IList<Project> GetList();
         void NewActor(string ProjectID, Entities.Projects.Actor Actor);
+        void RemoveActor(string ProjectID, string ActorID);
+
+        IList<Entities.Projects.RestrictedProject> GetProjectByUser(string UserID);
     }
 }

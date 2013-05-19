@@ -11,17 +11,17 @@ namespace RecNote.Domain.Core.Base
     {
         protected IGenericDataBase GenericDataBase { get; set; }
 
-        public T FindByID(string id) 
+        public virtual T FindByID(string id) 
         {
             return this.GenericDataBase.FindByID<T>(id);
         }
 
-        public bool Remove(string id)
+        public virtual bool Remove(string id)
         {
             return this.GenericDataBase.Remove<T>(id);
         }
 
-        public T Save(T entry)
+        public virtual T Save(T entry)
         {
             return this.GenericDataBase.Save<T>((T)entry);
         }

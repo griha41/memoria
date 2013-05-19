@@ -22,7 +22,8 @@ namespace RecNote.Presentation.Web.Controllers
 
         public ActionResult List()
         {
-            return null;
+            var projects = new Model.List { RestrictedProjects = this.ProjectProvider.GetProjectByUser(MvcApplication.CurrentUser.ID) };
+            return View(projects);
         }
 
         public ActionResult New(Model.Project project)
@@ -45,10 +46,32 @@ namespace RecNote.Presentation.Web.Controllers
             return null;
         }
 
+        public ActionResult RemoveActor(Model.Actor actor)
+        {
+            this.ProjectProvider.RemoveActor(actor.ProjectID, actor.User.ID);
+            return null;
+        }
+
         public ActionResult ListActors(string projectID)
         {
             var project = this.ProjectProvider.FindByID(projectID);
             return View(project);
+        }
+
+        public ActionResult Save(Model.Project project)
+        {
+            var realProject = this.ProjectProvider.FindByID(project.CurrentProject.ID);
+            realProject.Name = project.CurrentProject.Name;
+            this.ProjectProvider.Save(realProject);
+            return null;
+        }
+
+        public ActionResult View(string projectID)
+        {
+            return View(new Model.Project
+            {
+                CurrentProject = this.ProjectProvider.FindByID(projectID)
+            });
         }
     }
 }
