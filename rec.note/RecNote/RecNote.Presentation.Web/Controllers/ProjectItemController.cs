@@ -14,7 +14,7 @@ namespace RecNote.Presentation.Web.Controllers
         //
         // GET: /ProjectItem/
 
-        public ActionResult View(Project project, InformationNode item)
+        public ActionResult View(Project project, ProjectItem item)
         {
             return View(new Model.View
             {

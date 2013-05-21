@@ -3,6 +3,7 @@
 
   <object abstract="true" id="ProviderBase" >
     <property name="GenericDataBase" ref="GenericDataBase" />
+    <property name="I18n" ref="TextI18n" />
   </object>
   
   

@@ -32,19 +32,7 @@ namespace RecNote.Entities.Projects
         public ProjectStateType State { get; set; }
 
         #region Information 
-        public InformationNode Introduction { get; set; }
-        public InformationNode InformationActors { get; set; }
-        public InformationNode Glossary { get; set; }
-        public InformationNode CurrentSystem { get; set; }
-        public InformationNode Restrictions { get; set; }
-        public InformationNode OverlookedProblems { get; set; }
-
-        public InformationNode InformationRequirements { get; set; }
-        public InformationNode FunctionalRequirements { get; set; }
-        public InformationNode NonFunctionalRequirements { get; set; }
-
-
-        
+        public ProjectItem[] Information { get; set; }
         #endregion
 
     }

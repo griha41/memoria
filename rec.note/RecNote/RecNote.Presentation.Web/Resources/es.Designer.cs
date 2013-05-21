@@ -124,6 +124,51 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Actores.
+        /// </summary>
+        internal static string project_description_actors {
+            get {
+                return ResourceManager.GetString("project.description.actors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sistema Actual.
+        /// </summary>
+        internal static string project_description_currentSystem {
+            get {
+                return ResourceManager.GetString("project.description.currentSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Introducción.
+        /// </summary>
+        internal static string project_description_introduction {
+            get {
+                return ResourceManager.GetString("project.description.introduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Objetivos.
+        /// </summary>
+        internal static string project_description_objectives {
+            get {
+                return ResourceManager.GetString("project.description.objectives", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Definiciones.
+        /// </summary>
+        internal static string project_descriptions {
+            get {
+                return ResourceManager.GetString("project.descriptions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to +.
         /// </summary>
         internal static string project_menu_new {
@@ -156,6 +201,60 @@ namespace RecNote.Presentation.Web.Resources {
         internal static string project_new_title {
             get {
                 return ResourceManager.GetString("project.new.title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to +.
+        /// </summary>
+        internal static string project_project_newAudio {
+            get {
+                return ResourceManager.GetString("project.project.newAudio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Requisitos.
+        /// </summary>
+        internal static string project_requirements {
+            get {
+                return ResourceManager.GetString("project.requirements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Funcionales.
+        /// </summary>
+        internal static string project_requirements_functional {
+            get {
+                return ResourceManager.GetString("project.requirements.functional", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Requisitos de información.
+        /// </summary>
+        internal static string project_requirements_information {
+            get {
+                return ResourceManager.GetString("project.requirements.information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Funcionales.
+        /// </summary>
+        internal static string project_requirements_nofunctional {
+            get {
+                return ResourceManager.GetString("project.requirements.nofunctional", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Audios Asociados.
+        /// </summary>
+        internal static string project_view_audios {
+            get {
+                return ResourceManager.GetString("project.view.audios", resourceCulture);
             }
         }
         

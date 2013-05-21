@@ -12,7 +12,6 @@ namespace RecNote.Domain.Core.Base
     {
         protected IGenericDataBase GenericDataBase { get; set; }
         protected ITextI18n I18n { get; set; }
-        protected string CountryCode { get; set; }
 
         public virtual T FindByID(string id) 
         {

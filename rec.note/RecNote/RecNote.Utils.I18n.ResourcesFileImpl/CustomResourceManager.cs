@@ -30,7 +30,7 @@ namespace RecNote.Utils.I18n.ResourcesFile
 
         public string GetString(string codeDialog)
         {
-            return this.Elements.ContainsKey(codeDialog) ? this.Elements[codeDialog] : string.Empty;
+            return this.Elements.ContainsKey(codeDialog) ? this.Elements[codeDialog] : codeDialog;
         }
 
         public IDictionaryEnumerator GetEnumerator()

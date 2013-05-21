@@ -21,7 +21,49 @@ namespace RecNote.Domain.Core.Base.Projects
                 project = this.GenericDataBase.Save(new Entities.Projects.Project
                 {
                     Owner = user,
-                    IsTemporal = true
+                    IsTemporal = true,
+                    Information = new [] {
+                        new Entities.Projects.ProjectItem
+                        {
+                            Name = I18n.GetString("project.descriptions"),
+                            Childs = new []{
+                                new Entities.Projects.ProjectItem{
+                                    Name = I18n.GetString("project.description.introduction"),
+                                    AllowChilds = false
+                                },
+                                new Entities.Projects.ProjectItem{
+                                    Name = I18n.GetString("project.description.actors"),
+                                    AllowChilds = true
+                                },
+                                new Entities.Projects.ProjectItem{
+                                    Name = I18n.GetString("project.description.currentSystem"),
+                                    AllowChilds = false
+                                },
+                                new Entities.Projects.ProjectItem{
+                                    Name = I18n.GetString("project.description.objectives"),
+                                    AllowChilds = true
+                                }
+                            }
+                        },
+                        new Entities.Projects.ProjectItem
+                        {
+                            Name = I18n.GetString("project.requirements"),
+                            Childs = new []{
+                                new Entities.Projects.ProjectItem{
+                                    Name = I18n.GetString("project.requirements.information"),
+                                    AllowChilds = true
+                                },
+                                new Entities.Projects.ProjectItem{
+                                    Name = I18n.GetString("project.requirements.functional"),
+                                    AllowChilds = true
+                                },
+                                new Entities.Projects.ProjectItem{
+                                    Name = I18n.GetString("project.requirements.nofunctional"),
+                                    AllowChilds = true
+                                }
+                            }
+                        }
+                    }
                 });
             // ahora si =)
 

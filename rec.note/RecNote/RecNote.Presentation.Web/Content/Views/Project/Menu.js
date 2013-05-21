@@ -67,7 +67,7 @@ project.save = function(container)
     if( Util.isNull(data['CurrentProject.Name']) ) { Util.showError('input[name="CurrentProject.Name"]', 'error.isNull'); return; }
     Util.post('Project/Save', data, function()
     {
-        var listProjects = '#listProjects';
+        var listProjects = '#projectList';
         if ( $(listProjects).length > 0 )
         {
             Util.replaceAction( listProjects, 'Project/ListProjects', {} );
@@ -94,3 +94,19 @@ project.view = function (projectID)
         $('#projectList li[projectID="'+projectID+'"]').addClass('selected');
     });
 }
+
+var audio = {
+    current : null,
+    "new" : function(projectID)
+    {
+        if(audio.current == null)
+        {
+            Util.post('Audio/New', { projectID : projectID }, 
+                function(html){
+                    audio.current = $(html);
+                    $('body #overtop').append(audio.current);
+                    $('body #overtop').show();
+                    });
+        }
+    }
+};

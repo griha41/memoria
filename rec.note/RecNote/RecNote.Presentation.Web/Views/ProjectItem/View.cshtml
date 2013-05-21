@@ -4,14 +4,13 @@
 @model RecNote.Presentation.Web.Models.ProjectItem.View
 <section name="projectItemView" itemID="@Model.Item.ID">
     <header>
-        <h2>@(Model.Item.Name ?? Model.Name)</h2>
+        <h2>@Model.Item.Name</h2>
     </header>
-    
     <article>
         @Model.Item.Data
     </article>
     <footer>
-        @if (Model.Item.Childs.Length > 0)
+        @if (Model.Item.Childs != null && Model.Item.Childs.Length > 0)
         {
         }
         else

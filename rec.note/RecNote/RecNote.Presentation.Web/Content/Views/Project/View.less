@@ -1,4 +1,5 @@
-﻿#projectView {
+﻿@import "../../Css/vars.less";
+#projectView {
 	padding: 14px;
 	vertical-align: top;
 	> header {
@@ -13,5 +14,45 @@
 			position: relative;
 			top: -60px;
 		}
+	}
+	> section.body {
+		padding-right: 250px;
+		text-align: left;
+		> h2 {}
+		> section.option {
+			text-align: left;
+			> h2 {font-size: 20px; line-height: 60px; vertical-align: middle;}
+			> section
+			{
+				width: 206px;
+				height: 136px;
+				background-color: @itemBackgroundColor;
+				padding: 7px;
+				display: inline-block; 
+				cursor: pointer;
+
+				header {
+					> h2 { font-size: 16px; }
+				}
+				> article {
+					width: 206px;
+					height: 136px;
+					overflow: hidden;
+				}
+				> footer {
+					float: left;
+					height: 40px;
+					top: -40px;
+					position: relative;
+				}
+			}
+		}
+	}
+	> section.right {
+		position: absolute;
+		right: 0px;
+		button: 0px;
+		top: 100px;
+		width: 250px;
 	}
 }
