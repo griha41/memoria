@@ -84,9 +84,13 @@ project.cancel = function(container)
 
 project.view = function (projectID)
 {
-    if(project._current != null) { return; }
-    Util.post('Project/View', null, function (html) {
+    if(project._current != null) { $(project._current).show(); return; }
+
+    Util.post('Project/View', { projectID : projectID }, function (html) {
+        console.log(html);
         project._current = $(html);
         $('#main #center').append(project._current);
+        $('#projectList li').removeClass('selected');
+        $('#projectList li[projectID="'+projectID+'"]').addClass('selected');
     });
 }

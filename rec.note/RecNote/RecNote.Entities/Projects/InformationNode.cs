@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RecNote.Entities.Projects
 {
-    public class InformationNode
+    public class InformationNode : Base
     {
         public string Data { get; set; }
         
@@ -13,6 +13,6 @@ namespace RecNote.Entities.Projects
         public string Name { get; set; }
         public bool AllowChilds { get; set; }
 
-        InformationNode[] Childs { get; protected set; }
+        public InformationNode[] Childs { get; set; }
     }
 }

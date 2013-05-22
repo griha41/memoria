@@ -81,5 +81,13 @@ namespace RecNote.Presentation.Web.Helpers
         {
             return enu.HasValue ? GetRegExp(enu.Value) : new Regex(string.Empty);
         }
+
+        public static object GetString(string key, object replaces)
+        {
+            var text = GetTextString(key);
+            foreach (var value in new RouteValueDictionary(replaces))
+                text = text.Replace("${" + value.Key + "}", value.Value.ToString());
+            return MvcHtmlString.Create(text);
+        }
     }
 }

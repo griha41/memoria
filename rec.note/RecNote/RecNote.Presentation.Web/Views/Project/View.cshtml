@@ -2,4 +2,22 @@
     Layout = "~/Views/Shared/Control.cshtml";
 }
 @model RecNote.Presentation.Web.Models.Project.Project
+<section id="projectView">
+    @Html.HiddenFor(p => p.CurrentProject.ID)
+    <header>
+        <h2>@Model.CurrentProject.Name</h2>
+        <menu>
+            <button type="button" class="link" onclick="project.cancel('#projectNew');" id="countMembers" >@I18n.GetString("members", new { count = Model.CurrentProject.Actors.Length })</button>
+            <button type="button" class="sub" onclick="project.save('#projectNew');">@I18n.GetString("save")</button>
+        </menu>
+    </header>
+    <section class="body">
+        <section class="definitions">
+            @Html.Action("View", "ProjectItem", new { Item = Model.CurrentProject.Introduction, Project = Model.CurrentProject })
+        </section>
+
+    </section>
+    <footer>
+    </footer>
+</section>
 

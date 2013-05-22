@@ -7,7 +7,7 @@
         <ul>
             @foreach (var restrictedProject in Model.RestrictedProjects)
             {   
-                <li onclick="project.view('@restrictedProject.Project.ID');">@restrictedProject.Project.Name</li>       
+                <li projectID="@restrictedProject.Project.ID" onclick="project.view('@restrictedProject.Project.ID');">@restrictedProject.Project.Name</li>       
             }
         </ul>
     </nav>

@@ -47,6 +47,7 @@
     <Compile Include="Projects\Actor.cs" />
     <Compile Include="Projects\InformationNode.cs" />
     <Compile Include="Projects\Project.cs" />
+    <Compile Include="Projects\ProjectStateType.cs" />
     <Compile Include="Projects\RestrictedProject.cs" />
     <Compile Include="Projects\RoleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

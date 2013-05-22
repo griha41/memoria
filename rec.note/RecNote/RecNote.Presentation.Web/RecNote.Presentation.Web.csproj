@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ProjectItemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -86,6 +87,7 @@
     <Compile Include="Models\DependencyResolver.cs" />
     <Compile Include="Models\Global.cs" />
     <Compile Include="Models\Home\Login.cs" />
+    <Compile Include="Models\ProjectItem\View.cs" />
     <Compile Include="Models\Project\Actor.cs" />
     <Compile Include="Models\Project\List.cs" />
     <Compile Include="Models\Project\Project.cs" />
@@ -211,6 +213,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Control.cshtml" />
     <Content Include="Views\Project\Menu.cshtml" />
+    <None Include="Content\Views\Project\View.less" />
     <None Include="Content\Views\Project\ListActors.less">
       <Compile>True</Compile>
       <Minify>True</Minify>
@@ -232,6 +235,7 @@
     <Content Include="Views\Project\ListActors.cshtml" />
     <Content Include="Views\Project\List.cshtml" />
     <Content Include="Views\Project\View.cshtml" />
+    <Content Include="Views\ProjectItem\View.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

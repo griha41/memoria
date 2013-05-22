@@ -58,6 +58,10 @@
       <Project>{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}</Project>
       <Name>RecNote.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RecNote.Utils.I18n\RecNote.Utils.I18n.csproj">
+      <Project>{7475DC38-C99B-4D4D-BA90-DA8A1E5DE0C7}</Project>
+      <Name>RecNote.Utils.I18n</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

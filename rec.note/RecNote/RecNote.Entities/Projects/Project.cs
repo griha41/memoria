@@ -28,6 +28,9 @@ namespace RecNote.Entities.Projects
         /// </summary>
         public Actor[] Actors { get; set; }
 
+
+        public ProjectStateType State { get; set; }
+
         #region Information 
         public InformationNode Introduction { get; set; }
         public InformationNode InformationActors { get; set; }
@@ -39,6 +42,9 @@ namespace RecNote.Entities.Projects
         public InformationNode InformationRequirements { get; set; }
         public InformationNode FunctionalRequirements { get; set; }
         public InformationNode NonFunctionalRequirements { get; set; }
+
+
+        
         #endregion
 
     }
