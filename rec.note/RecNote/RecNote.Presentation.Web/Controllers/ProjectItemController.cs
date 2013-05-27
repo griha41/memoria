@@ -9,17 +9,19 @@ using Model = RecNote.Presentation.Web.Models.ProjectItem;
 
 namespace RecNote.Presentation.Web.Controllers
 {
-    public class ProjectItemController : Controller
+    public class ProjectItemController : BaseController
     {
         //
         // GET: /ProjectItem/
 
-        public ActionResult View(Project project, ProjectItem item)
+        public ActionResult View(Project project, ProjectItem item, ProjectItem parent)
         {
+            
             return View(new Model.View
             {
                 Project = project,
-                Item = item
+                Item = item,
+                Parent = parent
             });
         }
 

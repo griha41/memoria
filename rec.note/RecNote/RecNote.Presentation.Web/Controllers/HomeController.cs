@@ -6,10 +6,11 @@ using System.Web.Mvc;
 using Model = RecNote.Presentation.Web.Models.Home;
 
 using RecNote.Domain.Core.Users;
+using RecNote.Domain.Core.Session;
 
 namespace RecNote.Presentation.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         //
         // GET: /Home/
@@ -31,6 +32,8 @@ namespace RecNote.Presentation.Web.Controllers
                 if (this.UserProvider.Login(model.Username, model.Password))
                 {
                     MvcApplication.CurrentUser = this.UserProvider.FindByEmail(model.Username);
+                    var session = this.SessionProvider.New(MvcApplication.CurrentUser);
+                    Response.SetCookie(new HttpCookie("SessionID", session.ID));
                 }
                 
                 return RedirectToAction("");

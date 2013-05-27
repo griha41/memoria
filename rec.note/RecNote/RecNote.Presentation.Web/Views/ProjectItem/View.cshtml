@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/Control.cshtml";
 }
 @model RecNote.Presentation.Web.Models.ProjectItem.View
-<section name="projectItemView" itemID="@Model.Item.ID">
+<section name="projectItemView" ItemName="@Model.Item.Name" onclick="projectItem.edit('@Model.Item.Name', '@(Model.Parent == null ? string.Empty : Model.Parent.Name)')">
     <header>
         <h2>@Model.Item.Name</h2>
     </header>

@@ -43,6 +43,7 @@
     <Compile Include="Projects\ProjectProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProviderBase.cs" />
+    <Compile Include="Session\SessionProvider.cs" />
     <Compile Include="Users\UserProvider.cs" />
   </ItemGroup>
   <ItemGroup>

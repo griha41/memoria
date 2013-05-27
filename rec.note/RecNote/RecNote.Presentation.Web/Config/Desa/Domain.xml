@@ -17,5 +17,9 @@
     <property name="ProjectData" ref="ProjectData" />
     <property name="UserProvider" ref="UserProvider" />
   </object>
+
+  <object id="SessionProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Session.SessionProvider, RecNote.Domain.Core.Base">
+    
+  </object>
   
 </objects>

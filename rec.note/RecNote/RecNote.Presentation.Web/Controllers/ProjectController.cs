@@ -9,7 +9,7 @@ using Model = RecNote.Presentation.Web.Models.Project;
 
 namespace RecNote.Presentation.Web.Controllers
 {
-    public class ProjectController : Controller
+    public class ProjectController : BaseController
     {
         //
         // GET: /Project/

@@ -52,6 +52,7 @@
     <Compile Include="Projects\RestrictedProject.cs" />
     <Compile Include="Projects\RoleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session\Session.cs" />
     <Compile Include="Users\User.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -11,5 +11,6 @@ namespace RecNote.Presentation.Web.Models.ProjectItem
     {
         public RecNote.Entities.Projects.Project Project { get; set; }
         public RecNote.Entities.Projects.ProjectItem Item { get; set; }
+        public RecNote.Entities.Projects.ProjectItem Parent { get; set; }
     }
 }

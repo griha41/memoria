@@ -12,7 +12,7 @@ namespace RecNote.Presentation.Web.Models
         public static HttpSessionState Session { get { return HttpContext.Current.Session; } }
 
         // TODO: Debe ser asignado a variable de guardado temporal y único por sesión
-        public static User CurrentUser { get { return (User)Session["CurrentUser"]; } set { Session["CurrentUser"] = value; } }
+        public static User CurrentUser { get { return (User)HttpContext.Current.Items["CurrentUser"]; } set { HttpContext.Current.Items["CurrentUser"] = value; } }
 
         // Pais actual
         public static String CountryCode { get { return "es"; } }
