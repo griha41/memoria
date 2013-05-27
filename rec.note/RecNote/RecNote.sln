@@ -1,6 +1,16 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{D5E7AC94-48ED-46EA-A55E-5EFC47127BC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{8EC40CDA-0F8E-4D92-BE4C-FE6AA4D4DD8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F8A8DA34-0918-475B-B94D-B63C91E2C3AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{34DCB52D-C113-4CDE-BE83-0D2C5E5A6B22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{862E9AF2-3AE6-4ABC-A03E-EC79F4F91621}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Presentation.Web", "RecNote.Presentation.Web\RecNote.Presentation.Web.csproj", "{092FB7E8-5C7C-42C3-AF61-306C8F37CAAE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Entities", "RecNote.Entities\RecNote.Entities.csproj", "{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}"
@@ -11,17 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Utils.I18n.Resource
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Domain.Core", "RecNote.Domain.Core\RecNote.Domain.Core.csproj", "{ABB70E6D-FEA3-4B71-B3AA-9B529E9C2C7C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{D5E7AC94-48ED-46EA-A55E-5EFC47127BC3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{8EC40CDA-0F8E-4D92-BE4C-FE6AA4D4DD8E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F8A8DA34-0918-475B-B94D-B63C91E2C3AE}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{34DCB52D-C113-4CDE-BE83-0D2C5E5A6B22}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Utils.MvcExtensions", "RecNote.Utils.MvcExtensions\RecNote.Utils.MvcExtensions.csproj", "{E6762FA1-F93A-479C-A436-C0FF357827F1}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{862E9AF2-3AE6-4ABC-A03E-EC79F4F91621}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Domain.Core.Base", "RecNote.Domain.Core.Base\RecNote.Domain.Core.Base.csproj", "{68B068EA-3EF7-4162-91BA-5A0CB29BA129}"
 EndProject
