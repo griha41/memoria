@@ -137,7 +137,10 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Content\themes\recnote\common\close.png" />
     <Content Include="Content\themes\recnote\common\x.png" />
-    <Content Include="Content\Views\Project\Menu.js" />
+    <Content Include="Content\Views\ProjectItem\View.js" />
+    <Content Include="Content\Views\Project\Menu.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Web.config" />
@@ -211,35 +214,44 @@
       <Compile>True</Compile>
       <Minify>True</Minify>
     </None>
-    <None Include="Content\Views\Home\Login.less" />
+    <Content Include="Content\Views\Home\Login.less">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\Shared\Void.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Control.cshtml" />
     <Content Include="Views\Project\Menu.cshtml" />
-    <None Include="Content\Views\Project\View.less" />
-    <None Include="Content\Views\Project\ListActors.less">
+    <Content Include="Content\Views\Project\View.less">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Views\Project\ListActors.less">
       <Compile>True</Compile>
       <Minify>True</Minify>
-    </None>
-    <None Include="Content\Views\Project\Menu.less">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Views\Project\Menu.less">
       <Compile>True</Compile>
       <Minify>True</Minify>
-    </None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\Project\New.cshtml" />
-    <None Include="Content\Views\Project\New.less">
+    <Content Include="Content\Views\Project\New.less">
       <Compile>True</Compile>
       <Minify>True</Minify>
-    </None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\Project\NewActor.cshtml" />
-    <None Include="Content\Views\Project\NewActor.less">
+    <Content Include="Content\Views\Project\NewActor.less">
       <Compile>True</Compile>
       <Minify>True</Minify>
-    </None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Views\Project\ListActors.cshtml" />
     <Content Include="Views\Project\List.cshtml" />
     <Content Include="Views\Project\View.cshtml" />
     <Content Include="Views\ProjectItem\View.cshtml" />
     <Content Include="Views\Audio\List.cshtml" />
+    <Content Include="Views\ProjectItem\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
