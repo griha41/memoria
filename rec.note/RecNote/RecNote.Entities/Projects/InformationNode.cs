@@ -14,6 +14,8 @@ namespace RecNote.Entities.Projects
 
         public bool AllowChilds { get; set; }
 
+        public ProjectItemStateType State { get; set; }
+
         public ProjectItem[] Childs { get; set; }
     }
 }

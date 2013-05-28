@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace RecNote.Entities
 {

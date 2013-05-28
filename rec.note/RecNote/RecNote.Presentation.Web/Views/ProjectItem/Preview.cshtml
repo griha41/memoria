@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.ProjectItem.View
+<section name="projectItemPreview" ItemName="@Model.Item.Name" onclick="projectItem.view('@Model.Project.ID','@Model.Item.Name', '@(Model.Parent == null ? string.Empty : Model.Parent.Name)')">
+    <header>
+        <h2>@Model.Item.Name</h2>
+    </header>
+    <article>
+        @Model.Item.Data
+    </article>
+    <footer>
+        @if (Model.Item.Childs != null && Model.Item.Childs.Length > 0)
+        {
+        }
+        else
+        {
+            @I18n.GetString(Model.Item.IsPublic)
+        }
+    </footer>
+</section>

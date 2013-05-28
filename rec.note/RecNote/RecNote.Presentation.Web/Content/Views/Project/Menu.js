@@ -110,3 +110,22 @@ var audio = {
         }
     }
 };
+
+
+
+
+var projectItem = {
+    current: null,
+    view: function (projectID, itemName, parentName) {
+        $('#projectView .body .option').hide();
+        Util.post('projectItem/view', { projectID: projectID, itemName: itemName, parentName: parentName },
+            function (html) {
+                projectItem.current = $(html);
+                $('#projectView .body').append(projectItem.current);
+                projectItem.current.show();
+            });
+    },
+    edit: function (projectID, itemName, parentName) {
+
+    }
+};

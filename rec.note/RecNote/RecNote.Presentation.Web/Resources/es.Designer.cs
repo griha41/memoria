@@ -70,6 +70,15 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Editar.
+        /// </summary>
+        internal static string edit {
+            get {
+                return ResourceManager.GetString("edit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Iniciar Sesión.
         /// </summary>
         internal static string login {
@@ -264,6 +273,15 @@ namespace RecNote.Presentation.Web.Resources {
         internal static string recoveryPassword {
             get {
                 return ResourceManager.GetString("recoveryPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Guardar.
+        /// </summary>
+        internal static string save {
+            get {
+                return ResourceManager.GetString("save", resourceCulture);
             }
         }
         

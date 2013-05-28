@@ -120,6 +120,9 @@
   <data name="actor.delete" xml:space="preserve">
     <value>x</value>
   </data>
+  <data name="edit" xml:space="preserve">
+    <value>Editar</value>
+  </data>
   <data name="login" xml:space="preserve">
     <value>Iniciar Sesión</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="recoveryPassword" xml:space="preserve">
     <value>Recuperar contraseña</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>Guardar</value>
   </data>
   <data name="systemName" xml:space="preserve">
     <value>REC.note</value>

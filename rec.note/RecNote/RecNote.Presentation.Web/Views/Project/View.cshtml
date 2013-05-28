@@ -18,7 +18,7 @@
                 <h2>@information.Name</h2>
                 @foreach (var item in information.Childs)
                 {
-                    @Html.Action("View", "ProjectItem", new { Project = Model.CurrentProject, Item = item })
+                    @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Item = item })
                 }
             </section>
         }

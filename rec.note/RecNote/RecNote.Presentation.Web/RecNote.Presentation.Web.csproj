@@ -145,9 +145,11 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\NicEdit\nicEdit.js" />
+    <Content Include="Content\themes\NicEdit\nicEditorIcons.gif" />
     <Content Include="Content\themes\recnote\common\close.png" />
     <Content Include="Content\themes\recnote\common\x.png" />
-    <Content Include="Content\Views\ProjectItem\View.js" />
+    <Content Include="Content\Views\ProjectItem\Preview.js" />
     <Content Include="Content\Views\Project\Menu.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -259,9 +261,11 @@
     <Content Include="Views\Project\ListActors.cshtml" />
     <Content Include="Views\Project\List.cshtml" />
     <Content Include="Views\Project\View.cshtml" />
-    <Content Include="Views\ProjectItem\View.cshtml" />
+    <Content Include="Views\ProjectItem\Preview.cshtml" />
     <Content Include="Views\Audio\List.cshtml" />
     <Content Include="Views\ProjectItem\Edit.cshtml" />
+    <Content Include="Views\ProjectItem\View.cshtml" />
+    <Content Include="Content\Views\ProjectItem\View.less" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

@@ -2,20 +2,44 @@
     Layout = "~/Views/Shared/Control.cshtml";
 }
 @model RecNote.Presentation.Web.Models.ProjectItem.View
-<section name="projectItemView" ItemName="@Model.Item.Name" onclick="projectItem.edit('@Model.Item.Name', '@(Model.Parent == null ? string.Empty : Model.Parent.Name)')">
+<section id="projectItemView">
     <header>
         <h2>@Model.Item.Name</h2>
+        <menu>
+            <button id="projectItemSave" class="link" onclick="endEdit()" style="display:none;" >@I18n.GetString("save")</button>
+            <button id="projectItemEdit" class="link" onclick="beginEdit()" >@I18n.GetString("edit")</button>
+        </menu>
     </header>
-    <article>
-        @Model.Item.Data
-    </article>
+    <section >
+        <div id="Item_Data">
+            @Model.Item.Data
+        </div>
+    </section>
     <footer>
-        @if (Model.Item.Childs != null && Model.Item.Childs.Length > 0)
-        {
-        }
-        else
-        {
-            @I18n.GetString(Model.Item.IsPublic)
-        }
+        
     </footer>
+
+    <script type="text/javascript">
+        var currentEditor = null;
+        var beginEdit = function () {
+
+            Util.post('ProjectItem/AllowEdit', { projectID: '@Model.Project.ID', itemName: '@Html.Raw(Model.Item.Name)', parentName: '@Html.Raw(Model.Parent == null ? string.Empty : Model.Parent.Name)' },
+                function (text) {
+                    $('#Item_Data').html(text);
+                    currentEditor = Util.editor.panelInstance('Item_Data', { hasPanel: true });
+                    $('#projectItemSave').show();
+                    $('#projectItemEdit').hide();
+                });
+
+            
+        };
+        var endEdit = function () {
+            if (currentEditor != null) {
+                $('#projectItemSave').hide();
+                $('#projectItemEdit').show();
+                currentEditor.removeInstance('Item_Data'); 
+            }
+        };
+    </script>
+
 </section>

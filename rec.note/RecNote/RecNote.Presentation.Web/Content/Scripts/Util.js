@@ -43,6 +43,7 @@
         $.ajax({
             type: 'POST',
             url: this.absoluteUrl(url),
+            contentType: "application/x-www-form-urlencoded;charset=ISO-8859-15",
             data: parameters,
             success: onResponse,
             error: function (html) {

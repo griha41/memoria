@@ -8,6 +8,11 @@
   <object id="ProjectController" parent="BaseController" type="RecNote.Presentation.Web.Controllers.ProjectController, RecNote.Presentation.Web" singleton="false" >
     <property name="ProjectProvider" ref="ProjectProvider" />
   </object>
+  
+  <object id="ProjectItemController" parent="BaseController" type="RecNote.Presentation.Web.Controllers.ProjectItemController, RecNote.Presentation.Web" singleton="false" >
+    <property name="ProjectProvider" ref="ProjectProvider" />
+  </object>
+  
 
   <object id="BaseController" abstract="true" >
     <property name="SessionProvider" ref="SessionProvider" />

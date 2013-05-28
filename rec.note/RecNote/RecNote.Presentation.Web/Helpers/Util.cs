@@ -20,6 +20,13 @@ namespace RecNote.Presentation.Web.Helpers
     {
 
         public static Dictionary<string, bool> FileExist = new Dictionary<string, bool>();
+
+        public static string GetBaseUrl(this UrlHelper urlhelper)
+        {
+            var port = urlhelper.RequestContext.HttpContext.Request.Url.Port == 80 ? String.Empty : ":" + urlhelper.RequestContext.HttpContext.Request.Url.Port;
+            return "http://" + urlhelper.RequestContext.HttpContext.Request.Url.Host + port + VirtualPathUtility.ToAbsolute("~/");
+        }
+
         public static MvcHtmlString GetDynamicFiles(this UrlHelper urlhelper)
         {
             var views = ViewEngine.CurrentViews;
@@ -46,10 +53,9 @@ namespace RecNote.Presentation.Web.Helpers
                             +"less.sheets.push(e" + index+ ");";
                 }
             }
-            var port = urlhelper.RequestContext.HttpContext.Request.Url.Port == 80 ? String.Empty : ":" + urlhelper.RequestContext.HttpContext.Request.Url.Port;
-            string urlBase = "http://" + urlhelper.RequestContext.HttpContext.Request.Url.Host + port + VirtualPathUtility.ToAbsolute("~/");
+            
+            
             result += "<script type=\"text/javascript\" >"
-                            + "window.baseUrl = '" + urlBase + "';"
                             + lessResult
                             + "less.refresh(true);"
                         +"</script>";
