@@ -36,19 +36,20 @@ namespace RecNote.Presentation.Web.Helpers
             {
                 var match = Regex.Match(view, @"([\w]*\/[\w]*)\.cshtml");
                 var index = views.IndexOf(view);
+                var datetime = DateTime.UtcNow.ToString("ddhmmssff");
                 if (match.Success)
                 {
                     var script = Regex.Replace(match.Value, @"([\w]*\/[\w]*)\.cshtml", "~/Content/views/$1.js");
                     if (!FileExist.ContainsKey(script))
                         FileExist.Add(script, File.Exists(urlhelper.RequestContext.HttpContext.Server.MapPath(script)));
                     if (FileExist[script])
-                        result += "<script type=\"text/javascript\" src=\"" + urlhelper.Content(script) + "\" ></script>";
+                        result += "<script type=\"text/javascript\" src=\"" + urlhelper.Content(script) + "?" + datetime + "\" ></script>";
 
                     var less = Regex.Replace(match.Value, @"([\w]*\/[\w]*)\.cshtml", "~/Content/views/$1.less");
                     if (!FileExist.ContainsKey(less))
                         FileExist.Add(less, File.Exists(urlhelper.RequestContext.HttpContext.Server.MapPath(less)));
                     if (FileExist[less])
-                        lessResult += "var e" + index + " = $('<link type=\"text/css\" rel=\"stylesheet/less\" href=\"" + urlhelper.Content(less) + "?" + DateTime.Now.ToString("hmmssff") + "\" />')[0];"
+                        lessResult += "var e" + index + " = $('<link type=\"text/css\" rel=\"stylesheet/less\" href=\"" + urlhelper.Content(less) + "?" + datetime + "\" />')[0];"
                             +"$('head').append(e" + index + ");"
                             +"less.sheets.push(e" + index+ ");";
                 }
