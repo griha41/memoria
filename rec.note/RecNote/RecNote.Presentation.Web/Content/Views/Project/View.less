@@ -13,8 +13,41 @@
 			float: right;
 			position: relative;
 			top: -60px;
+			menu {
+				text-align: center;
+				padding: 0px;
+			}
+		}
+		#memberSection {
+			position: absolute;
+			display: none;
+			float: right;
+			right: 0px;
+			width: 258px;
+			border: @border2;
+			z-index: 10;
+			background-color : @bodyColor2;
 		}
 	}
+	#newMember {
+			position: absolute;
+			right: 0px;
+			background-color: @bodyColor2;
+			top: 0px;
+			bottom: 0px;
+			vertical-align: middle;
+
+			display: none;
+			z-index: 11;
+			#projectNewActor {
+				text-align: center;
+				margin: 10px;
+				button {
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+		}
 	> section.body {
 		padding-right: 250px;
 		text-align: left;

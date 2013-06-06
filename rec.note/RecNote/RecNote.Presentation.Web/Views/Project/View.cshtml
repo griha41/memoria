@@ -7,8 +7,15 @@
     <header>
         <h2>@Model.CurrentProject.Name</h2>
         <menu>
-            <button type="button" class="link" onclick="project.cancel('#projectNew');" id="countMembers" >@I18n.GetString("members", new { count = Model.CurrentProject.Actors.Length })</button>
+            <button type="button" class="link" onclick="project.viewMembers('@Model.CurrentProject.ID');" id="countMembers" >@I18n.GetString("members", new { count = Model.CurrentProject.Actors.Length })            </button>
+            <section id="memberSection" >
+                <section id="memberSectionBody"></section>
+                <menu>
+                    <button type="button" onclick="project.newMember()">@I18n.GetString("newMember")</button>
+                </menu>
+            </section>
         </menu>
+        
     </header>
     <section class="body">
         <section class="option">
@@ -33,7 +40,9 @@
         </h2>
         @Html.Action("List", "Audio", new { projectID = Model.CurrentProject.ID })
     </section>
+    <section id="newMember">
+        @Html.Action("NewActor", "Project", new { projectID = Model.CurrentProject.ID })
+    </section>
     <footer>
     </footer>
 </section>
-

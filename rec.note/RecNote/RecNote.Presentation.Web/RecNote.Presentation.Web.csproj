@@ -269,6 +269,7 @@
     <Content Include="Content\Views\ProjectItem\View.less" />
     <Content Include="Views\ProjectItem\PreviewResume.cshtml" />
     <Content Include="Views\ProjectItem\ViewArray.cshtml" />
+    <Content Include="Views\Project\ListMembers.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

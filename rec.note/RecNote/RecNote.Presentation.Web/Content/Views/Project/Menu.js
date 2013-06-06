@@ -42,6 +42,12 @@ project.saveNewActor = function()
         param["ProjectID"] = project.currentID();
         Util.post('Project/SaveActor', param, function (){
             Util.clear(id);
+            if ($('#newMember').is(':visible')) { $('#newMember').hide(); }
+            Util.post('Project/ListMembers', { projectID: project.currentID() },
+               function (html) {
+                   $('#memberSection #memberSectionBody').html($(html));
+               });
+            //project.viewMembers(project.currentID());
             var listActors = '#projectListActors';
             if( $(listActors).length > 0 )
             {
@@ -93,6 +99,25 @@ project.view = function (projectID)
         $('#projectList li').removeClass('selected');
         $('#projectList li[projectID="'+projectID+'"]').addClass('selected');
     });
+}
+
+project.newMember = function (projectID) {
+    $('#newMember').show();
+};
+
+project.viewMembers = function(projectID)
+{
+    var memberSection = $('#memberSection');
+    
+    if ($(memberSection).is(':visible'))
+        memberSection.hide('slow');
+    else {
+        Util.post('Project/ListMembers', { projectID: projectID },
+            function (html) {
+                $('#memberSection #memberSectionBody').html($(html));
+            });
+        memberSection.show('slow');
+    }
 }
 
 var audio = {

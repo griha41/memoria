@@ -73,5 +73,13 @@ namespace RecNote.Presentation.Web.Controllers
                 CurrentProject = this.ProjectProvider.FindByID(projectID)
             });
         }
+
+        public ActionResult ListMembers(string projectID)
+        {
+            return View(new Model.Project
+            {
+                CurrentProject = this.ProjectProvider.FindByID(projectID)
+            });
+        }
     }
 }
