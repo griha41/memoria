@@ -99,6 +99,7 @@
     <Compile Include="Models\DependencyResolver.cs" />
     <Compile Include="Models\Global.cs" />
     <Compile Include="Models\Home\Login.cs" />
+    <Compile Include="Models\ProjectItem\Preview.cs" />
     <Compile Include="Models\ProjectItem\View.cs" />
     <Compile Include="Models\Project\Actor.cs" />
     <Compile Include="Models\Project\List.cs" />
@@ -266,6 +267,8 @@
     <Content Include="Views\ProjectItem\Edit.cshtml" />
     <Content Include="Views\ProjectItem\View.cshtml" />
     <Content Include="Content\Views\ProjectItem\View.less" />
+    <Content Include="Views\ProjectItem\PreviewResume.cshtml" />
+    <Content Include="Views\ProjectItem\ViewArray.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

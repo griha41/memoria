@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.ProjectItem.Preview
+<section name="projectItemPreview" onclick="')">
+    <header>
+        <h2>@I18n.GetString(Model.Type)</h2>
+    </header>
+    <article>
+        
+    </article>
+    <footer>
+        @Model.Items.Count()
+    </footer>
+</section>

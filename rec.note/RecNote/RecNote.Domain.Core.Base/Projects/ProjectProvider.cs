@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 
 using RecNote.Data.Projects;
+using RecNote.Entities.Projects;
 
 namespace RecNote.Domain.Core.Base.Projects
 {
@@ -22,47 +23,17 @@ namespace RecNote.Domain.Core.Base.Projects
                 {
                     Owner = user,
                     IsTemporal = true,
-                    Information = new [] {
-                        new Entities.Projects.ProjectItem
-                        {
-                            Name = I18n.GetString("project.descriptions"),
-                            Childs = new []{
-                                new Entities.Projects.ProjectItem{
-                                    Name = I18n.GetString("project.description.introduction"),
-                                    AllowChilds = false
-                                },
-                                new Entities.Projects.ProjectItem{
-                                    Name = I18n.GetString("project.description.actors"),
-                                    AllowChilds = true
-                                },
-                                new Entities.Projects.ProjectItem{
-                                    Name = I18n.GetString("project.description.currentSystem"),
-                                    AllowChilds = false
-                                },
-                                new Entities.Projects.ProjectItem{
-                                    Name = I18n.GetString("project.description.objectives"),
-                                    AllowChilds = true
-                                }
-                            }
-                        },
-                        new Entities.Projects.ProjectItem
-                        {
-                            Name = I18n.GetString("project.requirements"),
-                            Childs = new []{
-                                new Entities.Projects.ProjectItem{
-                                    Name = I18n.GetString("project.requirements.information"),
-                                    AllowChilds = true
-                                },
-                                new Entities.Projects.ProjectItem{
-                                    Name = I18n.GetString("project.requirements.functional"),
-                                    AllowChilds = true
-                                },
-                                new Entities.Projects.ProjectItem{
-                                    Name = I18n.GetString("project.requirements.nofunctional"),
-                                    AllowChilds = true
-                                }
-                            }
-                        }
+                    Definition = new Entities.Projects.ProjectDefinition
+                    {
+                        CurrentSystem = new Entities.Projects.ProjectItem(I18n.GetString("project.description.currentSystem")),
+                        Actors = new Entities.Projects.ProjectItem[]{},
+                        Introducction = new Entities.Projects.ProjectItem(I18n.GetString("project.description.introduction")),
+                        Objetives = new Entities.Projects.ProjectItem[]{}                        
+                    },
+                    Requirements = new Entities.Projects.ProjectRequirement{
+                        Functionals = new Entities.Projects.ProjectItem[]{},
+                        Informations = new Entities.Projects.ProjectItem[]{},
+                        NotFunctionals = new Entities.Projects.ProjectItem[]{}
                     }
                 });
             // ahora si =)
@@ -120,10 +91,34 @@ namespace RecNote.Domain.Core.Base.Projects
                     UserAllow = user,
                     IsOwner = false,
                     Role = role
-                }).ToArray());
+                })
+                .Where(c => !listProjects.Any(p => p.Project.ID == c.Project.ID))
+                .ToArray());
             }
 
             return listProjects.Where(p => !p.Project.IsTemporal).ToList();
         }
+
+        public ProjectItem GetItem(string projectID, ProjectItemType type, string name)
+        {
+            return this.ProjectData.GetItem(projectID, type, name);
+        }
+        public ProjectItem BlockItem(string projectID, ProjectItemType type, string name, Entities.Users.User user)
+        {
+            var item = this.GetItem(projectID, type, name);
+            if(item.State == ProjectItemStateType.OnEdit && item.Editor.ID != user.ID)
+                throw new Exception("error.projectItemOnEdit"); 
+
+            item.Editor = user;
+            item.State = ProjectItemStateType.OnEdit;
+            return this.SaveItem(projectID, type, item);
+        }
+        public ProjectItem SaveItem(string projectID, ProjectItemType type, ProjectItem item)
+        {
+            return this.ProjectData.SaveItem(projectID, type, item);
+
+        }
+
+
     }
 }

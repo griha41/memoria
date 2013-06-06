@@ -116,9 +116,9 @@ var audio = {
 
 var projectItem = {
     current: null,
-    view: function (projectID, itemName, parentName) {
+    view: function (projectID, type) {
         $('#projectView .body .option').hide();
-        Util.post('projectItem/view', { projectID: projectID, itemName: itemName, parentName: parentName },
+        Util.post('projectItem/view', { projectID: projectID, type: type },
             function (html) {
                 projectItem.current = $(html);
                 $('#projectView .body').append(projectItem.current);

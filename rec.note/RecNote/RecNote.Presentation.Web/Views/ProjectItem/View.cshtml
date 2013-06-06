@@ -23,7 +23,7 @@
         var currentEditor = null;
         var beginEdit = function () {
 
-            Util.post('ProjectItem/AllowEdit', { projectID: '@Model.Project.ID', itemName: '@Html.Raw(Model.Item.Name)', parentName: '@Html.Raw(Model.Parent == null ? string.Empty : Model.Parent.Name)' },
+            Util.post('ProjectItem/AllowEdit', { projectID: '@Model.Project.ID', name: '@Model.Item.Name', type: '@Model.Type' },
                 function (text) {
                     $('#Item_Data').html(text);
                     currentEditor = Util.editor.panelInstance('Item_Data', { hasPanel: true });

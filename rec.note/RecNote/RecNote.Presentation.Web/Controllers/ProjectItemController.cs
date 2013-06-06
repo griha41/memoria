@@ -15,54 +15,67 @@ namespace RecNote.Presentation.Web.Controllers
         //
         // GET: /ProjectItem/
         IProjectProvider ProjectProvider { get; set; }
-        
 
-        public ActionResult Preview(Project project, ProjectItem item, ProjectItem parent)
+
+        public ActionResult Preview(Project project, ProjectItem[] items, ProjectItemType type)
         {
-            
-            return View(new Model.View
-            {
-                Project = project,
-                Item = item,
-                Parent = parent
-            });
+            if(type == ProjectItemType.Introduction || type == ProjectItemType.CurrentSystem)
+                return View(new Model.View
+                {
+                    Project = project,
+                    Item = items.FirstOrDefault(),
+                    Type = type
+                });
+            else
+                return View("PreviewResume", new Model.Preview
+                {
+                    Project = project,
+                    Items = items,
+                    Type = type
+                });
         }
 
-        public ActionResult View(string projectID, string itemName, string parentName)
+        public ActionResult View(string projectID, ProjectItemType type, string name)
         {
             var project = this.ProjectProvider.FindByID(projectID);
 
-            var parents = from e in project.Information
-                          from p in e.Childs
-                          select p;
-
-            var parent = (string.IsNullOrEmpty(parentName) ? null : parents.FirstOrDefault(p => p.Name == parentName));
-            var item = ((parent == null) ? parents : parent.Childs).FirstOrDefault(p => p.Name == itemName);
-
-            return View(new Model.View
+            if (type == ProjectItemType.Introduction || type == ProjectItemType.CurrentSystem || !string.IsNullOrEmpty(name))
             {
-                Project = project,
-                Item = item,
-                Parent = parent
-            });
+                var item = this.ProjectProvider.GetItem(projectID, type, name);
+                return View(new Model.View
+                {
+                    Project = project,
+                    Item = item,
+                    Type = type
+                });
+            }
+            else
+            {
+                ProjectItem[] items = null;
+                switch(type)
+                {
+                    case ProjectItemType.Actors: items = project.Definition.Actors; break;
+                    case ProjectItemType.Objetives: items = project.Definition.Objetives; break;
+                    case ProjectItemType.ReqFunctionals: items = project.Requirements.Functionals; break;
+                    case ProjectItemType.ReqInformations: items = project.Requirements.Informations; break;
+                    case ProjectItemType.ReqNotFunctionals: items = project.Requirements.NotFunctionals; break;
+                }
+                return View("ViewArray", new Model.Preview
+                {
+                    Project = project,
+                    Items = items,
+                    Type = type
+                });
+            }
+
         }
 
         [ValidateInput(false)]
-        public ActionResult AllowEdit(string projectID, string itemName, string parentName)
+        public ActionResult AllowEdit(string projectID, ProjectItemType type, string name)
         {
-            var project = this.ProjectProvider.FindByID(projectID);
-
-            var parents = from e in project.Information
-                          from p in e.Childs
-                          select p;
-
-            var parent = (string.IsNullOrEmpty(parentName) ? null : parents.FirstOrDefault(p => p.Name == parentName));
-            var item = ((parent == null) ? parents : parent.Childs).FirstOrDefault(p => p.Name == itemName);
-
-            if (item.State != ProjectItemStateType.OnEdit)
-                return Json(item.Data, JsonRequestBehavior.AllowGet);
-
-            throw new Exception("error.projectItemOnEdit");
+            var item = this.ProjectProvider.BlockItem(projectID, type, name, MvcApplication.CurrentUser);
+            return Json(item.Data, JsonRequestBehavior.AllowGet);
+            
         }
 
     }

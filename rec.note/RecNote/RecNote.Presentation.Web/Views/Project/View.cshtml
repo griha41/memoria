@@ -12,16 +12,20 @@
         </menu>
     </header>
     <section class="body">
-        @foreach (var information in Model.CurrentProject.Information)
-        {
-            <section class="option">
-                <h2>@information.Name</h2>
-                @foreach (var item in information.Childs)
-                {
-                    @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Item = item })
-                }
-            </section>
-        }
+        <section class="option">
+            <h2>@I18n.GetString("project.definition")</h2>
+            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Introducction, type = RecNote.Entities.Projects.ProjectItemType.Introduction })
+            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Actors, type = RecNote.Entities.Projects.ProjectItemType.Actors })
+            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.CurrentSystem, type = RecNote.Entities.Projects.ProjectItemType.CurrentSystem })
+            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Objetives, type = RecNote.Entities.Projects.ProjectItemType.Objetives })
+        </section>
+
+        <section class="option">
+            <h2>@I18n.GetString("project.requirements")</h2>
+            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Informations, type = RecNote.Entities.Projects.ProjectItemType.ReqInformations })
+            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Functionals, type = RecNote.Entities.Projects.ProjectItemType.ReqFunctionals })
+            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.NotFunctionals, type = RecNote.Entities.Projects.ProjectItemType.ReqNotFunctionals })
+        </section>
     </section>
     <section class="right">
         <h2>

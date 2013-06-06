@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.ProjectItem.Preview
+<section id="projectItemViewArray">
+    <header>
+        <h2>@I18n.GetString(Model.Type)</h2>
+    </header>
+    
+
+    <section class="body">
+        @foreach (var item in Model.Items)
+        {
+            <section class="option">
+                @Html.Action("Preview", "ProjectItem", new { Project = Model.Project, Items = item, type = Model.Type })
+            </section>
+        }
+    </section>
+
+
+    <footer>
+        
+    </footer>
+</section>

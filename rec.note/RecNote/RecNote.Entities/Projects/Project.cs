@@ -32,7 +32,8 @@ namespace RecNote.Entities.Projects
         public ProjectStateType State { get; set; }
 
         #region Information 
-        public ProjectItem[] Information { get; set; }
+        public ProjectDefinition Definition { get; set; }
+        public ProjectRequirement Requirements {get;set;}
         #endregion
 
     }

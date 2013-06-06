@@ -33,5 +33,11 @@ namespace RecNote.Data.MongoDB
             return this.GenericDataBase.Remove<T>(id);
         }
 
+        public void PartialUpdate(string id, string path, object obj)
+        {
+            var query = Query.EQ("_id", BsonValue.Create(id));
+            //var update = Update.Set(path, obj);
+            this.GetCollection().Update(query, Update.Set(path, BsonDocument.Create(obj)));
+        }
     }
 }

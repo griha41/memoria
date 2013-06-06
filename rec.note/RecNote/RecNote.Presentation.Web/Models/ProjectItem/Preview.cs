@@ -7,10 +7,10 @@ using RecNote.Entities.Projects;
 
 namespace RecNote.Presentation.Web.Models.ProjectItem
 {
-    public class View
+    public class Preview
     {
-        public RecNote.Entities.Projects.Project Project { get; set; }
-        public RecNote.Entities.Projects.ProjectItem Item { get; set; }
+        public Entities.Projects.Project Project { get; set; }
+        public Entities.Projects.ProjectItem[] Items { get; set; }
         public ProjectItemType Type { get; set; }
     }
 }

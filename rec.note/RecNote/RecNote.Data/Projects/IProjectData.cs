@@ -12,5 +12,8 @@ namespace RecNote.Data.Projects
         IList<Entities.Projects.Project> GetList();
         IList<Entities.Projects.Project> GetByOwner(string UserID);
         IList<Entities.Projects.Project> GetByUserRole(string UserID, RoleType Role);
+
+        ProjectItem GetItem(string projectID, ProjectItemType type, string name);
+        ProjectItem SaveItem(string projectID, ProjectItemType type, ProjectItem item);
     }
 }
