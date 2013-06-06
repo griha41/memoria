@@ -7,7 +7,7 @@
         <h2>@I18n.GetString(Model.Type)</h2>
     </header>
     <article>
-        @Model.Item.Data
+        @Html.Raw( Model.Item.Data)
     </article>
     <footer>
         @I18n.GetString(Model.Item.IsPublic)

@@ -14,7 +14,7 @@ namespace RecNote.Entities.Projects
         [BsonId]
         public string Name { get; set; }
 
-        public Users.User Editor { get; set; }
+        public string EditorID { get; set; }
         
         public ProjectItemStateType State { get; set; }
 
@@ -22,6 +22,7 @@ namespace RecNote.Entities.Projects
         {
             this.Name = name;
         }
+        public ProjectItem() { }
         
     }
 }

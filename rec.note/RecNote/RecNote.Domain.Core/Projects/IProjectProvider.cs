@@ -19,5 +19,6 @@ namespace RecNote.Domain.Core.Projects
         ProjectItem GetItem(string projectID, ProjectItemType type, string name);
         ProjectItem BlockItem(string projectID, ProjectItemType type , string name, Entities.Users.User user);
         ProjectItem SaveItem(string projectID, ProjectItemType type, ProjectItem item);
+        ProjectItem PublishItem(string projectID, ProjectItemType type, string name, bool publish);
     }
 }

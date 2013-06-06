@@ -23,6 +23,8 @@ namespace RecNote.Domain.Core.Base.Projects
                 {
                     Owner = user,
                     IsTemporal = true,
+                    Actors = new Actor[]{},
+                    State = ProjectStateType.New,
                     Definition = new Entities.Projects.ProjectDefinition
                     {
                         CurrentSystem = new Entities.Projects.ProjectItem(I18n.GetString("project.description.currentSystem")),
@@ -106,19 +108,26 @@ namespace RecNote.Domain.Core.Base.Projects
         public ProjectItem BlockItem(string projectID, ProjectItemType type, string name, Entities.Users.User user)
         {
             var item = this.GetItem(projectID, type, name);
-            if(item.State == ProjectItemStateType.OnEdit && item.Editor.ID != user.ID)
+            if(item.State == ProjectItemStateType.OnEdit && item.EditorID != user.ID)
                 throw new Exception("error.projectItemOnEdit"); 
 
-            item.Editor = user;
+            item.EditorID = user.ID;
             item.State = ProjectItemStateType.OnEdit;
             return this.SaveItem(projectID, type, item);
         }
+
+        public ProjectItem PublishItem(string projectID, ProjectItemType type, string name, bool publish)
+        {
+            var item = this.GetItem(projectID, type, name);
+            item.IsPublic = publish;
+            return this.SaveItem(projectID, type, item);
+        }
+
         public ProjectItem SaveItem(string projectID, ProjectItemType type, ProjectItem item)
         {
             return this.ProjectData.SaveItem(projectID, type, item);
-
         }
-
+        
 
     }
 }

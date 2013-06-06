@@ -74,8 +74,23 @@ namespace RecNote.Presentation.Web.Controllers
         public ActionResult AllowEdit(string projectID, ProjectItemType type, string name)
         {
             var item = this.ProjectProvider.BlockItem(projectID, type, name, MvcApplication.CurrentUser);
-            return Json(item.Data, JsonRequestBehavior.AllowGet);
-            
+            return Json(item, JsonRequestBehavior.AllowGet);
+        }
+
+        [ValidateInput(false)]
+        public ActionResult SaveItem(string projectID, ProjectItemType type,string name, ProjectItem item)
+        {
+            var oldItem = this.ProjectProvider.GetItem(projectID, type, name);
+            if (string.IsNullOrEmpty(item.Name))
+                oldItem.Name = item.Name;
+            oldItem.Data = item.Data;
+            return Json(this.ProjectProvider.SaveItem(projectID, type, item), JsonRequestBehavior.AllowGet);
+        }
+
+        [ValidateInput(false)]
+        public ActionResult Publish(string projectID, ProjectItemType type, string name, bool publish)
+        {
+            return Json(this.ProjectProvider.PublishItem(projectID, type, name, publish), JsonRequestBehavior.AllowGet);
         }
 
     }
