@@ -39,6 +39,18 @@
 
 			display: none;
 			z-index: 11;
+			h2 {
+				padding: 50px 10px 10px 10px;
+				width: 450px;
+				height: 75px;
+				vertical-align: middle;
+				menu {
+					display: block;
+					right: 0px;
+					top: 16px;
+					position: absolute;
+				}
+			}
 			#projectNewActor {
 				text-align: center;
 				margin: 10px;
@@ -52,41 +64,46 @@
 		padding-right: 250px;
 		text-align: left;
 		> h2 {}
-		> section.option {
-			text-align: left;
-			> h2 {font-size: 20px; line-height: 60px; vertical-align: middle;}
-			> section
-			{
-				width: 206px;
-				height: 136px;
-				background-color: @itemBackgroundColor;
-				padding: 7px;
-				display: inline-block; 
-				cursor: pointer;
-				vertical-align: top;
-				overflow: hidden;
-				header {
-					> h2 { font-size: 16px; }
-				}
-				> article {
+		> section.init {
+			> section.option {
+				text-align: left;
+				> h2 {font-size: 20px; line-height: 60px; vertical-align: middle;}
+				> section
+				{
 					width: 206px;
 					height: 136px;
+					margin: 5px 2px 5px 2px;
+					background-color: @itemBackgroundColor;
+					padding: 7px;
+					display: inline-block; 
+					cursor: pointer;
+					vertical-align: top;
 					overflow: hidden;
+					header {
+						> h2 { font-size: 16px; }
+					}
+					> article {
+						width: 206px;
+						height: 136px;
+						overflow: hidden;
+					}
+					> footer {
+						float: left;
+						height: 40px;
+						top: -40px;
+						position: relative;
+						background-color: @bodyColor3;
+					}
 				}
-				> footer {
-					float: left;
-					height: 40px;
-					top: -40px;
-					position: relative;
-				}
+			}
+			> section.right {
+				position: absolute;
+				right: 0px;
+				button: 0px;
+				top: 100px;
+				width: 250px;
 			}
 		}
 	}
-	> section.right {
-		position: absolute;
-		right: 0px;
-		button: 0px;
-		top: 100px;
-		width: 250px;
-	}
+	
 }

@@ -141,6 +141,9 @@
   <data name="project.actors" xml:space="preserve">
     <value>Participantes del Proyecto</value>
   </data>
+  <data name="project.definition" xml:space="preserve">
+    <value>Definiciones</value>
+  </data>
   <data name="project.description.actors" xml:space="preserve">
     <value>Actores</value>
   </data>
@@ -185,6 +188,27 @@
   </data>
   <data name="project.view.audios" xml:space="preserve">
     <value>Audios Asociados</value>
+  </data>
+  <data name="ProjectItemType.Actors" xml:space="preserve">
+    <value>Actores</value>
+  </data>
+  <data name="ProjectItemType.CurrentSystem" xml:space="preserve">
+    <value>Sistema actual</value>
+  </data>
+  <data name="ProjectItemType.Introduction" xml:space="preserve">
+    <value>Introducción</value>
+  </data>
+  <data name="ProjectItemType.Objetives" xml:space="preserve">
+    <value>Objetivos</value>
+  </data>
+  <data name="ProjectItemType.ReqFunctionals" xml:space="preserve">
+    <value>Funcionales</value>
+  </data>
+  <data name="ProjectItemType.ReqInformations" xml:space="preserve">
+    <value>De Información</value>
+  </data>
+  <data name="ProjectItemType.ReqNotFunctionals" xml:space="preserve">
+    <value>No Funcionales</value>
   </data>
   <data name="recoveryPassword" xml:space="preserve">
     <value>Recuperar contraseña</value>

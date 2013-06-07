@@ -18,29 +18,37 @@
         
     </header>
     <section class="body">
-        <section class="option">
-            <h2>@I18n.GetString("project.definition")</h2>
-            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Introducction, type = RecNote.Entities.Projects.ProjectItemType.Introduction })
-            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Actors, type = RecNote.Entities.Projects.ProjectItemType.Actors })
-            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.CurrentSystem, type = RecNote.Entities.Projects.ProjectItemType.CurrentSystem })
-            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Objetives, type = RecNote.Entities.Projects.ProjectItemType.Objetives })
-        </section>
+        <section class="init">
+            <section class="option">
+                <h2>@I18n.GetString("project.definition")</h2>
+                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Introducction, type = RecNote.Entities.Projects.ProjectItemType.Introduction })
+                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Actors, type = RecNote.Entities.Projects.ProjectItemType.Actors })
+                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.CurrentSystem, type = RecNote.Entities.Projects.ProjectItemType.CurrentSystem })
+                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Objetives, type = RecNote.Entities.Projects.ProjectItemType.Objetives })
+            </section>
 
-        <section class="option">
-            <h2>@I18n.GetString("project.requirements")</h2>
-            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Informations, type = RecNote.Entities.Projects.ProjectItemType.ReqInformations })
-            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Functionals, type = RecNote.Entities.Projects.ProjectItemType.ReqFunctionals })
-            @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.NotFunctionals, type = RecNote.Entities.Projects.ProjectItemType.ReqNotFunctionals })
+            <section class="option">
+                <h2>@I18n.GetString("project.requirements")</h2>
+                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Informations, type = RecNote.Entities.Projects.ProjectItemType.ReqInformations })
+                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Functionals, type = RecNote.Entities.Projects.ProjectItemType.ReqFunctionals })
+                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.NotFunctionals, type = RecNote.Entities.Projects.ProjectItemType.ReqNotFunctionals })
+            </section>
+            <section class="right">
+                <h2>
+                    @I18n.GetString("project.view.audios")
+                    <button type="button" onclick="audio.new('@Model.CurrentProject.ID')">@I18n.GetString("project.project.newAudio")</button>
+                </h2>
+                @Html.Action("List", "Audio", new { projectID = Model.CurrentProject.ID })
+            </section>
         </section>
     </section>
-    <section class="right">
-        <h2>
-            @I18n.GetString("project.view.audios")
-            <button type="button" onclick="audio.new('@Model.CurrentProject.ID')">@I18n.GetString("project.project.newAudio")</button>
-        </h2>
-        @Html.Action("List", "Audio", new { projectID = Model.CurrentProject.ID })
-    </section>
+   
     <section id="newMember">
+        <h2>@I18n.GetString("newMember")
+            <menu>
+                <button class="link" onclick="$('#newMember').hide()" >@I18n.GetString("cancel")</button>
+            </menu>
+        </h2>
         @Html.Action("NewActor", "Project", new { projectID = Model.CurrentProject.ID })
     </section>
     <footer>

@@ -133,6 +133,15 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Definiciones.
+        /// </summary>
+        internal static string project_definition {
+            get {
+                return ResourceManager.GetString("project.definition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Actores.
         /// </summary>
         internal static string project_description_actors {
@@ -264,6 +273,69 @@ namespace RecNote.Presentation.Web.Resources {
         internal static string project_view_audios {
             get {
                 return ResourceManager.GetString("project.view.audios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Actores.
+        /// </summary>
+        internal static string ProjectItemType_Actors {
+            get {
+                return ResourceManager.GetString("ProjectItemType.Actors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sistema actual.
+        /// </summary>
+        internal static string ProjectItemType_CurrentSystem {
+            get {
+                return ResourceManager.GetString("ProjectItemType.CurrentSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Introducción.
+        /// </summary>
+        internal static string ProjectItemType_Introduction {
+            get {
+                return ResourceManager.GetString("ProjectItemType.Introduction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Objetivos.
+        /// </summary>
+        internal static string ProjectItemType_Objetives {
+            get {
+                return ResourceManager.GetString("ProjectItemType.Objetives", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Funcionales.
+        /// </summary>
+        internal static string ProjectItemType_ReqFunctionals {
+            get {
+                return ResourceManager.GetString("ProjectItemType.ReqFunctionals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a De Información.
+        /// </summary>
+        internal static string ProjectItemType_ReqInformations {
+            get {
+                return ResourceManager.GetString("ProjectItemType.ReqInformations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No Funcionales.
+        /// </summary>
+        internal static string ProjectItemType_ReqNotFunctionals {
+            get {
+                return ResourceManager.GetString("ProjectItemType.ReqNotFunctionals", resourceCulture);
             }
         }
         

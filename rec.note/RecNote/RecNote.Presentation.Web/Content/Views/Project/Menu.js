@@ -47,7 +47,6 @@ project.saveNewActor = function()
                function (html) {
                    $('#memberSection #memberSectionBody').html($(html));
                });
-            //project.viewMembers(project.currentID());
             var listActors = '#projectListActors';
             if( $(listActors).length > 0 )
             {
@@ -90,10 +89,13 @@ project.cancel = function(container)
 
 project.view = function (projectID)
 {
-    if(project._current != null) { $(project._current).show(); return; }
+    if (project._current != null) {
+        $('#projectView .body > section').not('.option').remove();
+        $('#projectView .body > section.option').show();
+    }
 
     Util.post('Project/View', { projectID : projectID }, function (html) {
-        console.log(html);
+        if (project._current != null) { project._current.remove(); }
         project._current = $(html);
         $('#main #center').append(project._current);
         $('#projectList li').removeClass('selected');

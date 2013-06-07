@@ -50,15 +50,13 @@ namespace RecNote.Presentation.Web.Helpers
                         FileExist.Add(less, File.Exists(urlhelper.RequestContext.HttpContext.Server.MapPath(less)));
                     if (FileExist[less])
                         lessResult += "var e" + index + " = $('<link type=\"text/css\" rel=\"stylesheet/less\" href=\"" + urlhelper.Content(less) + "?" + datetime + "\" />')[0];"
-                            +"$('head').append(e" + index + ");"
-                            +"less.sheets.push(e" + index+ ");";
+                            + "Util.addLess(e" + index + ");";
                 }
             }
             
-            
+            if(!string.IsNullOrEmpty(lessResult))
             result += "<script type=\"text/javascript\" >"
                             + lessResult
-                            + "less.refresh(true);"
                         +"</script>";
 
 

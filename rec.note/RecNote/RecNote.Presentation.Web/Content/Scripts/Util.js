@@ -4,6 +4,21 @@
             $("body").append(html);
         });
     },
+    addLess: function (link) {
+        var href = $(link).attr('href').substr(0, $(link).attr('href').indexOf('?'));
+        var exist = false;
+        $('link').each(function (i, e) {
+            var chref = $(e).attr('href').substr(0, $(e).attr('href').indexOf('?'));
+            if (chref == href) {
+                exist = true;
+            }
+        });
+        if (!exist) {
+            $('head').append(link);
+            less.sheets.push(link);
+            less.refresh(true);
+        }
+    },
     absoluteUrl: function (url) {
         return (baseUrl + url).replace(/([a-zA-Z])\/\//, "$1/");
     },
