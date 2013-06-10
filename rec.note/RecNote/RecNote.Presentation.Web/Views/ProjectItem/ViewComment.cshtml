@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.ProjectItem.ViewComment
+<section id="viewComment" time="@Model.Comment.Time.Ticks">
+    <h2>@Model.Actor.Name
+        <menu>
+            <button class="link" onclick="projectItem.closeComment();">@I18n.GetString("cancel")</button>
+        </menu>
+    </h2>
+    <h4>@I18n.GetString(Model.Actor.Role)</h4>
+    <p>
+        @Html.Raw( Model.Comment.Message )
+    </p>
+</section>

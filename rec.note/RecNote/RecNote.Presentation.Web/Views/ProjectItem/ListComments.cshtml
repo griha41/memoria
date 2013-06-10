@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.ProjectItem.ListComments
+<section id="projectItemListComments">
+    <ul>
+        @foreach (var com in Model.Comments)
+        {
+            var actor = Model.Actors.FirstOrDefault(u => u.ID == com.UserID);
+            <li onclick="projectItem.viewComment('@Model.ProjectID', '@Model.Type', '@Model.ItemName', '@com.Time.Ticks')">
+                <section class="comment">
+                    <h3>@actor.Name</h3>
+                    <h4>@I18n.GetString(actor.Role)</h4>
+                    <p>@Html.Raw( com.Message )</p>
+                </section>
+            </li>
+        }
+    </ul>
+</section>
