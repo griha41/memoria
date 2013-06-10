@@ -18,6 +18,11 @@ namespace RecNote.Domain.Core.Base
             return this.GenericDataBase.FindByID<T>(id);
         }
 
+        public virtual T[] ListByIDs(string[] ids)
+        {
+            return this.GenericDataBase.ListByIDs<T>(ids);
+        }
+
         public virtual bool Remove(string id)
         {
             return this.GenericDataBase.Remove<T>(id);

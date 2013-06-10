@@ -11,6 +11,7 @@
   
   <object id="ProjectItemController" parent="BaseController" type="RecNote.Presentation.Web.Controllers.ProjectItemController, RecNote.Presentation.Web" singleton="false" >
     <property name="ProjectProvider" ref="ProjectProvider" />
+    <property name="UserProvider" ref="UserProvider" />
   </object>
   
 

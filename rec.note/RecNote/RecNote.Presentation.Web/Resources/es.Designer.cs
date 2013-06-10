@@ -70,6 +70,42 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Publicar Comentario.
+        /// </summary>
+        internal static string addComment {
+            get {
+                return ResourceManager.GetString("addComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a +.
+        /// </summary>
+        internal static string addComments {
+            get {
+                return ResourceManager.GetString("addComments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar.
+        /// </summary>
+        internal static string cancel {
+            get {
+                return ResourceManager.GetString("cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Comentarios.
+        /// </summary>
+        internal static string comments {
+            get {
+                return ResourceManager.GetString("comments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Editar.
         /// </summary>
         internal static string edit {
@@ -84,6 +120,15 @@ namespace RecNote.Presentation.Web.Resources {
         internal static string login {
             get {
                 return ResourceManager.GetString("login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nuevo Comentario.
+        /// </summary>
+        internal static string newComment_tile {
+            get {
+                return ResourceManager.GetString("newComment.tile", resourceCulture);
             }
         }
         
@@ -345,6 +390,15 @@ namespace RecNote.Presentation.Web.Resources {
         internal static string recoveryPassword {
             get {
                 return ResourceManager.GetString("recoveryPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Interesado.
+        /// </summary>
+        internal static string RoleType_Stakeholder {
+            get {
+                return ResourceManager.GetString("RoleType.Stakeholder", resourceCulture);
             }
         }
         

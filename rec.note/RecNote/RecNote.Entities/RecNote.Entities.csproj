@@ -49,6 +49,7 @@
     <Compile Include="Projects\ProjectDefinition.cs" />
     <Compile Include="Projects\ProjectItem.cs" />
     <Compile Include="Projects\Project.cs" />
+    <Compile Include="Projects\ProjectItemComment.cs" />
     <Compile Include="Projects\ProjectItemStateType.cs" />
     <Compile Include="Projects\ProjectItemType.cs" />
     <Compile Include="Projects\ProjectRequirement.cs" />

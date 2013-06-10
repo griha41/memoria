@@ -18,11 +18,16 @@ namespace RecNote.Entities.Projects
         
         public ProjectItemStateType State { get; set; }
 
-        public ProjectItem(string name)
+        public ProjectItemComment[] Comments { get; set; }
+
+
+        public ProjectItem(string name) : this()
         {
             this.Name = name;
         }
-        public ProjectItem() { }
+        public ProjectItem() {
+            this.Comments = new ProjectItemComment[] { };
+        }
         
     }
 }

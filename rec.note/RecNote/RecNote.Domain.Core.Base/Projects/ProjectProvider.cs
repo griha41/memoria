@@ -127,7 +127,15 @@ namespace RecNote.Domain.Core.Base.Projects
         {
             return this.ProjectData.SaveItem(projectID, type, item);
         }
-        
 
+        public void AddComment(string projectID, ProjectItemType type, string name, string message, Entities.Users.User user)
+        {
+            this.ProjectData.AddComment(projectID, type, name, new ProjectItemComment
+            {
+                UserID = user.ID,
+                Message = message,
+                Time = DateTime.UtcNow
+            });
+        }
     }
 }

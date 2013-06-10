@@ -222,4 +222,22 @@
   <data name="username" xml:space="preserve">
     <value>Usuario (correo electronico)</value>
   </data>
+  <data name="addComments" xml:space="preserve">
+    <value>+</value>
+  </data>
+  <data name="comments" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="newComment.tile" xml:space="preserve">
+    <value>Nuevo Comentario</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="addComment" xml:space="preserve">
+    <value>Publicar Comentario</value>
+  </data>
+  <data name="RoleType.Stakeholder" xml:space="preserve">
+    <value>Interesado</value>
+  </data>
 </root>

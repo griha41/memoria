@@ -15,5 +15,7 @@ namespace RecNote.Data.Projects
 
         ProjectItem GetItem(string projectID, ProjectItemType type, string name);
         ProjectItem SaveItem(string projectID, ProjectItemType type, ProjectItem item);
+
+        void AddComment(string projectID, ProjectItemType type, string name, ProjectItemComment message);
     }
 }

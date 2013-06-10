@@ -48,5 +48,10 @@ namespace RecNote.Data.MongoDB
             var e = this.GetCollection<T>().Save<T>(entry, new MongoInsertOptions { });
             return entry;
         }
+
+        public T[] ListByIDs<T>(string[] ids) where T : Entities.Base
+        {
+            return this.GetCollection<T>().FindAs<T>(query: Query<T>.In(p => p.ID, ids)).ToArray();
+        }
     }
 }

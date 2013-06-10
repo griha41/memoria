@@ -90,8 +90,8 @@ project.cancel = function(container)
 project.view = function (projectID)
 {
     if (project._current != null) {
-        $('#projectView .body > section').not('.option').remove();
-        $('#projectView .body > section.option').show();
+        $('#projectView .body > section').not('.init').remove();
+        $('#projectView .body > section.init').show();
     }
 
     Util.post('Project/View', { projectID : projectID }, function (html) {
@@ -144,7 +144,7 @@ var audio = {
 var projectItem = {
     current: null,
     view: function (projectID, type) {
-        $('#projectView .body .option').hide();
+        $('#projectView .body .init').hide();
         Util.post('projectItem/view', { projectID: projectID, type: type },
             function (html) {
                 projectItem.current = $(html);
@@ -154,5 +154,36 @@ var projectItem = {
     },
     edit: function (projectID, itemName, parentName) {
 
+    },
+    newComment: function (projectID, type, name) {
+        Util.post('projectItem/newComment', { projectID: projectID, type: type, name: name },
+             function (html) {
+                 $('body').append(html);
+                 currentEditor = Util.editor.panelInstance('projectItemCommentData', { hasPanel: true });
+             });
+    },
+    viewComment: function(projectID, type, name, datetime)
+    {
+        Util.post('projectItem/viewComment', { projectID: projectID, type: type, name: name, timeTicks: datetime },
+            function (html)
+            {
+                $('body').append(html);
+            });
+    },
+    closeComment : function()
+    {
+        $('#viewComment').remove();
+    },
+    addComment: function () {
+        var form = Util.getParams('#projectItemNewComment');
+        var data = {
+            projectID : form["Project.ID"],
+            name: form["Item.Name"],
+            type: form["Type"]
+        };
+        data.message = nicEditors.findEditor('projectItemCommentData').getContent();
+        Util.post('projectItem/addComment', data, function () {
+            $('#projectItemNewComment').remove();
+        });
     }
 };

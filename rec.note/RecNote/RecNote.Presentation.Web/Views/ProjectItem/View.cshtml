@@ -17,6 +17,10 @@
             @Html.Raw( Model.Item.Data )
         </div>
     </section>
+    <section class="right">
+        <h2>@I18n.GetString("comments") <menu><button type="button" onclick="projectItem.newComment('@Model.Project.ID', '@Model.Type', '@Model.Item.Name');">@I18n.GetString("addComments")</button></menu></h2>
+        @Html.Action("ListComments", "ProjectItem", new { projectID = Model.Project.ID, name = Model.Item.Name, type = Model.Type })
+    </section>
     <footer>
         
     </footer>
@@ -27,6 +31,7 @@
         currentData.projectID = '@Model.Project.ID';
         currentData.initName = '@Model.Item.Name';
         currentData.type = '@Model.Type';
+        delete currentData.Comments;
 
         var beginEdit = function () {
             Util.post('ProjectItem/AllowEdit', { projectID: '@Model.Project.ID', name: '@Model.Item.Name', type: '@Model.Type' },
@@ -44,7 +49,7 @@
                 currentData.projectID = '@Model.Project.ID';
                 currentData.initName = '@Model.Item.Name';
                 currentData.type = '@Model.Type';
-                console.log(currentData);
+                delete currentData.Comments;
                 Util.post('ProjectItem/SaveItem', currentData,
                     function (result) {
 
@@ -71,5 +76,5 @@
                 });
         };
     </script>
-
+    
 </section>
