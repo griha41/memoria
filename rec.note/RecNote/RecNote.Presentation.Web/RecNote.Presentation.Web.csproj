@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RecNote.Presentation.Web</RootNamespace>
     <AssemblyName>RecNote.Presentation.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
@@ -84,6 +84,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AudioController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\ProjectItemController.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="Helpers\Util.cs" />
     <Compile Include="Models\ActionType.cs" />
     <Compile Include="Models\Audio\List.cs" />
+    <Compile Include="Models\Audio\New.cs" />
     <Compile Include="Models\DependencyResolver.cs" />
     <Compile Include="Models\Global.cs" />
     <Compile Include="Models\Home\Login.cs" />
@@ -119,8 +121,18 @@
     <Content Include="Config\Desa\Data.xml" />
     <Content Include="Config\Desa\Domain.xml" />
     <Content Include="Config\Desa\Presentation.xml" />
+    <Content Include="Content\Css\jquery.fileupload-ui.css" />
+    <Content Include="Content\Scripts\cors\jquery.postmessage-transport.js" />
+    <Content Include="Content\Scripts\cors\jquery.xdr-transport.js" />
+    <Content Include="Content\Scripts\jquery.fileupload-fp.js" />
+    <Content Include="Content\Scripts\jquery.fileupload-jui.js" />
+    <Content Include="Content\Scripts\jquery.fileupload-ui.js" />
+    <Content Include="Content\Scripts\jquery.fileupload.js" />
+    <Content Include="Content\Scripts\jquery.iframe-transport.js" />
     <Content Include="Content\Scripts\less.min.js" />
+    <Content Include="Content\Scripts\main.js" />
     <Content Include="Content\Scripts\Util.js" />
+    <Content Include="Content\Scripts\vendor\jquery.ui.widget.js" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -275,6 +287,9 @@
     <Content Include="Views\ProjectItem\ListComments.cshtml" />
     <Content Include="Views\ProjectItem\NewComment.cshtml" />
     <Content Include="Views\ProjectItem\ViewComment.cshtml" />
+    <Content Include="Views\Audio\New.cshtml" />
+    <None Include="Properties\PublishProfiles\Amazon.pubxml" />
+    <None Include="Properties\PublishProfiles\Perfil1.pubxml" />
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

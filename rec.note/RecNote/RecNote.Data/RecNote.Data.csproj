@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Audios\IAudioProvider.cs" />
     <Compile Include="IDataBase.cs" />
+    <Compile Include="Files\IFileData.cs" />
     <Compile Include="IGenericDataBase.cs" />
     <Compile Include="Projects\IProjectData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

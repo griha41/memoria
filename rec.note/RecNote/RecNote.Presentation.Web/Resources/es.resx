@@ -240,4 +240,16 @@
   <data name="RoleType.Stakeholder" xml:space="preserve">
     <value>Interesado</value>
   </data>
+  <data name="audio.name" xml:space="preserve">
+    <value>Nombre del Audio</value>
+  </data>
+  <data name="newAudio" xml:space="preserve">
+    <value>Nuevo Audio</value>
+  </data>
+  <data name="attachAudio" xml:space="preserve">
+    <value>Adjuntar Audio</value>
+  </data>
+  <data name="explore" xml:space="preserve">
+    <value>Explorar</value>
+  </data>
 </root>

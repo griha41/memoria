@@ -124,17 +124,33 @@ project.viewMembers = function(projectID)
 
 var audio = {
     current : null,
-    "new" : function(projectID)
+    new : function(projectID)
     {
         if(audio.current == null)
         {
             Util.post('Audio/New', { projectID : projectID }, 
                 function(html){
                     audio.current = $(html);
-                    $('body #overtop').append(audio.current);
-                    $('body #overtop').show();
+                    $('body').append(audio.current);
+                    $('#Audio_File').fileupload({
+                        url: 'file/upload',
+                        start: function () { alert('subiendo archivo'); },
+                        done: function (e, data) {
+                            $('#audioNew label').hide();
+                            $('#audioNew #Audio_File').remove();
+                            var fileID = $('input')
+                                .attr('type', 'hidden')
+                                .attr('name', 'ProjectID')
+                                .attr('value', data.result.id);
+                            $('#audioNew label').append(fileID);
+                        },
+                        autoUpload: true
                     });
+                });
         }
+    },
+    cancel: function () {
+        $('#audioNew').remove();
     }
 };
 

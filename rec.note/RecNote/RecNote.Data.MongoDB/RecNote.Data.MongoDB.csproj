@@ -52,6 +52,7 @@
     <Compile Include="Audios\AudioProvider.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="DataBase.cs" />
+    <Compile Include="Files\FileData.cs" />
     <Compile Include="GenericDataBase.cs" />
     <Compile Include="Projects\ProjectData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

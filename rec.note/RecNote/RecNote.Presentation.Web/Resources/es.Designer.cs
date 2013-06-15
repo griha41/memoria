@@ -88,6 +88,24 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Adjuntar Audio.
+        /// </summary>
+        internal static string attachAudio {
+            get {
+                return ResourceManager.GetString("attachAudio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nombre del Audio.
+        /// </summary>
+        internal static string audio_name {
+            get {
+                return ResourceManager.GetString("audio.name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancelar.
         /// </summary>
         internal static string cancel {
@@ -115,11 +133,29 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Explorar.
+        /// </summary>
+        internal static string explore {
+            get {
+                return ResourceManager.GetString("explore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Iniciar Sesión.
         /// </summary>
         internal static string login {
             get {
                 return ResourceManager.GetString("login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Nuevo Audio.
+        /// </summary>
+        internal static string newAudio {
+            get {
+                return ResourceManager.GetString("newAudio", resourceCulture);
             }
         }
         

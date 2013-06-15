@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.Audio.New
+<section id="audioNew">
+    <h2>@I18n.GetString("newAudio")
+        <menu>
+            <button class="link" onclick="audio.cancel();" >@I18n.GetString("cancel")</button>
+        </menu>
+    </h2>
+    <section class="body">
+        @Html.TextBoxFor(p => p.Audio.Name, new { placeHolder = I18n.GetString("audio.name") })
+        <form id="audioNewForm" action="@Url.Action("Upload", "Audio")" method="POST" enctype="multipart/form-data">
+            <label>
+                    @I18n.GetString("attachAudio")
+                    <input accept="audio/*" type="file" id="Audio_File" name="Audio.File[]"  multiple>
+                    <button class="link" type="button">@I18n.GetString("explore")</button>
+            </label>
+        </form>
+        <button>@I18n.GetString("addAudio")</button>
+    </section>
+</section>

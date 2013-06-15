@@ -21,5 +21,10 @@
   <object id="SessionProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Session.SessionProvider, RecNote.Domain.Core.Base">
     
   </object>
+
+  <object id="FileProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Files.FileProvider, RecNote.Domain.Core.Base">
+    <property name="PartialPath" value="C:\RecNoteAudios\" />
+    <property name="FileData" ref="FileData" />
+  </object>
   
 </objects>

@@ -10,6 +10,10 @@
 
   <object id="ProjectData" parent="DataBase" type="RecNote.Data.MongoDB.Projects.ProjectData, RecNote.Data.MongoDB" >
   </object>
+
+
+<object id="FileData" parent="DataBase" type="RecNote.Data.MongoDB.Files.FileData, RecNote.Data.MongoDB" >
+ </object>
   
 
 

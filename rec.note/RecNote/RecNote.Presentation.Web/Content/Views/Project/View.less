@@ -8,25 +8,31 @@
 		> h2 {
 			line-height: 45px;
 			vertical-align: middle;
-		}
-		> menu {
-			float: right;
-			position: relative;
-			top: -60px;
-			menu {
-				text-align: center;
-				padding: 0px;
+			> menu {
+				float: right;
+				display: inline-block;
+				menu {
+					text-align: center;
+					padding: 0px;
+				}
 			}
 		}
-		#memberSection {
-			position: absolute;
-			display: none;
-			float: right;
-			right: 0px;
-			width: 258px;
-			border: @border2;
-			z-index: 10;
-			background-color : @bodyColor2;
+	}
+	#memberSection {
+		position: absolute;
+		display: none;
+		float: right;
+		right: 0px;
+		width: 258px;
+		border: @border2;
+		z-index: 10;
+		background-color : @bodyColor2;
+		padding: 15px;
+		ul {
+			list-style: none;
+			margin: 0px;
+			padding: 0px;
+			font-size: 15px;
 		}
 	}
 	#newMember {
@@ -45,10 +51,8 @@
 				height: 75px;
 				vertical-align: middle;
 				menu {
-					display: block;
-					right: 0px;
-					top: 16px;
-					position: absolute;
+					display: inline-block;
+					float: right;
 				}
 			}
 			#projectNewActor {
@@ -99,11 +103,38 @@
 			> section.right {
 				position: absolute;
 				right: 0px;
-				button: 0px;
-				top: 100px;
+				bottom: 0px;
+				top: 50px;
 				width: 250px;
 			}
 		}
 	}
 	
+}
+
+
+#audioNew {
+	position: absolute;
+	top: 50px;
+	right: 0px;
+	bottom: 0px;
+	background-color: @bodyColor2;
+	width: 40%;
+	padding: 22px;
+	input[type=file] {
+		display:none;
+	}
+	button {
+		float: right;
+	}
+	h2 {
+		height: 45px;
+	}
+	menu {
+		display: inline-block;
+		float: right;
+	}
+	label {
+		display: block;
+	}
 }

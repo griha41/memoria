@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-
+using RecNote.Entities.Audios;
+using Model = RecNote.Presentation.Web.Models.Audio;
 
 namespace RecNote.Presentation.Web.Controllers
 {
@@ -12,7 +13,7 @@ namespace RecNote.Presentation.Web.Controllers
     {
         //
         // GET: /Audio/
-
+        
         
 
         public ActionResult List(string projectID)
@@ -22,7 +23,11 @@ namespace RecNote.Presentation.Web.Controllers
 
         public ActionResult New(string projectID)
         {
-            return null;
+            return View(new Model.New
+            {
+                ProjectID = projectID,
+                Audio = new Audio()
+            });
         }
 
     }

@@ -26,4 +26,10 @@
     <property name="SessionName" value="SessionID" />
   </object>
   
+  
+  <object id="FileController" type="RecNote.Presentation.Web.Controllers.FileController, RecNote.Presentation.Web"  singleton="false" >
+    <property name="FileProvider" ref="FileProvider" />
+  </object>
+
+
 </objects>

@@ -5,7 +5,7 @@
 <section id="projectView">
     @Html.HiddenFor(p => p.CurrentProject.ID)
     <header>
-        <h2>@Model.CurrentProject.Name</h2>
+        <h2>@Model.CurrentProject.Name
         <menu>
             <button type="button" class="link" onclick="project.viewMembers('@Model.CurrentProject.ID');" id="countMembers" >@I18n.GetString("members", new { count = Model.CurrentProject.Actors.Length })            </button>
             <section id="memberSection" >
@@ -15,7 +15,7 @@
                 </menu>
             </section>
         </menu>
-        
+        </h2>
     </header>
     <section class="body">
         <section class="init">
