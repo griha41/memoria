@@ -1,7 +1,19 @@
 ﻿@{
     Layout = "~/Views/Shared/Control.cshtml";
 }
-
+@model IList<RecNote.Entities.Audios.Audio>
 <section id="audioList">
-    
+    <ul>
+        @foreach(var audio in Model)
+        {
+            <li>
+                <section class="audio" audioID="@audio.ID">
+                    <a class="play" onclick="audio.play('@audio.ID')" ></a>
+                    <a class="remove" onclick="audio.remove('@audio.ID')" ></a>
+                    <h3>@audio.Name</h3>
+                    @audio.Date
+                </section>
+            </li>
+        }
+    </ul>
 </section>

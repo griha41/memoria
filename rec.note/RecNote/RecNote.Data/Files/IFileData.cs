@@ -7,5 +7,6 @@ namespace RecNote.Data.Files
 {
     public interface IFileData : IDataBase<Entities.Files.File>
     {
+        Entities.Files.File[] FindByType(string type);
     }
 }

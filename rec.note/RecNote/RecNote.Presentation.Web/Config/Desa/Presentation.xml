@@ -31,5 +31,11 @@
     <property name="FileProvider" ref="FileProvider" />
   </object>
 
+  <object id="AudioController" type="RecNote.Presentation.Web.Controllers.AudioController, RecNote.Presentation.Web"  singleton="false" >
+    <property name="AudioProvider" ref="AudioProvider" />
+    <property name="FileProvider" ref="FileProvider" />
+  </object>
+
+  
 
 </objects>

@@ -37,11 +37,5 @@ namespace RecNote.Presentation.Web.Controllers
                 );
         }
 
-        public ActionResult Reader(string fileID)
-        {
-            var file = this.FileProvider.FindByID(fileID);
-            return File(this.FileProvider.GetFile(fileID), file.ContentType, file.Name);
-        }
-
     }
 }

@@ -7,7 +7,8 @@ namespace RecNote.Entities.Audios
 {
     public class Audio : Base
     {
-        public string[] Projects { get; set; }
+        public string ProjectID { get; set; }
+        public string FileID { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
     }

@@ -350,3 +350,17 @@ if (typeof String.prototype.startsWith != 'function') {
     return this.indexOf(str) == 0;
   };
 }
+
+var i18n = {
+    getString: function (text) {
+        if (i18n.data[text] == null) return text;
+        return i18n.data[text];
+    },
+    data : null
+};
+
+$(document).ready(function () {
+    Util.post('i18n.js', null, function (data) {
+        i18n.data = data;
+    });
+});

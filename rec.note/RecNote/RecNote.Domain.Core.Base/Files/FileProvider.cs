@@ -35,5 +35,11 @@ namespace RecNote.Domain.Core.Base.Files
             var file = this.FindByID(fileID);
             return File.ReadAllBytes(file.FullPath);
         }
+
+
+        public Entities.Files.File[] FindByType(string type)
+        {
+            return this.FileData.FindByType(type);
+        }
     }
 }

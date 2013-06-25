@@ -22,4 +22,7 @@
     <property name="Database" value="recnote"  />
   </object>
   
+  <object id="AudioData" parent="DataBase" type="RecNote.Data.MongoDB.Audios.AudioData, RecNote.Data.MongoDB" >
+  </object>
+  
 </objects>

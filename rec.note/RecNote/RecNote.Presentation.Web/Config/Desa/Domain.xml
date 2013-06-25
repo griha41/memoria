@@ -26,5 +26,16 @@
     <property name="PartialPath" value="C:\RecNoteAudios\" />
     <property name="FileData" ref="FileData" />
   </object>
+
+  <object id="AudioProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Audios.AudioProvider, RecNote.Domain.Core.Base">
+    <property name="AudioData" ref="AudioData" />
+    <property name="FileProvider" ref="FileProvider" />
+    
+    <property name="FingerLength" value="10" />
+    <property name="TopWavelets" value="150" />
+    <property name="MaxFrequency" value="2048" />
+    <property name="MinFrequency" value="512" />
+    
+  </object>
   
 </objects>

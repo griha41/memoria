@@ -46,6 +46,7 @@
     <Compile Include="Audios\Audio.cs" />
     <Compile Include="Base.cs" />
     <Compile Include="Files\File.cs" />
+    <Compile Include="Files\AudioFile.cs" />
     <Compile Include="Projects\Actor.cs" />
     <Compile Include="Projects\ProjectDefinition.cs" />
     <Compile Include="Projects\ProjectItem.cs" />

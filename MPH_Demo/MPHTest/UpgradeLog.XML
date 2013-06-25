@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MPHTest">
+</Property><Property Name="Archivo de la solución" Value="C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\MPHTest.sln">
+</Property><Property Name="Date" Value="lunes, 24 de junio de 2013">
+</Property><Property Name="Time" Value="0:43">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="MPHTest.sln" Description="La copia C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest.sln del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPHTest.csproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\MPHTest.csproj">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPH\BitArray.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\MPH\BitArray.cs">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPH\BitBool.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\MPH\BitBool.cs">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPH\Buckets.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\MPH\Buckets.cs">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPH\CompressedSeq.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\MPH\CompressedSeq.cs">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPH\IKeySource.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\MPH\IKeySource.cs">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPH\JenkinsHash.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\MPH\JenkinsHash.cs">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPH\MillerRabin.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\MPH\MillerRabin.cs">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPH\MinPerfectHash.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\MPH\MinPerfectHash.cs">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPH\Select.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\MPH\Select.cs">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\Program.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\Program.cs">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\Properties\AssemblyInfo.cs" Description="Se realizó correctamente la copia de seguridad del archivo C:\Users\Gerardo\dev\memoria\MPH_Demo\MPHTest\Backup\MPHTest\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="1" Project="MPHTest" Source="MPHTest\MPHTest.csproj" Description="La versión de destino de su proyecto es .NET Framework 2.0 ó 3.0. Si el proyecto utiliza ensamblados que requieren una versión más reciente de .NET Framework, no se podrá compilar. Puede cambiar la versión de .NET Framework haciendo clic en Propiedades en el menú del proyecto y seleccionando una nueva versión en el cuadro desplegable '.NET Framework'. (En Visual Basic, haga clic en el botón 'Opciones avanzadas del compilador...' en la pestaña Compilar).">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPHTest.csproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="MPHTest" Source="MPHTest\MPHTest.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="MPHTest.sln" Description="La solución se convirtió correctamente">
+</Event><Event ErrorLevel="3" Project="" Source="MPHTest.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="MPHTest" Source="MPHTest\MPHTest.csproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event></UpgradeLog>

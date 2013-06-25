@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <object abstract="true" id="ProviderBase" >
+    <property name="GenericDataBase" ref="GenericDataBase" />
+    <property name="I18n" ref="TextI18n" />
+  </object>
+  
+  
+  <object id="UserProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Users.UserProvider, RecNote.Domain.Core.Base" >
+    <property name="emailAdmin" value="villarroel.gj@gmail.com" />
+    <property name="passwordAdmin" value="recnote" />
+    <property name="UserData" ref="UserData" />
+  </object>
+
+  <object id="ProjectProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Projects.ProjectProvider, RecNote.Domain.Core.Base" >
+    <property name="ProjectData" ref="ProjectData" />
+    <property name="UserProvider" ref="UserProvider" />
+  </object>
+
+  <object id="SessionProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Session.SessionProvider, RecNote.Domain.Core.Base">
+    
+  </object>
+
+  <object id="FileProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Files.FileProvider, RecNote.Domain.Core.Base">
+    <property name="PartialPath" value="C:\RecNoteAudios\" />
+    <property name="FileData" ref="FileData" />
+  </object>
+
+  <object id="AudioProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Audios.AudioProvider, RecNote.Domain.Core.Base">
+    <property name="AudioData" ref="AudioData" />
+    <property name="FileProvider" ref="FileProvider" />
+    
+    <property name="FingerLength" value="10" />
+    <property name="TopWavelets" value="150" />
+    <property name="MaxFrequency" value="2048" />
+    <property name="MinFrequency" value="512" />
+    
+  </object>
+  
+</objects>

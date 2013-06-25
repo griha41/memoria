@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bass.Net, Version=2.4.10.2, Culture=neutral, PublicKeyToken=b7566c273e6ef480, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Bass.Net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,6 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audios\AudioProvider.cs" />
+    <Compile Include="Audios\MemoryPermutation.cs" />
+    <Compile Include="Files\AudioFileCompare.cs" />
     <Compile Include="Files\FileProvider.cs" />
     <Compile Include="Projects\ProjectProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -48,6 +56,14 @@
     <Compile Include="Users\UserProvider.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\fingerprint\fingerprint\Sources5\src\Soundfingerprinting.SoundTools\Soundfingerprinting.SoundTools.csproj">
+      <Project>{362ba144-fdfe-410b-a8f5-a9359cc848ae}</Project>
+      <Name>Soundfingerprinting.SoundTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\fingerprint\fingerprint\Sources5\src\Soundfingerprinting\Soundfingerprinting.csproj">
+      <Project>{56eb1986-589c-4da9-b961-5833bb4a7816}</Project>
+      <Name>Soundfingerprinting %28Domain\Soundfingerprinting\Soundfingerprinting%29</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RecNote.Data\RecNote.Data.csproj">
       <Project>{C8C0E999-B8D7-48D5-8E37-0B16B27A072A}</Project>
       <Name>RecNote.Data</Name>

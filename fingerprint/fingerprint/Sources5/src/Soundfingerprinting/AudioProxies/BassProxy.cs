@@ -48,11 +48,13 @@ namespace Soundfingerprinting.AudioProxies
             int bassVersion = Bass.BASS_GetVersion();
             int bassMixVersion = BassMix.BASS_Mixer_GetVersion();
             int bassfxVersion = BassFx.BASS_FX_GetVersion();
-            int plg = Bass.BASS_PluginLoad("bassflac.dll");
+            int plg = Bass.BASS_PluginLoad("C:\\RecNoteLibs\\bassflac.dll");
+            /*
             if (plg == 0)
                 throw new Exception(Bass.BASS_ErrorGetCode().ToString());
+             */ 
             if (!Bass.BASS_Init(-1, DEFAULT_SAMPLE_RATE, BASSInit.BASS_DEVICE_DEFAULT | BASSInit.BASS_DEVICE_MONO, IntPtr.Zero)) //Set Sample Rate / MONO
-                throw new Exception(Bass.BASS_ErrorGetCode().ToString());
+                throw new Exception(Bass.BASS_ErrorGetCode().ToString()); 
             if (!Bass.BASS_SetConfig(BASSConfig.BASS_CONFIG_MIXER_FILTER, 50)) /*Set filter for anti aliasing*/
                 throw new Exception(Bass.BASS_ErrorGetCode().ToString());
             if (!Bass.BASS_SetConfig(BASSConfig.BASS_CONFIG_FLOATDSP, true)) /*Set floating parameters to be passed*/

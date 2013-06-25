@@ -67,9 +67,9 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bass.Net, Version=2.4.6.4, Culture=neutral, PublicKeyToken=b7566c273e6ef480, processorArchitecture=MSIL">
+    <Reference Include="Bass.Net, Version=2.4.10.2, Culture=neutral, PublicKeyToken=b7566c273e6ef480, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Externals\Bass.Net.dll</HintPath>
+      <HintPath>..\..\..\..\..\rec.note\RecNote\libs\Bass.Net.dll</HintPath>
     </Reference>
     <Reference Include="Ninject">
       <HintPath>..\Externals\Ninject.dll</HintPath>
@@ -238,7 +238,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Soundfingerprinting\Soundfingerprinting.csproj">
       <Project>{56EB1986-589C-4DA9-B961-5833BB4A7816}</Project>
-      <Name>Soundfingerprinting</Name>
+      <Name>Soundfingerprinting %28Domain\Soundfingerprinting\Soundfingerprinting%29</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

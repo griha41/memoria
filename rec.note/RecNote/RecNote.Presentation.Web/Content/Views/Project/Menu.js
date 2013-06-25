@@ -136,13 +136,16 @@ var audio = {
                         url: 'file/upload',
                         start: function () { alert('subiendo archivo'); },
                         done: function (e, data) {
-                            $('#audioNew label').hide();
+                            $('#audioNew label').html('');
                             $('#audioNew #Audio_File').remove();
-                            var fileID = $('input')
+                            var fileID = $('<input>')
                                 .attr('type', 'hidden')
                                 .attr('name', 'ProjectID')
-                                .attr('value', data.result.id);
+                                .addClass('important')
+                                .attr('value', data.result.file.id);
+
                             $('#audioNew label').append(fileID);
+                            $('#audioNew label').append($('<span>').text(data.result.file.name));
                         },
                         autoUpload: true
                     });
@@ -150,7 +153,36 @@ var audio = {
         }
     },
     cancel: function () {
-        $('#audioNew').remove();
+        audio.current.remove();
+        audio.current = null;
+    },
+    append: function () {
+        var fileID = $('#audioNew input[name=ProjectID]').val();
+        var projectID = project.currentID();
+        var audioName = $('#audioNew #Audio_Name').val();
+        if (Util.isNull(fileID)) { alert(i18n.getString('error.fileNotfound')); }
+        if (Util.isNull(audioName)) { alert(i18n.getString('error.audioNameNull')); }
+        var data = $('#audioNew');
+        Util.post('Audio/Append', { projectID: projectID, fileID: fileID, audioName: audioName },
+            function (data) {
+                if (!Util.isNull(data.ID))
+                { alert(i18n.getString('message.audioAdded')); }
+                audio.cancel();
+            });
+    },
+    list: function () {
+        var projectID = project.currentID();
+    },
+    remove: function (audioID) {
+        Util.post('Audio/Remove', { audioID: audioID }, function () {
+            $('.audio[audioID="' + audioID + '"]').parent().remove();
+        });
+    },
+    play: function (audioID) {
+        Util.post('Audio/Play', { audioID: audioID }, function (html) {
+            $('#audioPlay').remove();
+            $('body').append(html);
+        });
     }
 };
 

@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Audios\IAudioProvider.cs" />
+    <Compile Include="Audios\IAudioData.cs" />
     <Compile Include="IDataBase.cs" />
     <Compile Include="Files\IFileData.cs" />
     <Compile Include="IGenericDataBase.cs" />
