@@ -7,7 +7,9 @@ project.currentID = function()
 
 project.new = function()
 {
-    if(project._current != null) { return; }
+    $('#projectNew').remove();
+    $('#projectView').remove();
+    $('#projectList li.selected').removeClass('selected');
     Util.post('Project/New', null, function (html) {
         project._current = $(html);
         $('#main #center').append(project._current);
@@ -103,6 +105,8 @@ project.view = function (projectID)
     });
 }
 
+
+
 project.newMember = function (projectID) {
     $('#newMember').show();
 };
@@ -178,11 +182,36 @@ var audio = {
             $('.audio[audioID="' + audioID + '"]').parent().remove();
         });
     },
-    play: function (audioID) {
-        Util.post('Audio/Play', { audioID: audioID }, function (html) {
+    play: function (audioID, init, end) {
+        Util.post('Audio/Play', { audioID: audioID, init: init, end: end }, function (html) {
             $('#audioPlay').remove();
             $('body').append(html);
         });
+    },
+    close: function () {
+        $('#audioPlay').remove();
+    },
+    reference: function (audioID, init, end) {
+
+        var recnote = $('<recnote>')
+        .attr('id', audioID)
+        .attr('init', init)
+        .attr('end', end)
+        .attr('tooltip', 'audio1')
+        .attr('disabled', true)
+        .attr('editable', false)
+        .attr('contenteditable', false)
+        .attr('onselectstart', 'return false;')
+        .attr('onclick', 'audio.play($(this).attr("id"), $(this).attr("init"), $(this).attr("end"));');
+
+        
+        //var recnote = '<recnote id="' + audioID + '" init="' + init + '" end="' + end + '" onclick="audio.play($(this).attr(\'id\'), $(this).attr(\'init\'), $(this).attr(\'end\'));" />';
+        $('#audioSearch').remove();
+        if ($('.nicEdit-main div').last().length > 0)
+            $('.nicEdit-main div').last().append(recnote);
+        else
+            $('.nicEdit-main').append(recnote);
+        //$('.nicEdit-main').append($('<div>'));
     }
 };
 
@@ -191,13 +220,32 @@ var audio = {
 
 var projectItem = {
     current: null,
-    view: function (projectID, type) {
+    view: function (projectID, type, name) {
         $('#projectView .body .init').hide();
-        Util.post('projectItem/view', { projectID: projectID, type: type },
+        Util.post('projectItem/view', { projectID: projectID, type: type, name: name },
             function (html) {
                 projectItem.current = $(html);
-                $('#projectView .body').append(projectItem.current);
+                $('#projectView > .body').html('');
+                $('#projectView > .body').append(projectItem.current);
                 projectItem.current.show();
+            });
+    },
+    viewArray : function (projectID, type, name) {
+        $('#projectView .body .init').hide();
+        Util.post('projectItem/viewArray', { projectID: projectID, type: type, name: name },
+            function (html) {
+                projectItem.current = $(html);
+                $('#projectView > .body').html('');
+                $('#projectView > .body').append(projectItem.current);
+                projectItem.current.show();
+            });
+    },
+    new : function (projectID, type, name)
+    {
+        $('#projectView .body .init').hide();
+        Util.post('projectItem/new', { projectID: projectID, type: type, name: name },
+            function (html) {
+                projectItem.viewArray(projectID, type);
             });
     },
     edit: function (projectID, itemName, parentName) {

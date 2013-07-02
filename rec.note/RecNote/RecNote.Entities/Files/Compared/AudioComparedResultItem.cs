@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RecNote.Domain.Core.Files
+namespace RecNote.Entities.Files.Compared
 {
     public class AudioComparedResultItem
     {

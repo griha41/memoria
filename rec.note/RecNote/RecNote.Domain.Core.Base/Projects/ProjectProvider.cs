@@ -137,5 +137,15 @@ namespace RecNote.Domain.Core.Base.Projects
                 Time = DateTime.UtcNow
             });
         }
+
+
+        public RoleType GetRole(string projectID, string userID)
+        {
+            var project = this.FindByID(projectID);
+            if (project.Owner.ID == userID) return RoleType.Developer;
+            var actor = project.Actors.FirstOrDefault(a => a.ID == userID);
+            if (actor == null) { throw new Exception("error.noRoleFound"); }
+            return actor.Role;
+        }
     }
 }

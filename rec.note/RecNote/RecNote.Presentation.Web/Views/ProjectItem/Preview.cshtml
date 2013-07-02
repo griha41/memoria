@@ -2,14 +2,32 @@
     Layout = "~/Views/Shared/Control.cshtml";
 }
 @model RecNote.Presentation.Web.Models.ProjectItem.View
-<section name="projectItemPreview" ItemName="@Model.Item.Name" onclick="projectItem.view('@Model.Project.ID', '@Model.Type')">
-    <header>
-        <h2>@I18n.GetString(Model.Type)</h2>
-    </header>
-    <article>
-        @Html.Raw( Model.Item.Data)
-    </article>
-    <footer>
-        @I18n.GetString(Model.Item.IsPublic)
-    </footer>
-</section>
+@if (Model.Role == RecNote.Entities.Projects.RoleType.Developer || Model.Item.IsPublic)
+{
+    <section name="projectItemPreview" ItemName="@Model.Item.Name" 
+        onclick="projectItem.view('@Model.Project.ID', '@Model.Type', '@Model.Item.Name')" >
+        <header>
+            <h2>@(string.IsNullOrEmpty(Model.Item.Name) ? I18n.GetString(Model.Type).ToString() : Model.Item.Name )</h2>
+        </header>
+        <article>
+            @Html.Raw( Model.Item.Data)
+        </article>
+        <footer>
+            @I18n.GetString(Model.Item.IsPublic)
+        </footer>
+    </section>
+}
+else
+{
+    <section name="projectItemPreview" ItemName="@Model.Item.Name"  >
+        <header>
+            <h2>@(string.IsNullOrEmpty(Model.Item.Name) ? I18n.GetString(Model.Type).ToString() : Model.Item.Name )</h2>
+        </header>
+        <article>
+            @Html.Raw( Model.Item.Data)
+        </article>
+        <footer>
+            @I18n.GetString(Model.Item.IsPublic)
+        </footer>
+    </section>
+}

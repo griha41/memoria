@@ -106,6 +106,24 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Despublicado.
+        /// </summary>
+        internal static string Boolean_False {
+            get {
+                return ResourceManager.GetString("Boolean.False", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Publicado.
+        /// </summary>
+        internal static string Boolean_True {
+            get {
+                return ResourceManager.GetString("Boolean.True", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancelar.
         /// </summary>
         internal static string cancel {
@@ -444,6 +462,15 @@ namespace RecNote.Presentation.Web.Resources {
         internal static string save {
             get {
                 return ResourceManager.GetString("save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¿Que terminos estás buscando?.
+        /// </summary>
+        internal static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
             }
         }
         

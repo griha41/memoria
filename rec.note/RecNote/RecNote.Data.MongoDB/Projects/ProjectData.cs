@@ -75,6 +75,24 @@ namespace RecNote.Data.MongoDB.Projects
             }
         }
 
+        private int GetIndex(string projectID, ProjectItemType type, string name)
+        {
+            var project = this.FindByID(projectID);
+            if (type == ProjectItemType.Introduction)
+                return 0;
+            if (type == ProjectItemType.CurrentSystem)
+                return 0;
+            switch (type)
+            {
+                case ProjectItemType.Actors: return project.Definition.Actors.ToList().FindIndex(p => p.Name == name);
+                case ProjectItemType.Objetives: return project.Definition.Objetives.ToList().FindIndex(p => p.Name == name);
+                case ProjectItemType.ReqFunctionals: return project.Requirements.Functionals.ToList().FindIndex(p => p.Name == name);
+                case ProjectItemType.ReqInformations: return project.Requirements.Informations.ToList().FindIndex(p => p.Name == name);
+                case ProjectItemType.ReqNotFunctionals: return project.Requirements.NotFunctionals.ToList().FindIndex(p => p.Name == name);
+                default: return 0;
+            }
+        }
+
         private Expression<Func<Project, IEnumerable<ProjectItemComment>>> PathComment(string projectID, ProjectItemType type, string name)
         {
             Expression<Func<Project, IEnumerable<ProjectItemComment>>> path = null;
@@ -104,11 +122,30 @@ namespace RecNote.Data.MongoDB.Projects
                 path = p => p.Definition.CurrentSystem;
             switch (type)
             {
-                case ProjectItemType.Actors: path = p => p.Definition.Actors.FirstOrDefault(a => a.Name == name); break;
-                case ProjectItemType.Objetives: path = p => p.Definition.Objetives.FirstOrDefault(a => a.Name == name); break;
-                case ProjectItemType.ReqFunctionals: path = p => p.Requirements.Functionals.FirstOrDefault(a => a.Name == name); break;
-                case ProjectItemType.ReqInformations: path = p => p.Requirements.Informations.FirstOrDefault(a => a.Name == name); break;
-                case ProjectItemType.ReqNotFunctionals: path = p => p.Requirements.NotFunctionals.FirstOrDefault(a => a.Name == name); break;
+                case ProjectItemType.Actors: path = p => p.Definition.Actors[this.GetIndex(projectID, type, name)]; break;
+                case ProjectItemType.Objetives: path = p => p.Definition.Objetives[this.GetIndex(projectID, type, name)]; break;
+                case ProjectItemType.ReqFunctionals: path = p => p.Requirements.Functionals[this.GetIndex(projectID, type, name)]; break;
+                case ProjectItemType.ReqInformations: path = p => p.Requirements.Informations[this.GetIndex(projectID, type, name)]; break;
+                case ProjectItemType.ReqNotFunctionals: path = p => p.Requirements.NotFunctionals[this.GetIndex(projectID, type, name)]; break;
+            }
+            return path;
+        }
+
+        private Expression<Func<Project, IEnumerable<ProjectItem>>> PathSaveItem(string projectID, ProjectItemType type)
+        {
+            Expression<Func<Project, IEnumerable<ProjectItem>>> path = null;
+
+            if (type == ProjectItemType.Introduction)
+                path = null;
+            if (type == ProjectItemType.CurrentSystem)
+                path = null;
+            switch (type)
+            {
+                case ProjectItemType.Actors: path = p => p.Definition.Actors; break;
+                case ProjectItemType.Objetives: path = p => p.Definition.Objetives; break;
+                case ProjectItemType.ReqFunctionals: path = p => p.Requirements.Functionals; break;
+                case ProjectItemType.ReqInformations: path = p => p.Requirements.Informations; break;
+                case ProjectItemType.ReqNotFunctionals: path = p => p.Requirements.NotFunctionals; break;
             }
             return path;
         }
@@ -116,10 +153,30 @@ namespace RecNote.Data.MongoDB.Projects
         public ProjectItem SaveItem(string projectID, ProjectItemType type, ProjectItem item)
         {
             var path = this.PathItem(projectID, type, item.Name);
-            this.GetCollection().Update(
-                Query<Project>.EQ(p => p.ID, projectID), 
-                Update<Project>.Set(path, item)
-                );
+            if (this.GetItem(projectID, type, item.Name) == null)
+            {
+                this.GetCollection().Update(
+                    Query<Project>.EQ(p => p.ID, projectID),
+                    Update<Project>.Push<ProjectItem>(this.PathSaveItem(projectID, type), item)
+                    );
+            }
+            else
+            {
+                if (type == ProjectItemType.Introduction || type == ProjectItemType.CurrentSystem)
+                {
+                    this.GetCollection().Update(
+                        Query<Project>.EQ(p => p.ID, projectID),
+                        Update<Project>.Set(path, item)
+                        );
+                }
+                else
+                {
+                    this.GetCollection().Update(
+                        Query.And( Query<Project>.EQ(p => p.ID, projectID) ),
+                        Update<Project>.Set<ProjectItem>(path, item)
+                        );
+                }
+            }
             return item;
         }
 

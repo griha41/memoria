@@ -34,6 +34,8 @@
   <object id="AudioController" type="RecNote.Presentation.Web.Controllers.AudioController, RecNote.Presentation.Web"  singleton="false" >
     <property name="AudioProvider" ref="AudioProvider" />
     <property name="FileProvider" ref="FileProvider" />
+    <property name="InitialSecondsDelay" value="1" />
+    <property name="Similarity" value="0.4" />
   </object>
 
   

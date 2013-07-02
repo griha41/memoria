@@ -22,16 +22,16 @@
             <section class="option">
                 <h2>@I18n.GetString("project.definition")</h2>
                 @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Introducction, type = RecNote.Entities.Projects.ProjectItemType.Introduction })
-                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Actors, type = RecNote.Entities.Projects.ProjectItemType.Actors })
+                @Html.Action("PreviewResume", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Actors, type = RecNote.Entities.Projects.ProjectItemType.Actors })
                 @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.CurrentSystem, type = RecNote.Entities.Projects.ProjectItemType.CurrentSystem })
-                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Objetives, type = RecNote.Entities.Projects.ProjectItemType.Objetives })
+                @Html.Action("PreviewResume", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Objetives, type = RecNote.Entities.Projects.ProjectItemType.Objetives })
             </section>
 
             <section class="option">
                 <h2>@I18n.GetString("project.requirements")</h2>
-                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Informations, type = RecNote.Entities.Projects.ProjectItemType.ReqInformations })
-                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Functionals, type = RecNote.Entities.Projects.ProjectItemType.ReqFunctionals })
-                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.NotFunctionals, type = RecNote.Entities.Projects.ProjectItemType.ReqNotFunctionals })
+                @Html.Action("PreviewResume", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Informations, type = RecNote.Entities.Projects.ProjectItemType.ReqInformations })
+                @Html.Action("PreviewResume", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Functionals, type = RecNote.Entities.Projects.ProjectItemType.ReqFunctionals })
+                @Html.Action("PreviewResume", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.NotFunctionals, type = RecNote.Entities.Projects.ProjectItemType.ReqNotFunctionals })
             </section>
             <section class="right">
                 <h2>

@@ -11,5 +11,6 @@ namespace RecNote.Domain.Core.Audios
     {
         void Append(string projectID, string fileID, string audioName);
         IList<Entities.Audios.Audio> FindByProjectID(string projectID);
+        Entities.Files.Compared.AudioComparedResult Compare(string audioID, string fileID, float similarity);
     }
 }

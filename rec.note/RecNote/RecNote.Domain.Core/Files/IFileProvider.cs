@@ -11,7 +11,9 @@ namespace RecNote.Domain.Core.Files
     {
         File Upload(string name, string contentType, byte[] file);
         Byte[] GetFile(string fileID);
-
         File[] FindByType(string type);
+        TF FindByID<TF>(string fileID) where TF : Entities.Files.File;
+
+        Byte[] GetFile(string fileID, int start, int end);
     }
 }

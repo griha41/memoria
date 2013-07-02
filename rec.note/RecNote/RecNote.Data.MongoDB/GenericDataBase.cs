@@ -53,5 +53,13 @@ namespace RecNote.Data.MongoDB
         {
             return this.GetCollection<T>().FindAs<T>(query: Query<T>.In(p => p.ID, ids)).ToArray();
         }
+
+
+        public R FindByID<T, R>(string id)
+            where T : Entities.Base
+            where R : T
+        {
+            return (R)this.GetCollection<T>().FindAs<R>(query: Query<T>.EQ(p => p.ID, id)).FirstOrDefault();
+        }
     }
 }

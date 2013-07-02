@@ -21,55 +21,87 @@ namespace RecNote.Presentation.Web.Controllers
 
         public ActionResult Preview(Project project, ProjectItem[] items, ProjectItemType type)
         {
-            if(type == ProjectItemType.Introduction || type == ProjectItemType.CurrentSystem)
-                return View(new Model.View
-                {
-                    Project = project,
-                    Item = items.FirstOrDefault(),
-                    Type = type
-                });
-            else
-                return View("PreviewResume", new Model.Preview
-                {
-                    Project = project,
-                    Items = items,
-                    Type = type
-                });
+            return View(new Model.View
+            {
+                Project = project,
+                Item = items.FirstOrDefault(),
+                Type = type,
+                Role = this.ProjectProvider.GetRole(project.ID, MvcApplication.CurrentUser.ID)
+            });
+        }
+
+        public ActionResult PreviewResume(Project project, ProjectItem[] items, ProjectItemType type)
+        {
+            var role = this.ProjectProvider.GetRole(project.ID, MvcApplication.CurrentUser.ID);
+            if (role != RoleType.Developer)
+            {
+                items = (from i in items
+                         where i.IsPublic
+                         select i).ToArray();
+            }
+
+            return View(new Model.Preview
+            {
+                Project = project,
+                Items = items,
+                Type = type,
+                
+            });
         }
 
         public ActionResult View(string projectID, ProjectItemType type, string name)
         {
             var project = this.ProjectProvider.FindByID(projectID);
+            var item = this.ProjectProvider.GetItem(projectID, type, name);
 
-            if (type == ProjectItemType.Introduction || type == ProjectItemType.CurrentSystem || !string.IsNullOrEmpty(name))
+            return View(new Model.View
             {
-                var item = this.ProjectProvider.GetItem(projectID, type, name);
-                return View(new Model.View
-                {
-                    Project = project,
-                    Item = item,
-                    Type = type
-                });
-            }
-            else
+                Project = project,
+                Item = item,
+                Type = type,
+                Role = this.ProjectProvider.GetRole(project.ID, MvcApplication.CurrentUser.ID)
+            });
+        }
+
+        public ActionResult ViewArray(string projectID, ProjectItemType type, string name)
+        {
+            var project = this.ProjectProvider.FindByID(projectID);
+            var role = this.ProjectProvider.GetRole(project.ID, MvcApplication.CurrentUser.ID);
+
+            ProjectItem[] items = null;
+            switch (type)
             {
-                ProjectItem[] items = null;
-                switch(type)
-                {
-                    case ProjectItemType.Actors: items = project.Definition.Actors; break;
-                    case ProjectItemType.Objetives: items = project.Definition.Objetives; break;
-                    case ProjectItemType.ReqFunctionals: items = project.Requirements.Functionals; break;
-                    case ProjectItemType.ReqInformations: items = project.Requirements.Informations; break;
-                    case ProjectItemType.ReqNotFunctionals: items = project.Requirements.NotFunctionals; break;
-                }
-                return View("ViewArray", new Model.Preview
-                {
-                    Project = project,
-                    Items = items,
-                    Type = type
-                });
+                case ProjectItemType.Actors: items = project.Definition.Actors; break;
+                case ProjectItemType.Objetives: items = project.Definition.Objetives; break;
+                case ProjectItemType.ReqFunctionals: items = project.Requirements.Functionals; break;
+                case ProjectItemType.ReqInformations: items = project.Requirements.Informations; break;
+                case ProjectItemType.ReqNotFunctionals: items = project.Requirements.NotFunctionals; break;
             }
 
+            if (role != RoleType.Developer)
+            {
+                items = (from i in items
+                         where i.IsPublic
+                         select i).ToArray();
+            }
+
+            return View("ViewArray", new Model.Preview
+            {
+                Project = project,
+                Items = items,
+                Type = type
+            });
+
+        }
+
+        public ActionResult New(string projectID, ProjectItemType type, string name)
+        {
+            var project = this.ProjectProvider.FindByID(projectID);
+            this.ProjectProvider.SaveItem(projectID, type, new ProjectItem
+            {
+                Name = name
+            });
+            return Json(true, JsonRequestBehavior.AllowGet);
         }
 
         [ValidateInput(false)]

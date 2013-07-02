@@ -32,12 +32,22 @@ namespace SoundFingerPrinting.RecNote
         private static IAudioProvider AudioProvider { get { return (IAudioProvider)ctx.GetObject("AudioProvider"); } }
         static void Main(string[] args)
         {
+            if (args.Length > 0)
+            {
+                foreach (var arg in args)
+                {
+                    var file = FileProvider.FindByID(arg);
+                    if (file == null || file.GetType() == typeof(Files.AudioFile)) { continue; }
+                    Process(file);
+                }
+                return;
+            }
             while (true)
             {
                 var files = FileProvider.FindByType("mp3");
                 foreach(var file in files.Where(f => f.GetType() != typeof(Files.AudioFile)) )
                     Process(file);
-                Thread.Sleep(5000);
+                Thread.Sleep(1000);
             }
         }
 

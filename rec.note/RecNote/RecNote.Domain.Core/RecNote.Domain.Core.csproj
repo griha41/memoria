@@ -41,10 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Audios\IAudioProvider.cs" />
-    <Compile Include="Files\AudioComparedResultItem.cs" />
     <Compile Include="Files\IFileCompareProvider.cs" />
     <Compile Include="Files\IFileProvider.cs" />
-    <Compile Include="Files\ResultAudioCompared.cs" />
     <Compile Include="IProviderBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Projects\IProjectProvider.cs" />

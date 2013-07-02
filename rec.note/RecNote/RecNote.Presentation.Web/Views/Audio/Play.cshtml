@@ -1,7 +1,10 @@
 ﻿@{
     Layout = "~/Views/Shared/Control.cshtml";
 }
-@model RecNote.Entities.Audios.Audio
+@model RecNote.Presentation.Web.Models.Audio.Play
 <section id="audioPlay">
-    <audio src="@Url.Action("Reader", "Audio", new { audioID = Model.ID })" controls autoplay loop></audio>
+    <menu>
+        <a onclick="audio.close()" class="close"></a>
+    </menu>
+    <audio src="@Url.Action("Reader", "Audio", new { audioID = Model.Audio.ID })@((Model.Init.HasValue || Model.End.HasValue) ? string.Format("#t={0},{1}",(Model.Init),(Model.End)) : string.Empty)" controls autoplay loop></audio>
 </section>

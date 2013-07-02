@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Audios\Audio.cs" />
     <Compile Include="Base.cs" />
+    <Compile Include="Files\Compared\AudioComparedResult.cs" />
+    <Compile Include="Files\Compared\AudioComparedResultItem.cs" />
     <Compile Include="Files\File.cs" />
     <Compile Include="Files\AudioFile.cs" />
     <Compile Include="Projects\Actor.cs" />

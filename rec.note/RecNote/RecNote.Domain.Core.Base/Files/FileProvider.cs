@@ -41,5 +41,21 @@ namespace RecNote.Domain.Core.Base.Files
         {
             return this.FileData.FindByType(type);
         }
+
+
+        public TF FindByID<TF>(string fileID) where TF : Entities.Files.File
+        {
+            return this.GenericDataBase.FindByID<Entities.Files.File, TF>(fileID);
+        }
+
+
+        public byte[] GetFile(string fileID, int offset, int count)
+        {
+            var file = this.FindByID(fileID);
+            var bytes = new byte[count];
+            var f = File.OpenRead(file.FullPath);
+            f.Read(bytes,offset, count);
+            return bytes;
+        }
     }
 }

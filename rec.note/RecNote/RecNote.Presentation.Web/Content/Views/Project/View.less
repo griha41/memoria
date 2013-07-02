@@ -11,9 +11,9 @@
 			> menu {
 				float: right;
 				display: inline-block;
-				menu {
-					text-align: center;
-					padding: 0px;
+				> input[type=text] {
+						display: inline-block;
+						width: 200px;
 				}
 			}
 		}
@@ -90,6 +90,7 @@
 						width: 206px;
 						height: 136px;
 						overflow: hidden;
+						font-size: 12px;
 					}
 					> footer {
 						float: left;
@@ -199,4 +200,46 @@
 	width: 350px;
 	height: 50px;
 	z-index: 20;
+	background-color: @bodyColor;
+	a.close {
+		content: "";
+		float: right;
+		display: block;
+		width: 12px;
+		height: 12px;
+		background-color: transparent;
+		border: 0px;
+		margin: 0px;
+		padding: 0px;
+		margin-right: 10px;
+		background-image: url('@{imagePath}/common/x.png');
+	}
+}
+
+#audioSearch {
+	position: absolute;
+	right: 50px;
+	top: 150px;
+	left: 50px;
+	z-index: 30;
+	padding: 30px;
+	border: @border2;
+	.rounded ( 6px ); 
+	background-color: @bodyColor;
+	input[type=file] {
+		display: none;
+	}
+	a.close {
+		content: "";
+		float: right;
+		display: block;
+		width: 12px;
+		height: 12px;
+		background-color: transparent;
+		border: 0px;
+		margin: 0px;
+		padding: 0px;
+		margin-right: 10px;
+		background-image: url('@{imagePath}/common/x.png');
+	}
 }

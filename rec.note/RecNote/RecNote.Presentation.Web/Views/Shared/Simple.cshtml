@@ -52,11 +52,56 @@
             // rootpath: "http://local.recnote.cl/"// a path to add on to the start of every url
             //resource
         };
+
+        var customButtons = {
+            buttons: {
+                'addAudio': { name: __('Add an audio file'), type: 'addAudio', noClose: true }
+            }
+            , iconFiles: { 'addAudio': Util.url('Content/themes/recnote/common/addAudio.png') }
+        };
+        addAudio = nicEditorButton.extend({
+            mouseClick: function () {
+                window.currentEditElement = null;
+                window.currentEditElement = $('.nicEdit-main:focus');
+                if (window.currentEditElement.length > 0) {
+                    Util.post('Audio/Search', { projectID: project.currentID() }, function (html) {
+                        $('body').append(html);
+                        $('#Audio_File').fileupload({
+                            url: 'file/upload',
+                            start: function () { alert('subiendo archivo'); },
+                            done: function (e, data) {
+                                $('#audioSearch label').html('');
+                                $('#audioSearch #Audio_File').remove();
+                                var fileID = $('<input>')
+                                    .attr('type', 'hidden')
+                                    .attr('name', 'ProjectID')
+                                    .addClass('important')
+                                    .attr('value', data.result.file.id);
+
+                                $('#audioSearch label').append(fileID);
+                                $('#audioSearch label').append($('<span>').text(data.result.file.name));
+
+                                Util.post('Audio/Result', { projectID: project.currentID(), fileID: data.result.file.id }, function (result) {
+                                    $('#audioSearch > .result').html(result);
+                                });
+                            },
+                            autoUpload: true
+                        });
+                    });
+                }
+            }
+        });
+
         bkLib.onDomLoaded(
                 function () {
-                    Util.editor = new nicEditor({ iconsPath: '@Url.Content("~/Content/themes/NicEdit/nicEditorIcons.gif")', buttonList: ['bold', 'italic', 'underline', 'ol', 'ul'] });
+
+                    nicEditors.registerPlugin(nicPlugin, customButtons);
+
+                    Util.editor = new nicEditor({ iconsPath: '@Url.Content("~/Content/themes/NicEdit/nicEditorIcons.gif")', buttonList: ['bold', 'italic', 'underline', 'ol', 'ul','addAudio'] });
+
                 }
             );
+
     </script>
     <script src="@Url.Content("~/Content/Scripts/less.min.js")" type="text/javascript"></script>
 
