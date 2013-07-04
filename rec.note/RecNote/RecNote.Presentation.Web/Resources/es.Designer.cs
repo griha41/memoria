@@ -169,6 +169,24 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña RecNote.
+        /// </summary>
+        internal static string mail_password {
+            get {
+                return ResourceManager.GetString("mail.password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Su contraseña es:${password}.
+        /// </summary>
+        internal static string mail_passwordMessage {
+            get {
+                return ResourceManager.GetString("mail.passwordMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nuevo Audio.
         /// </summary>
         internal static string newAudio {

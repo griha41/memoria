@@ -24,6 +24,13 @@ namespace RecNote.Presentation.Web.Controllers
             return View();
         }
 
+        public ActionResult RecoveryPassword(string mail)
+        {
+            var user = this.UserProvider.FindByEmail(mail);
+            this.UserProvider.NewPassword(user);
+            return Json(true, JsonRequestBehavior.DenyGet);
+        }
+
         public ActionResult Login(Model.Login model)
         {
             if (model == null) model = new Model.Login { };

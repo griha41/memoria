@@ -184,6 +184,7 @@
     <Content Include="Content\themes\recnote\common\close.png" />
     <Content Include="Content\themes\recnote\common\play.png" />
     <Content Include="Content\themes\recnote\common\x.png" />
+    <Content Include="Content\Views\Home\Login.js" />
     <Content Include="Content\Views\ProjectItem\Preview.js" />
     <Content Include="Content\Views\Project\Menu.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -224,6 +225,14 @@
     <ProjectReference Include="..\RecNote.Entities\RecNote.Entities.csproj">
       <Project>{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}</Project>
       <Name>RecNote.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Services.Mailing.Gmail\RecNote.Services.Mailing.Gmail.csproj">
+      <Project>{17436bb3-83f3-4cbb-9072-92896bb5bc4e}</Project>
+      <Name>RecNote.Services.Mailing.Gmail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Services.Mailing\RecNote.Services.Mailing.csproj">
+      <Project>{5b0488f1-6305-4667-96a7-d164009a1dab}</Project>
+      <Name>RecNote.Services.Mailing</Name>
     </ProjectReference>
     <ProjectReference Include="..\RecNote.Utils.I18n.ResourcesFileImpl\RecNote.Utils.I18n.ResourcesFile.csproj">
       <Project>{11501FD5-97E6-4268-A946-5C8DEEF9D55A}</Project>

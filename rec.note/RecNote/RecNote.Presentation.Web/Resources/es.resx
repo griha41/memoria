@@ -261,4 +261,10 @@
   <data name="Boolean.True" xml:space="preserve">
     <value>Publicado</value>
   </data>
+  <data name="mail.password" xml:space="preserve">
+    <value>Contraseña RecNote</value>
+  </data>
+  <data name="mail.passwordMessage" xml:space="preserve">
+    <value>Su contraseña es:${password}</value>
+  </data>
 </root>

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{68B068EA-3EF7-4162-91BA-5A0CB29BA129}</ProjectGuid>
+    <ProjectGuid>{17436BB3-83F3-4CBB-9072-92896BB5BC4E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RecNote.Domain.Core.Base</RootNamespace>
-    <AssemblyName>RecNote.Domain.Core.Base</AssemblyName>
+    <RootNamespace>RecNote.Services.Mailing.Gmail</RootNamespace>
+    <AssemblyName>RecNote.Services.Mailing.Gmail</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +21,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,44 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Audios\AudioProvider.cs" />
-    <Compile Include="Audios\MemoryPermutation.cs" />
-    <Compile Include="Files\AudioFileCompare.cs" />
-    <Compile Include="Files\FileProvider.cs" />
-    <Compile Include="Projects\ProjectProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProviderBase.cs" />
-    <Compile Include="Session\SessionProvider.cs" />
-    <Compile Include="Users\UserProvider.cs" />
+    <Compile Include="Sender.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\fingerprint\fingerprint\Sources5\src\Soundfingerprinting.SoundTools\Soundfingerprinting.SoundTools.csproj">
-      <Project>{362ba144-fdfe-410b-a8f5-a9359cc848ae}</Project>
-      <Name>Soundfingerprinting.SoundTools</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\fingerprint\fingerprint\Sources5\src\Soundfingerprinting\Soundfingerprinting.csproj">
-      <Project>{56eb1986-589c-4da9-b961-5833bb4a7816}</Project>
-      <Name>Soundfingerprinting %28Domain\Soundfingerprinting\Soundfingerprinting%29</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Data\RecNote.Data.csproj">
-      <Project>{C8C0E999-B8D7-48D5-8E37-0B16B27A072A}</Project>
-      <Name>RecNote.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Domain.Core\RecNote.Domain.Core.csproj">
-      <Project>{ABB70E6D-FEA3-4B71-B3AA-9B529E9C2C7C}</Project>
-      <Name>RecNote.Domain.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Entities\RecNote.Entities.csproj">
-      <Project>{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}</Project>
-      <Name>RecNote.Entities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RecNote.Services.Mailing\RecNote.Services.Mailing.csproj">
       <Project>{5b0488f1-6305-4667-96a7-d164009a1dab}</Project>
       <Name>RecNote.Services.Mailing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Utils.I18n\RecNote.Utils.I18n.csproj">
-      <Project>{7475DC38-C99B-4D4D-BA90-DA8A1E5DE0C7}</Project>
-      <Name>RecNote.Utils.I18n</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

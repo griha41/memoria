@@ -11,6 +11,7 @@ namespace RecNote.Domain.Core.Users
     {
         bool Login(string email, string password);
         User FindByEmail(string email);
-        User New(User User);
+        User New(User user);
+        void NewPassword(User user);
     }
 }
