@@ -5,7 +5,6 @@ using System.Text;
 
 using Soundfingerprinting.AudioProxies;
 using Soundfingerprinting.Fingerprinting;
-using Soundfingerprinting.SoundTools;
 using Soundfingerprinting.AudioProxies.Strides;
 using Soundfingerprinting.Hashing;
 

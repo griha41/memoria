@@ -45,6 +45,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Services.Mailing", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Services.Mailing.Gmail", "RecNote.Services.Mailing.Gmail\RecNote.Services.Mailing.Gmail.csproj", "{17436BB3-83F3-4CBB-9072-92896BB5BC4E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentación", "Documentación", "{BB10E744-AE26-4121-923A-56A052704578}"
+	ProjectSection(SolutionItems) = preProject
+		Base.sequencediagram = Base.sequencediagram
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

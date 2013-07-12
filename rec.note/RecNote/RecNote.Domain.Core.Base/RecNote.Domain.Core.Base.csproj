@@ -52,10 +52,6 @@
     <Compile Include="Users\UserProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\fingerprint\fingerprint\Sources5\src\Soundfingerprinting.SoundTools\Soundfingerprinting.SoundTools.csproj">
-      <Project>{362ba144-fdfe-410b-a8f5-a9359cc848ae}</Project>
-      <Name>Soundfingerprinting.SoundTools</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\fingerprint\fingerprint\Sources5\src\Soundfingerprinting\Soundfingerprinting.csproj">
       <Project>{56eb1986-589c-4da9-b961-5833bb4a7816}</Project>
       <Name>Soundfingerprinting %28Domain\Soundfingerprinting\Soundfingerprinting%29</Name>
