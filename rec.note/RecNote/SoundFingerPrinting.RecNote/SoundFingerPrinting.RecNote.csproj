@@ -88,6 +88,11 @@
     <Compile Include="MemoryPermutation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="es.Designer.cs">
+      <DependentUpon>es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -102,7 +107,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\..\fingerprint\fingerprint\Sources5\src\Soundfingerprinting\Soundfingerprinting.csproj">
       <Project>{56eb1986-589c-4da9-b961-5833bb4a7816}</Project>
-      <Name>Soundfingerprinting %28Domain\Soundfingerprinting\Soundfingerprinting%29</Name>
+      <Name>Soundfingerprinting</Name>
     </ProjectReference>
     <ProjectReference Include="..\RecNote.Data.MongoDB\RecNote.Data.MongoDB.csproj">
       <Project>{3b212c30-4f29-4189-82f9-5f1107558362}</Project>
@@ -126,9 +131,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data.xml" />
+    <Content Include="Data.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Domain.xml">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SoundFingerPrint.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -158,6 +166,14 @@
       <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>es.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

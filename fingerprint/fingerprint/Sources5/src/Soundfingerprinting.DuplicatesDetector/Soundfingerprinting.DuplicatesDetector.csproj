@@ -238,7 +238,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Soundfingerprinting\Soundfingerprinting.csproj">
       <Project>{56EB1986-589C-4DA9-B961-5833BB4A7816}</Project>
-      <Name>Soundfingerprinting %28Domain\Soundfingerprinting\Soundfingerprinting%29</Name>
+      <Name>Soundfingerprinting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

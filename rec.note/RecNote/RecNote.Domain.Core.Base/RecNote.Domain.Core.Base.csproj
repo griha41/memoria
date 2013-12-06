@@ -54,7 +54,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\fingerprint\fingerprint\Sources5\src\Soundfingerprinting\Soundfingerprinting.csproj">
       <Project>{56eb1986-589c-4da9-b961-5833bb4a7816}</Project>
-      <Name>Soundfingerprinting %28Domain\Soundfingerprinting\Soundfingerprinting%29</Name>
+      <Name>Soundfingerprinting</Name>
     </ProjectReference>
     <ProjectReference Include="..\RecNote.Data\RecNote.Data.csproj">
       <Project>{C8C0E999-B8D7-48D5-8E37-0B16B27A072A}</Project>

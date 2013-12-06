@@ -3,7 +3,7 @@
 
   <object abstract="true" id="ProviderBase" >
     <property name="GenericDataBase" ref="GenericDataBase" />
-    <property name="I18n" ref="TextI18n" />
+    
   </object>
   
   
@@ -11,7 +11,7 @@
     <property name="emailAdmin" value="villarroel.gj@gmail.com" />
     <property name="passwordAdmin" value="recnote" />
     <property name="UserData" ref="UserData" />
-    <property name="Sender" ref="MailSender" />
+
   </object>
 
   <object id="ProjectProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Projects.ProjectProvider, RecNote.Domain.Core.Base" >

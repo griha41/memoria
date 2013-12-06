@@ -25,14 +25,5 @@
   <object id="AudioData" parent="DataBase" type="RecNote.Data.MongoDB.Audios.AudioData, RecNote.Data.MongoDB" >
   </object>
 
-  <object id="MailSender" type="RecNote.Services.Mailing.Gmail.Sender, RecNote.Services.Mailing.Gmail" >
-    <property name="User" value="recnotecl@gmail.com" />
-    <property name="DisplayUser" value="RecNote" />
-    <property name="Password" value=",.rec123?" />
-    <property name="Port" value="587" />
-    <property name="EnableSsl" value="true" />
-    <property name="Host" value="smtp.gmail.com" />
-    <property name="SmtpDeliveryMethod" value="Network" />
-  </object>
   
 </objects>
