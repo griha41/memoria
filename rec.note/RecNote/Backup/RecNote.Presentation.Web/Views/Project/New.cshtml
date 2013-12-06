@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.Project.Project
+<section id="projectNew">
+    <header>
+        <h2>@I18n.GetString("project.new.title")</h2>
+        <menu label="@I18n.GetString("actions")" >
+            <button type="button" class="link" onclick="project.cancel('#projectNew');" >@I18n.GetString("cancel")</button>
+            <button type="button" class="sub" onclick="project.save('#projectNew');">@I18n.GetString("save")</button>
+        </menu>
+    </header>
+    <section class="body">
+        <h3>@I18n.GetString("project.name")</h3>
+        @Html.HiddenFor(m => m.CurrentProject.ID)
+        @Html.TextBoxFor(m => m.CurrentProject.Name, new { placeholder = I18n.GetString("placeholder.project.name") })
+        <h3>@I18n.GetString("project.actors")</h3>
+        @Html.Action("NewActor", "Project", new { projectID = Model.CurrentProject.ID })
+        @Html.Action("ListActors", "Project", new { projectID = Model.CurrentProject.ID })
+    </section>
+    <footer></footer>
+</section>
+

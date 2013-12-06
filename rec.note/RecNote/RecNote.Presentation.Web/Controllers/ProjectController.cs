@@ -66,7 +66,7 @@ namespace RecNote.Presentation.Web.Controllers
             return null;
         }
 
-        public ActionResult View(string projectID)
+        public new ActionResult View(string projectID)
         {
             return View(new Model.Project
             {

@@ -5,6 +5,9 @@
 <ul>
     @foreach (var member in Model.CurrentProject.Actors)
     {
-        <li>@member.Name (@I18n.GetString(member.Role))</li>
+        <li>@member.Name (@I18n.GetString(member.Role)) 
+            @Html.Hidden("Actor.ID", member.ID)
+            <button class="close" value="Delete" onclick="project.removeActor($(this).parent());">x</button>
+        </li>
     }
 </ul>

@@ -22,6 +22,11 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
     <TargetFrameworkProfile />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +49,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="encog-core-cs">
       <HintPath>..\Externals\encog-core-cs.dll</HintPath>
     </Reference>
@@ -91,8 +97,10 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ReportController.cs" />
     <Compile Include="Controllers\AudioController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\FileController.cs" />
@@ -132,7 +140,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config\Desa\Util.xml" />
+    <Content Include="Config\Desa\Util.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Config\Desa\Data.xml" />
     <Content Include="Config\Desa\Domain.xml">
       <SubType>Designer</SubType>
@@ -184,6 +194,7 @@
     <Content Include="Content\themes\recnote\common\close.png" />
     <Content Include="Content\themes\recnote\common\play.png" />
     <Content Include="Content\themes\recnote\common\x.png" />
+    <Content Include="Content\Views\Home\Index.js" />
     <Content Include="Content\Views\Home\Login.js" />
     <Content Include="Content\Views\ProjectItem\Preview.js" />
     <Content Include="Content\Views\Project\Menu.js">
@@ -206,48 +217,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RecNote.Data.MongoDB\RecNote.Data.MongoDB.csproj">
-      <Project>{3B212C30-4F29-4189-82F9-5F1107558362}</Project>
-      <Name>RecNote.Data.MongoDB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Data\RecNote.Data.csproj">
-      <Project>{C8C0E999-B8D7-48D5-8E37-0B16B27A072A}</Project>
-      <Name>RecNote.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Domain.Core.Base\RecNote.Domain.Core.Base.csproj">
-      <Project>{68B068EA-3EF7-4162-91BA-5A0CB29BA129}</Project>
-      <Name>RecNote.Domain.Core.Base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Domain.Core\RecNote.Domain.Core.csproj">
-      <Project>{ABB70E6D-FEA3-4B71-B3AA-9B529E9C2C7C}</Project>
-      <Name>RecNote.Domain.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Entities\RecNote.Entities.csproj">
-      <Project>{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}</Project>
-      <Name>RecNote.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Services.Mailing.Gmail\RecNote.Services.Mailing.Gmail.csproj">
-      <Project>{17436bb3-83f3-4cbb-9072-92896bb5bc4e}</Project>
-      <Name>RecNote.Services.Mailing.Gmail</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Services.Mailing\RecNote.Services.Mailing.csproj">
-      <Project>{5b0488f1-6305-4667-96a7-d164009a1dab}</Project>
-      <Name>RecNote.Services.Mailing</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Utils.I18n.ResourcesFileImpl\RecNote.Utils.I18n.ResourcesFile.csproj">
-      <Project>{11501FD5-97E6-4268-A946-5C8DEEF9D55A}</Project>
-      <Name>RecNote.Utils.I18n.ResourcesFile</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Utils.I18n\RecNote.Utils.I18n.csproj">
-      <Project>{7475DC38-C99B-4D4D-BA90-DA8A1E5DE0C7}</Project>
-      <Name>RecNote.Utils.I18n</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RecNote.Utils.MvcExtensions\RecNote.Utils.MvcExtensions.csproj">
-      <Project>{E6762FA1-F93A-479C-A436-C0FF357827F1}</Project>
-      <Name>RecNote.Utils.MvcExtensions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -261,6 +230,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>es.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -320,12 +290,56 @@
     <Content Include="Views\ProjectItem\NewComment.cshtml" />
     <Content Include="Views\ProjectItem\ViewComment.cshtml" />
     <Content Include="Views\Audio\New.cshtml" />
+    <Content Include="Content\Views\Project\ListMembers.less" />
     <None Include="Properties\PublishProfiles\Amazon.pubxml" />
     <None Include="Properties\PublishProfiles\Perfil1.pubxml" />
     <Content Include="Views\Audio\Play.cshtml" />
     <Content Include="Views\Audio\Search.cshtml" />
     <Content Include="Views\Audio\Result.cshtml" />
     <Content Include="Views\ProjectItem\New.cshtml" />
+    <Content Include="Views\Report\Project.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RecNote.Data.MongoDB\RecNote.Data.MongoDB.csproj">
+      <Project>{3b212c30-4f29-4189-82f9-5f1107558362}</Project>
+      <Name>RecNote.Data.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Data\RecNote.Data.csproj">
+      <Project>{c8c0e999-b8d7-48d5-8e37-0b16b27a072a}</Project>
+      <Name>RecNote.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Domain.Core.Base\RecNote.Domain.Core.Base.csproj">
+      <Project>{68b068ea-3ef7-4162-91ba-5a0cb29ba129}</Project>
+      <Name>RecNote.Domain.Core.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Domain.Core\RecNote.Domain.Core.csproj">
+      <Project>{abb70e6d-fea3-4b71-b3aa-9b529e9c2c7c}</Project>
+      <Name>RecNote.Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Entities\RecNote.Entities.csproj">
+      <Project>{aa6ab421-6e0b-4dcf-9ae0-205a5acf3b59}</Project>
+      <Name>RecNote.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Services.Mailing.Gmail\RecNote.Services.Mailing.Gmail.csproj">
+      <Project>{17436bb3-83f3-4cbb-9072-92896bb5bc4e}</Project>
+      <Name>RecNote.Services.Mailing.Gmail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Services.Mailing\RecNote.Services.Mailing.csproj">
+      <Project>{5b0488f1-6305-4667-96a7-d164009a1dab}</Project>
+      <Name>RecNote.Services.Mailing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Utils.I18n.ResourcesFileImpl\RecNote.Utils.I18n.ResourcesFile.csproj">
+      <Project>{11501fd5-97e6-4268-a946-5c8deef9d55a}</Project>
+      <Name>RecNote.Utils.I18n.ResourcesFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Utils.I18n\RecNote.Utils.I18n.csproj">
+      <Project>{7475dc38-c99b-4d4d-ba90-da8a1e5de0c7}</Project>
+      <Name>RecNote.Utils.I18n</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Utils.MvcExtensions\RecNote.Utils.MvcExtensions.csproj">
+      <Project>{e6762fa1-f93a-479c-a436-c0ff357827f1}</Project>
+      <Name>RecNote.Utils.MvcExtensions</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>
@@ -351,7 +365,16 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://recnote.cl</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

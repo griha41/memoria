@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.ProjectItem.Preview
+<section id="projectView">
+    <header>
+        <h2>@I18n.GetString(Model.Type)
+            <menu>
+                @Html.TextBox("newDefinition", null, new { id = "newDefinition" })
+                <button onclick="projectItem.new('@Model.Project.ID', '@Model.Type', $('#newDefinition').val() )" >@I18n.GetString("+")</button>
+            </menu>
+        </h2>
+        
+    </header>
+    
+    <section class="body">
+        <section class="init">
+            @foreach (var item in Model.Items)
+            {
+                <section class="option">
+                    @Html.Action("Preview", "ProjectItem", new { Project = Model.Project, Items = item, type = Model.Type })
+                </section>
+            }
+        </section>
+    </section>
+
+
+    <footer>
+        
+    </footer>
+</section>

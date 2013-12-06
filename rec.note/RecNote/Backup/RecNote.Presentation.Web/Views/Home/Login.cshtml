@@ -1,0 +1,18 @@
+﻿@{ Layout = "~/Views/Shared/Void.cshtml"; }
+@model RecNote.Presentation.Web.Models.Home.Login
+<section id="homeLogin">
+    <header>@I18n.GetString("systemName")</header>
+    <section class="form">
+        <form>
+            <label>@I18n.GetString("username")</label>
+            @Html.TextBox("Username", Model.Username)
+            <label>
+                @I18n.GetString("password")
+                <a class="action" onclick="userPasswordRecovery();" >@I18n.GetString("recoveryPassword")</a>
+            </label>
+            @Html.Password("Password", Model.Password)
+            <input type="submit" value="@I18n.GetString("login")" />
+        </form>
+    </section>
+    <footer></footer>
+</section>

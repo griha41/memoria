@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Registro de generación de código/transformación de texto">
+  <MessageClass Name="Message" Label="Mensaje" Option="Mostrar mensajes informativos" />
+  <MessageClass Name="Warning" Label="Advertencia" Option="Mostrar advertencias" />
+  <MessageClass Name="Error" Label="Error" Option="Mostrar errores" />
+  <MessageClass Name="Property" Label="Propiedad" Option="Mostrar metadatos" />
+  <MessageClass Name="Diagnostic" Label="Mensaje" Option="Mostrar mensajes de diagnóstico" />
+  <Message Timestamp="2013-11-10T20:32:01" Importance="High" Text="Se inició la ingeniería inversa." />
+  <Message Timestamp="2013-11-10T20:32:02" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'ModelingRecNote::RecNote' -  (Package)" />
+  <Message Timestamp="2013-11-10T20:32:02" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'ModelingRecNote::RecNote::Entities' -  (Package)" />
+  <Message Timestamp="2013-11-10T20:32:02" Importance="Medium" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'ModelingRecNote::RecNote::Entities::Base' -  (Class)" />
+  <Message Timestamp="2013-11-10T20:32:02" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'ModelingRecNote::RecNote::Entities::Base::Base' -  (Operation)" />
+  <Message Timestamp="2013-11-10T20:32:02" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'ModelingRecNote::RecNote::Entities::Base::ID' -  (Property)" />
+  <Message Timestamp="2013-11-10T20:32:02" Importance="Diagnostic" Text="Se realizó ingeniería inversa del elemento en el modelo UML: 'String' -  (PrimitiveType)" />
+  <Message Timestamp="2013-11-10T20:32:02" Importance="High" Text="Se realizó ingeniería inversa total de los siguientes tipos: (1)." />
+  <Message Timestamp="2013-11-10T20:32:02" Importance="High" Text="La operación de ingeniería inversa se completó con (0) errores y (0) advertencias." />
+</Log>

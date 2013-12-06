@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model List<RecNote.Presentation.Web.Models.Audio.Partial>
+
+<section id="audioResult">
+    @foreach (var e in Model.OrderByDescending(p => p.Similitary))
+    {
+        <article >
+            <h3>@e.Audio.Name, @e.Audio.ID</h3>
+            <audio id="@e.Init" similitary="@e.Similitary" controls
+                ontimeupdate="document.getElementById('tracktime').innerHTML = Math.floor(this.currentTime) + ' / ' + Math.floor(this.duration);"
+                >
+                <source src="@Url.Action("Reader", "Audio", new { audioID = e.Audio.ID })#t=@e.Init,@e.End" type="audio/mp3" />
+            </audio>
+            <button onclick="audio.reference('@e.Audio.ID',@e.Init, @e.End)" >@I18n.GetString("addAudio")</button>
+        </article>
+    }
+</section>

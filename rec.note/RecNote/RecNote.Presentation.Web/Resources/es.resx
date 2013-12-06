@@ -267,4 +267,16 @@
   <data name="mail.passwordMessage" xml:space="preserve">
     <value>Su contraseña es:${password}</value>
   </data>
+  <data name="members" xml:space="preserve">
+    <value>${count} Participante(s)</value>
+  </data>
+  <data name="newMember" xml:space="preserve">
+    <value>Nuevo participante</value>
+  </data>
+  <data name="RoleType.Developer" xml:space="preserve">
+    <value>Desarrollador</value>
+  </data>
+  <data name="export" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
 </root>

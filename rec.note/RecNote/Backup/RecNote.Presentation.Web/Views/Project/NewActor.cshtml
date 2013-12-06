@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.Project.Actor
+<section id="projectNewActor">
+        @Html.HiddenFor(u => u.ProjectID)
+        @Html.HiddenFor(u => u.User.ID)
+        @Html.TextBoxFor(u => u.User.Name, new { placeholder = I18n.GetString("placeholder.actor.name") })
+        @Html.DropDownListFor(u => u.User.Role, Model.User.Role)
+        @Html.TextBoxFor(u => u.User.Email, new { placeholder = I18n.GetString("placeholder.actor.email") })
+        <button name="Action" value="@ActionType.Save" onclick="project.saveNewActor()" >@I18n.GetString("project.actor.save")</button>
+</section>

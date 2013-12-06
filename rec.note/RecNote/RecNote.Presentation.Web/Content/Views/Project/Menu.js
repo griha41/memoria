@@ -62,7 +62,7 @@ project.removeActor = function(container)
 {
     var actorID = $('input[name="Actor.ID"]', container).val();
 
-    Util.post('Project/RemoveActor', { projectID : project.currentID(), actorID : actorID },
+    Util.post('Project/RemoveActor', { projectID: project.currentID(), "User.ID" : actorID  },
     function(){
         $(container).remove();
     });

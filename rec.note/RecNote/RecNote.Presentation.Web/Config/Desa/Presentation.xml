@@ -13,11 +13,15 @@
     <property name="ProjectProvider" ref="ProjectProvider" />
     <property name="UserProvider" ref="UserProvider" />
   </object>
-  
+
+  <object id="ReportController" parent="BaseController" type="RecNote.Presentation.Web.Controllers.ReportController, RecNote.Presentation.Web" singleton="false" >
+    <property name="ProjectProvider" ref="ProjectProvider" />
+  </object>
 
   <object id="BaseController" abstract="true" >
     <property name="SessionProvider" ref="SessionProvider" />
     <property name="SessionName" value="SessionID" />
+    <property name="I18n" ref="TextI18n" />
   </object>
 
 

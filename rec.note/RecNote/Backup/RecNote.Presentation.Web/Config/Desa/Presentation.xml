@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  
+  <object id="HomeController" parent="BaseController" type="RecNote.Presentation.Web.Controllers.HomeController, RecNote.Presentation.Web" singleton="false" >
+    <property name="UserProvider" ref="UserProvider" />
+  </object>
+
+  <object id="ProjectController" parent="BaseController" type="RecNote.Presentation.Web.Controllers.ProjectController, RecNote.Presentation.Web" singleton="false" >
+    <property name="ProjectProvider" ref="ProjectProvider" />
+  </object>
+  
+  <object id="ProjectItemController" parent="BaseController" type="RecNote.Presentation.Web.Controllers.ProjectItemController, RecNote.Presentation.Web" singleton="false" >
+    <property name="ProjectProvider" ref="ProjectProvider" />
+    <property name="UserProvider" ref="UserProvider" />
+  </object>
+  
+
+  <object id="BaseController" abstract="true" >
+    <property name="SessionProvider" ref="SessionProvider" />
+    <property name="SessionName" value="SessionID" />
+  </object>
+
+
+  <object id="SessionCookieAttribute"  type="RecNote.Presentation.Web.Filters.SessionCookieAttribute, RecNote.Presentation.Web"  >
+    <property name="SessionProvider" ref="SessionProvider" />
+    <property name="SessionName" value="SessionID" />
+  </object>
+  
+  
+  <object id="FileController" type="RecNote.Presentation.Web.Controllers.FileController, RecNote.Presentation.Web"  singleton="false" >
+    <property name="FileProvider" ref="FileProvider" />
+  </object>
+
+  <object id="AudioController" type="RecNote.Presentation.Web.Controllers.AudioController, RecNote.Presentation.Web"  singleton="false" >
+    <property name="AudioProvider" ref="AudioProvider" />
+    <property name="FileProvider" ref="FileProvider" />
+    <property name="InitialSecondsDelay" value="1" />
+    <property name="Similarity" value="0.4" />
+  </object>
+
+  
+
+</objects>

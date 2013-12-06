@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{092FB7E8-5C7C-42C3-AF61-306C8F37CAAE}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RecNote.Presentation.Web</RootNamespace>
+    <AssemblyName>RecNote.Presentation.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="encog-core-cs">
+      <HintPath>..\Externals\encog-core-cs.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\libs\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net">
+      <HintPath>..\libs\Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Lib.Web.Mvc">
+      <HintPath>..\libs\Lib.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\libs\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.0.2.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core">
+      <HintPath>..\libs\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AudioController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\FileController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ProjectItemController.cs" />
+    <Compile Include="Controllers\ResourcesController.cs" />
+    <Compile Include="Filters\SessionCookieAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CurrentData.cs" />
+    <Compile Include="Helpers\I18n.cs" />
+    <Compile Include="Helpers\Util.cs" />
+    <Compile Include="Models\ActionResults\PartialFile.cs" />
+    <Compile Include="Models\ActionType.cs" />
+    <Compile Include="Models\Audio\List.cs" />
+    <Compile Include="Models\Audio\New.cs" />
+    <Compile Include="Models\Audio\Partial.cs" />
+    <Compile Include="Models\Audio\Play.cs" />
+    <Compile Include="Models\DependencyResolver.cs" />
+    <Compile Include="Models\Global.cs" />
+    <Compile Include="Models\Home\Login.cs" />
+    <Compile Include="Models\ProjectItem\ListComments.cs" />
+    <Compile Include="Models\ProjectItem\Preview.cs" />
+    <Compile Include="Models\ProjectItem\View.cs" />
+    <Compile Include="Models\ProjectItem\ViewComment.cs" />
+    <Compile Include="Models\Project\Actor.cs" />
+    <Compile Include="Models\Project\List.cs" />
+    <Compile Include="Models\Project\Project.cs" />
+    <Compile Include="Models\ViewEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>es.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\Desa\Util.xml" />
+    <Content Include="Config\Desa\Data.xml" />
+    <Content Include="Config\Desa\Domain.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\Desa\Presentation.xml" />
+    <Content Include="Content\Audio\7.MP3" />
+    <Content Include="Content\Css\jquery.fileupload-ui.css" />
+    <Content Include="Content\Scripts\cors\jquery.postmessage-transport.js" />
+    <Content Include="Content\Scripts\cors\jquery.xdr-transport.js" />
+    <Content Include="Content\Scripts\jquery.fileupload-fp.js" />
+    <Content Include="Content\Scripts\jquery.fileupload-jui.js" />
+    <Content Include="Content\Scripts\jquery.fileupload-ui.js" />
+    <Content Include="Content\Scripts\jquery.fileupload.js" />
+    <Content Include="Content\Scripts\jquery.iframe-transport.js" />
+    <Content Include="Content\Scripts\less.min.js" />
+    <Content Include="Content\Scripts\main.js" />
+    <Content Include="Content\Scripts\Util.js" />
+    <Content Include="Content\Scripts\vendor\jquery.ui.widget.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\NicEdit\nicEdit.js" />
+    <Content Include="Content\themes\NicEdit\nicEditorIcons.gif" />
+    <Content Include="Content\themes\recnote\common\addAudio.png" />
+    <Content Include="Content\themes\recnote\common\close.png" />
+    <Content Include="Content\themes\recnote\common\play.png" />
+    <Content Include="Content\themes\recnote\common\x.png" />
+    <Content Include="Content\Views\Home\Login.js" />
+    <Content Include="Content\Views\ProjectItem\Preview.js" />
+    <Content Include="Content\Views\Project\Menu.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RecNote.Data.MongoDB\RecNote.Data.MongoDB.csproj">
+      <Project>{3B212C30-4F29-4189-82F9-5F1107558362}</Project>
+      <Name>RecNote.Data.MongoDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Data\RecNote.Data.csproj">
+      <Project>{C8C0E999-B8D7-48D5-8E37-0B16B27A072A}</Project>
+      <Name>RecNote.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Domain.Core.Base\RecNote.Domain.Core.Base.csproj">
+      <Project>{68B068EA-3EF7-4162-91BA-5A0CB29BA129}</Project>
+      <Name>RecNote.Domain.Core.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Domain.Core\RecNote.Domain.Core.csproj">
+      <Project>{ABB70E6D-FEA3-4B71-B3AA-9B529E9C2C7C}</Project>
+      <Name>RecNote.Domain.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Entities\RecNote.Entities.csproj">
+      <Project>{AA6AB421-6E0B-4DCF-9AE0-205A5ACF3B59}</Project>
+      <Name>RecNote.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Services.Mailing.Gmail\RecNote.Services.Mailing.Gmail.csproj">
+      <Project>{17436bb3-83f3-4cbb-9072-92896bb5bc4e}</Project>
+      <Name>RecNote.Services.Mailing.Gmail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Services.Mailing\RecNote.Services.Mailing.csproj">
+      <Project>{5b0488f1-6305-4667-96a7-d164009a1dab}</Project>
+      <Name>RecNote.Services.Mailing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Utils.I18n.ResourcesFileImpl\RecNote.Utils.I18n.ResourcesFile.csproj">
+      <Project>{11501FD5-97E6-4268-A946-5C8DEEF9D55A}</Project>
+      <Name>RecNote.Utils.I18n.ResourcesFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Utils.I18n\RecNote.Utils.I18n.csproj">
+      <Project>{7475DC38-C99B-4D4D-BA90-DA8A1E5DE0C7}</Project>
+      <Name>RecNote.Utils.I18n</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RecNote.Utils.MvcExtensions\RecNote.Utils.MvcExtensions.csproj">
+      <Project>{E6762FA1-F93A-479C-A436-C0FF357827F1}</Project>
+      <Name>RecNote.Utils.MvcExtensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Simple.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>es.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Audio\e.ogg" />
+    <None Include="Content\Css\Default.less">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+    </None>
+    <None Include="Content\Css\vars.less">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+    </None>
+    <Content Include="Content\Views\Home\Login.less">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\Void.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Control.cshtml" />
+    <Content Include="Views\Project\Menu.cshtml" />
+    <Content Include="Content\Views\Project\View.less">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Views\Project\ListActors.less">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Views\Project\Menu.less">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Project\New.cshtml" />
+    <Content Include="Content\Views\Project\New.less">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Project\NewActor.cshtml" />
+    <Content Include="Content\Views\Project\NewActor.less">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Project\ListActors.cshtml" />
+    <Content Include="Views\Project\List.cshtml" />
+    <Content Include="Views\Project\View.cshtml" />
+    <Content Include="Views\ProjectItem\Preview.cshtml" />
+    <Content Include="Views\Audio\List.cshtml" />
+    <Content Include="Views\ProjectItem\Edit.cshtml" />
+    <Content Include="Views\ProjectItem\View.cshtml" />
+    <Content Include="Content\Views\ProjectItem\View.less" />
+    <Content Include="Views\ProjectItem\PreviewResume.cshtml" />
+    <Content Include="Views\ProjectItem\ViewArray.cshtml" />
+    <Content Include="Views\Project\ListMembers.cshtml" />
+    <Content Include="Views\ProjectItem\ListComments.cshtml" />
+    <Content Include="Views\ProjectItem\NewComment.cshtml" />
+    <Content Include="Views\ProjectItem\ViewComment.cshtml" />
+    <Content Include="Views\Audio\New.cshtml" />
+    <None Include="Properties\PublishProfiles\Amazon.pubxml" />
+    <None Include="Properties\PublishProfiles\Perfil1.pubxml" />
+    <Content Include="Views\Audio\Play.cshtml" />
+    <Content Include="Views\Audio\Search.cshtml" />
+    <Content Include="Views\Audio\Result.cshtml" />
+    <Content Include="Views\ProjectItem\New.cshtml" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

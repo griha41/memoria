@@ -27,7 +27,8 @@ namespace RecNote.Presentation.Web.Controllers
         public ActionResult RecoveryPassword(string mail)
         {
             var user = this.UserProvider.FindByEmail(mail);
-            this.UserProvider.NewPassword(user);
+            if(user != null)
+                this.UserProvider.NewPassword(user);
             return Json(true, JsonRequestBehavior.DenyGet);
         }
 
@@ -47,6 +48,13 @@ namespace RecNote.Presentation.Web.Controllers
             }
 
             return View("Login", model);
+        }
+
+        public ActionResult Close()
+        {
+            MvcApplication.CurrentUser = null;
+            Response.SetCookie(new HttpCookie("SessionID", "") { Expires = DateTime.Now.AddDays(-1) });
+            return Json(true);
         }
 
     }

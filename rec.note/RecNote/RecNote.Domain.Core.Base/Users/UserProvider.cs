@@ -52,7 +52,7 @@ namespace RecNote.Domain.Core.Base.Users
 
         public User New(User User)
         {
-            var user = this.FindByEmail(User.Email);
+            var user = this.FindByEmail(User.Email) ?? User;
             if (user != null)
                 User.ID = user.ID;
 

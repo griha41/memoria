@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.ProjectItem.View
+<section id="projectItemView">
+    <section >
+        <header>
+            <h2>
+                @Html.TextBoxFor(p => p.Item.Name)
+            </h2>
+            <menu>
+                <button id="projectItemSave" class="link" onclick="endEdit()" style="display:none;" >@I18n.GetString("save")</button>
+                <button id="projectItemEdit" class="link" onclick="beginEdit()" >@I18n.GetString("edit")</button>
+                <button class="publish"  style="@(Model.Item.IsPublic ? "display:none" : string.Empty)" publish="true" onclick="publish(true)" >@I18n.GetString("publish")</button>
+                <button class="publish" style="@(!Model.Item.IsPublic ? "display:none" : string.Empty)" publish="false" onclick="publish(false)" >@I18n.GetString("unpublish")</button>
+            </menu>
+        </header>
+        <div id="Item_Data">
+            @Html.Raw( Model.Item.Data )
+        </div>
+    </section>
+    <footer>
+        
+    </footer>
+
+    <script type="text/javascript">
+        var currentEditor = null;
+        var currentData = @Html.Raw(Json.Encode(Model.Item));
+        currentData.projectID = '@Model.Project.ID';
+        currentData.initName = '@Model.Item.Name';
+        currentData.type = '@Model.Type';
+        delete currentData.Comments;
+
+        var beginEdit = function () {
+            Util.post('ProjectItem/AllowEdit', { projectID: '@Model.Project.ID', name: '@Model.Item.Name', type: '@Model.Type' },
+                function (data) {
+                    currentData = data;
+                    $('#Item_Data').html(data.Data);
+                    currentEditor = Util.editor.panelInstance('Item_Data', { hasPanel: true });
+                    $('#projectItemSave').show();
+                    $('#projectItemEdit').hide();
+                });
+        };
+        var endEdit = function () {
+            if (currentEditor != null) {
+                currentData.Data = nicEditors.findEditor('Item_Data').getContent();
+                currentData.projectID = '@Model.Project.ID';
+                currentData.initName = '@Model.Item.Name';
+                currentData.type = '@Model.Type';
+                delete currentData.Comments;
+                Util.post('ProjectItem/SaveItem', currentData,
+                    function (result) {
+
+                        $('#projectItemSave').hide();
+                        $('#projectItemEdit').show();
+                        currentEditor.removeInstance('Item_Data');
+                    });
+            }
+        };
+        var publish = function(publish) {
+            Util.post('ProjectItem/Publish', { projectID: '@Model.Project.ID', name: '@Model.Item.Name', type: '@Model.Type', publish: publish  },
+                function(result)
+                {
+                    if(publish)
+                    {
+                        $('.publish[publish=true]').hide();
+                        $('.publish[publish=false]').show();
+                    }
+                    else
+                    {
+                        $('.publish[publish=true]').show();
+                        $('.publish[publish=false]').hide();
+                    }
+                });
+        };
+    </script>
+    
+</section>

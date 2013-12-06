@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.Project.List
+<section id="projectList">
+    <nav>
+        <ul>
+            @foreach (var restrictedProject in Model.RestrictedProjects)
+            {   
+                <li projectID="@restrictedProject.Project.ID" onclick="project.view('@restrictedProject.Project.ID');">@restrictedProject.Project.Name</li>       
+            }
+        </ul>
+    </nav>
+</section>

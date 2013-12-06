@@ -147,9 +147,23 @@ button.link {
 	margin: 0px;
 	padding: 0px;
 }
-button.sub {
+a.sub {
+    border: 0px;
+	font-weight: bold;
+	color: @textoBoton;
+	background-color: @buttonColor;
+	font-size: 18px;
+	line-height: 40px;
+	padding-left: 12px;
+	padding-right: 12px;
+	.rounded;
+	cursor: pointer;
+	font-family: Arial;
+}
+button.sub, a.sub {
 	background-color: @buttonColor2;
 	font-size: 15px;
+    display: inline-block;
 }
 h1,h2,h3,h4 {
 	margin: 5px 0px 0px 0px;

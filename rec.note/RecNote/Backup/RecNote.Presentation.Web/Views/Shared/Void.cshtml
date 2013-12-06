@@ -1,0 +1,47 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>REC.note</title>
+    <script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js" ></script>
+    <link rel="stylesheet/less" type="text/css" href="@Url.Content("~/Content/Css/Default.less")" />
+    <script language="javascript" type="text/javascript" src="@Url.Content("~/Content/Scripts/Util.js")" ></script>
+    <script src="@Url.Content("Content/themes/NicEdit/nicEdit.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.baseUrl = '@Url.GetBaseUrl()';
+        less = {
+            env: "development", // or "production"
+            async: false,       // load imports async
+            fileAsync: false,   // load imports async when in a page under
+            // a file protocol
+            poll: 1000,         // when in watch mode, time in ms between polls
+            functions: {},      // user functions, keyed by name
+            dumpLineNumbers: "comments", // or "mediaQuery" or "all"
+            relativeUrls: false, // whether to adjust url's to be relative
+            // if false, url's are already relative to the
+            // entry less file
+            rootpath: ":/a.com/"// a path to add on to the start of every url
+            //resource
+        };
+        bkLib.onDomLoaded(
+                function () {
+                    Util.editor = new nicEditor({ iconsPath: '@Url.Content("~/Content/themes/NicEdit/nicEditorIcons.gif")' });
+                }
+            );
+        
+    </script>
+    <script src="@Url.Content("~/Content/Scripts/less.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    <header></header>
+    <section id="main">
+        @RenderBody()
+    </section>
+    <footer></footer>
+    @Url.GetDynamicFiles()
+</body>
+</html>

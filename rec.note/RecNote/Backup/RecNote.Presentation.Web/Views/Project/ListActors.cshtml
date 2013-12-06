@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Entities.Projects.Project
+
+<section id="projectListActors">
+@if (Model.Actors != null)
+{
+    foreach (var actor in Model.Actors)
+    {
+    <section class="actor">
+        @Html.Hidden("Actor.ID", actor.ID)
+        <menu>
+            <button class="hidden close" value="@ActionType.Delete" onclick="project.removeActor($(this).first().parent().parent());" >@I18n.GetString("actor.delete")</button>
+        </menu>
+        <name>@actor.Name</name>
+        <role>@actor.Role</role>
+        <email>@actor.Email</email>
+    </section>
+    }
+}
+
+</section>

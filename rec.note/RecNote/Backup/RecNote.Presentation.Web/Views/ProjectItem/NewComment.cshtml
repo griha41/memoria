@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.ProjectItem.View
+<section id="projectItemNewComment" >
+    <h2>@I18n.GetString("newComment.tile")
+        @Html.HiddenFor(m => m.Project.ID)
+        @Html.HiddenFor(m => m.Item.Name)
+        @Html.HiddenFor(m => m.Type)
+        <menu>
+            <button class="link" onclick="$('#projectItemNewComment').remove();" >@I18n.GetString("cancel")</button>
+        </menu>
+    </h2>
+    <section>
+        <div id="projectItemCommentData"></div>
+        <button onclick="projectItem.addComment();" >@I18n.GetString("addComment")</button>
+    </section>
+    
+</section>

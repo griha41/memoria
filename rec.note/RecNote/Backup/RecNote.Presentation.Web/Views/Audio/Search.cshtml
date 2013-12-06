@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+<section id="audioSearch">
+    <h2>@I18n.GetString("search")</h2>
+    <a class="close" onclick="$('#audioSearch').remove();" ></a>
+    <label>
+        @I18n.GetString("attachAudio")
+        <input accept="audio/*" type="file" id="Audio_File" name="Audio.File[]"  multiple>
+        <button onclick="explore">@I18n.GetString("explore")</button>
+    </label>
+    <section class="result">
+
+    </section>
+</section>
+

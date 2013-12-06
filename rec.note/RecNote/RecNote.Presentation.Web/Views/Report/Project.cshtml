@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+@model RecNote.Entities.Projects.Project
+
+<body>
+    <h1>@Model.Name</h1>
+    <h2>@I18n.GetString("project.definition.introducction")</h2>
+    <p>@Html.Raw(Model.Definition.Introducction.Data)</p>
+    <h2>@I18n.GetString("project.definition.currentSystem")</h2>
+    <p>@Html.Raw(Model.Definition.CurrentSystem.Data)</p>
+    
+    
+    <h2>@I18n.GetString("project.definition.actors")</h2>
+    @foreach (var e in Model.Definition.Actors)
+    {
+        <h2>@e.Name</h2>
+        <p>@Html.Raw(e.Data)</p>
+    }
+
+    <h2>@I18n.GetString("project.definition.objetives")</h2>
+    @foreach (var e in Model.Definition.Objetives)
+    {
+        <h2>@e.Name</h2>
+        <p>@Html.Raw(e.Data)</p>
+    }
+
+    <h2>@I18n.GetString("project.requirements.functionals")</h2>
+    @foreach (var e in Model.Requirements.Functionals)
+    {
+        <h2>@e.Name</h2>
+        <p>@Html.Raw(e.Data)</p>
+    }
+
+    <h2>@I18n.GetString("project.requirements.notfunctionals")</h2>
+    @foreach (var e in Model.Requirements.NotFunctionals)
+    {
+        <h2>@e.Name</h2>
+        <p>@Html.Raw(e.Data)</p>
+    }
+
+    <h2>@I18n.GetString("project.requirements.informations")</h2>
+    @foreach (var e in Model.Requirements.Informations)
+    {
+        <h2>@e.Name</h2>
+        <p>@Html.Raw(e.Data)</p>
+    }
+
+</body>
