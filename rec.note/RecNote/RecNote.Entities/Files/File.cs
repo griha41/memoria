@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using MongoDB.Bson.Serialization.Attributes;
 using System.Data;
+using System.Runtime.Serialization;
 
 namespace RecNote.Entities.Files
 {
     [BsonKnownTypes(typeof(Files.AudioFile))]
     [BsonDiscriminator(RootClass = true)]
+    [Serializable]
     public class File : Entities.Base
     {
         

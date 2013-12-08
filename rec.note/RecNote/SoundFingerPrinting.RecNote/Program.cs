@@ -82,7 +82,7 @@ namespace SoundFingerPrinting.RecNote
             manager.MaxFrequency = 2048;
             manager.MinFrequency = 512;
 
-            float[][] spec = manager.CreateSpectrogram(proxy, audio.AlterPath, 0, 0);
+            //float[][] spec = manager.CreateSpectrogram(proxy, audio.AlterPath, 0, 0);
 
             var StaticStride = new StaticStride(0);
 

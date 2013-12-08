@@ -57,5 +57,15 @@ namespace RecNote.Domain.Core.Base.Files
             f.Read(bytes,offset, count);
             return bytes;
         }
+
+        public override Entities.Files.File Save(Entities.Files.File entry)
+        {
+            return this.FileData.Save(entry);
+        }
+
+        public override Entities.Files.File FindByID(string id)
+        {
+            return this.FileData.FindByID(id);
+        }
     }
 }

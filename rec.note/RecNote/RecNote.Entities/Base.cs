@@ -8,6 +8,7 @@ using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace RecNote.Entities
 {
+    [Serializable]
     public class Base
     {
         [BsonId]
