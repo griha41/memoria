@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Registro de generación de código/transformación de texto">
+  <MessageClass Name="Message" Label="Mensaje" Option="Mostrar mensajes informativos" />
+  <MessageClass Name="Warning" Label="Advertencia" Option="Mostrar advertencias" />
+  <MessageClass Name="Error" Label="Error" Option="Mostrar errores" />
+  <MessageClass Name="Property" Label="Propiedad" Option="Mostrar metadatos" />
+  <MessageClass Name="Diagnostic" Label="Mensaje" Option="Mostrar mensajes de diagnóstico" />
+  <Message Timestamp="2013-12-12T17:44:21" Importance="High" Text="Se inició la generación de código o la transformación de texto." />
+  <Message Timestamp="2013-12-12T17:44:21" Importance="Diagnostic" Text="Nombre = ClassTemplate" />
+  <Message Timestamp="2013-12-12T17:44:21" Importance="Diagnostic" Text="Sobrescribir = True" />
+  <Message Timestamp="2013-12-12T17:44:21" Importance="Diagnostic" Text="ProjectPath = ..\ModelingRecNoteLib\ModelingRecNoteLib.csproj" />
+  <Message Timestamp="2013-12-12T17:44:21" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2013-12-12T17:44:21" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2013-12-12T17:44:21" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2013-12-12T17:44:21" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2013-12-12T17:44:21" Importance="Medium" Text="Enlace de plantilla de texto de ModelingRecNote: 'ClassTemplate' aplicará ClassTemplate.t4 a: 'ModelingRecNote::System::DateTime' -  (Class) " />
+  <Message Timestamp="2013-12-12T17:44:27" Importance="Diagnostic" Text="'ModelingRecNote::System::DateTime' -  (Class): no se generó ningún archivo porque el método 'AppliesToElement' de la plantilla 'ClassTemplate.t4' se evaluó como false." />
+  <Message Timestamp="2013-12-12T17:44:27" Importance="Diagnostic" Text="Nombre = StructTemplate" />
+  <Message Timestamp="2013-12-12T17:44:27" Importance="Diagnostic" Text="Sobrescribir = True" />
+  <Message Timestamp="2013-12-12T17:44:27" Importance="Diagnostic" Text="ProjectPath = ..\ModelingRecNoteLib\ModelingRecNoteLib.csproj" />
+  <Message Timestamp="2013-12-12T17:44:27" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2013-12-12T17:44:27" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2013-12-12T17:44:27" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2013-12-12T17:44:27" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2013-12-12T17:44:27" Importance="Medium" Text="Enlace de plantilla de texto de ModelingRecNote: 'StructTemplate' aplicará StructTemplate.t4 a: 'ModelingRecNote::System::DateTime' -  (Class) " />
+  <Message Timestamp="2013-12-12T17:44:30" Importance="Medium" Text="Proyecto agregado: C:\Users\villa_000\dev\memoria\rec.note\RecNote\ModelingRecNoteLib\ModelingRecNoteLib.csproj" />
+  <Message Timestamp="2013-12-12T17:44:30" Importance="Medium" Text="'ModelingRecNote::System::DateTime' -  (Class): correcto (archivo creado) - C:\Users\villa_000\dev\memoria\rec.note\RecNote\ModelingRecNoteLib\GeneratedCode\System\DateTime.cs" />
+  <Message Timestamp="2013-12-12T17:44:31" Importance="Diagnostic" Text="La selección incluía 3 elementos que no estaban enlazados a una plantilla." />
+  <Message Timestamp="2013-12-12T17:44:31" Importance="Diagnostic" Text="'ModelingRecNote' -  (ModelStoreModel): sin plantilla enlazada." />
+  <Message Timestamp="2013-12-12T17:44:31" Importance="Diagnostic" Text="'ModelingRecNote::System' -  (Package): sin plantilla enlazada." />
+  <Message Timestamp="2013-12-12T17:44:31" Importance="Diagnostic" Text="'b23f634a-572d-40cf-82a5-940205393d41' -  (PackageHasProfileInstances): sin plantilla enlazada." />
+  <Message Timestamp="2013-12-12T17:44:31" Importance="High" Text="Generación de código completa. Errores: 0. Advertencias: 0." />
+</Log>

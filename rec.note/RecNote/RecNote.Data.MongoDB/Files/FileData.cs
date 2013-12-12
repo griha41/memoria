@@ -31,58 +31,60 @@ namespace RecNote.Data.MongoDB.Files
         public override Entities.Files.File Save(Entities.Files.File entry)
         {
             //return base.Save(entry);
-            if (entry != null && entry.GetType() == typeof(RecNote.Entities.Files.AudioFile))
+            if( entry != null && entry.GetType() == typeof(Entities.Files.AudioFile))
             {
-                var audio = (Entities.Files.AudioFile) entry;
-                if(string.IsNullOrEmpty(audio.AudioID))
-                { 
-                    var file = SerializeToStream(audio);
-                    var name = audio.AlterPath + ".key";
+                var audio = (Entities.Files.AudioFile)entry;
+                var keys = audio.Finger.Select(p => new Key { Length = p.Length, Bytes = this.ToByte(p) });
+                var file = File.Create(audio.AlterPath + ".key");
 
-                    using (FileStream f = new FileStream(name, FileMode.Create, System.IO.FileAccess.Write))
-                    {
-                        byte[] bytes = new byte[file.Length];
-                        file.Read(bytes, 0, (int)file.Length);
-                        f.Write(bytes, 0, bytes.Length);
-                        //file.Close();
-                        f.Close();
-                    }
+                var count = BitConverter.GetBytes(keys.Count());
 
+                file.Write(count, 0, 4);
 
-                    var info = this.GenericDataBase.MongoDataBase.GridFS.Upload(name, name);
-                    
-
-
-                    audio.Finger = new bool[][] {};
-                    audio.AudioID = info.Id.ToString();
+                foreach (var k in keys)
+                {
+                    file.Write(BitConverter.GetBytes(k.Bytes.Length), 0, 4);
+                    file.Write(BitConverter.GetBytes(k.Length), 0, 4);
+                    file.Write(k.Bytes, 0, k.Bytes.Length);
                 }
-                base.Save(audio);
+                file.Close();
+                audio.Finger = new bool[][] { };
+                return base.Save(audio);
             }
-            return base.Save(entry);
+            else
+                return base.Save(entry);
         }
 
         public override Entities.Files.File FindByID(string id)
         {
-            //return base.FindByID(id);
             var entry = base.FindByID(id);
-            if (entry != null && entry.GetType() == typeof(RecNote.Entities.Files.AudioFile))
+            if (entry != null && entry.GetType() == typeof(Entities.Files.AudioFile) && File.Exists(((Entities.Files.AudioFile)entry).AlterPath + ".key"))
             {
-                var audio = (Entities.Files.AudioFile) entry;
-                var e = this.GenericDataBase.MongoDataBase.GridFS.FindOne(Query.EQ("_id", new ObjectId(audio.AudioID)));
-                audio.Finger = DeserializeFromStream(e).Finger;
+                var audio = (Entities.Files.AudioFile)entry;
+                var fileName = audio.AlterPath + ".key";
+                var fs = File.OpenRead(fileName);
+                byte[] bytes = new byte[fs.Length];
+                fs.Read(bytes, 0, Convert.ToInt32(fs.Length));
+                fs.Close();
+                audio.Finger = this.ToBools(bytes);
                 return audio;
             }
             else
                 return entry;
         }
 
+        private class Key
+        {
+            public int Length { get; set; }
+            public byte[] Bytes { get; set; }
+        }
        
         private byte[] ToByte(bool[] bools)
         {
             if (bools.Length == 0) return new byte[] { };
-
-            long bytes = bools.LongLength / 8;
-            if ((bools.Length % 8) != 0) bytes++;
+            
+            int bytes = bools.Length / 8;
+            if (bools.Length % 8 != 0) bytes++;
             byte[] arr2 = new byte[bytes];
             int bitIndex = 0, byteIndex = 0;
 
@@ -90,50 +92,46 @@ namespace RecNote.Data.MongoDB.Files
             {
                 if (bools[i])
                     arr2[byteIndex] |= (byte)(((byte)1) << bitIndex);
-                
+
+                bitIndex++;
                 if (bitIndex == 8)
                 {
                     bitIndex = 0;
                     byteIndex++;
                 }
-                bitIndex++;
+                
             }
             return arr2;
         }
-
-
-        public static MemoryStream SerializeToStream(RecNote.Entities.Files.AudioFile o)
+        private bool[][] ToBools(byte[] bytes)
         {
-            MemoryStream stream = new MemoryStream();
-            IFormatter formatter = new BinaryFormatter();
-            formatter.Serialize(stream, o);
-            return stream;
-        }
-
-        public static RecNote.Entities.Files.AudioFile DeserializeFromStream(global::MongoDB.Driver.GridFS.MongoGridFSFileInfo file)
-        {
-
-            MemoryStream newFs = new MemoryStream();
-
-            
-            using (FileStream f = new FileStream(file.Name, FileMode.Open, FileAccess.Read))
+            List<List<bool>> bools = new List<List<bool>>();
+            int index = 0;
+            int countArr = BitConverter.ToInt32(bytes, index);
+            index += 4;
+            for (int arrI = 0; arrI < countArr; arrI++)
             {
-                byte[] bytes = new byte[f.Length];
-                f.Read(bytes, 0, (int)f.Length);
-                newFs.Write(bytes, 0, (int)f.Length);
+                int countBytes = BitConverter.ToInt32(bytes, index);
+                index += 4;
+                int countBools = BitConverter.ToInt32(bytes, index);
+                index += 4;
+                List<bool> list = new List<bool>();
+                for(int cii = 0; cii < countBytes; cii++)
+                {
+                    byte cbyte = bytes[cii + index];
+                    for(int cb = 0; cb < 8; cb++)
+                    {
+                        if(cb < countBools)
+                        {
+                            list.Add((cbyte & (1 << cb)) != 0);
+                        }
+                    }
+
+                }
+                bools.Add(list);
+                index += countBytes;
             }
-
-            /*using (var stream = file.OpenRead())
-            {
-                var bytes = new byte[stream.Length];
-                stream.Read(bytes, 0, (int)stream.Length);
-                newFs.Write(bytes, 0, bytes.Length);
-            }*/
-
-            IFormatter formatter = new BinaryFormatter();
-            newFs.Seek(0, SeekOrigin.Begin);
-            var o = (RecNote.Entities.Files.AudioFile)formatter.Deserialize(newFs);
-            return o;
+            return bools.Select(p => p.ToArray()).ToArray();
         }
 
     }

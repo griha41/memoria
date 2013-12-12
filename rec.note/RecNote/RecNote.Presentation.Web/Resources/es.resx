@@ -247,7 +247,7 @@
     <value>Nuevo Audio</value>
   </data>
   <data name="attachAudio" xml:space="preserve">
-    <value>Adjuntar Audio</value>
+    <value>Buscar audio</value>
   </data>
   <data name="explore" xml:space="preserve">
     <value>Explorar</value>
@@ -278,5 +278,32 @@
   </data>
   <data name="export" xml:space="preserve">
     <value>Exportar</value>
+  </data>
+  <data name="addAudio" xml:space="preserve">
+    <value>Agregar</value>
+  </data>
+  <data name="message.recoveryPasswordSent" xml:space="preserve">
+    <value>Contraseña enviada a su correo electronico</value>
+  </data>
+  <data name="project.definition.actors" xml:space="preserve">
+    <value>Participantes</value>
+  </data>
+  <data name="project.definition.currentSystem" xml:space="preserve">
+    <value>Sistema actual</value>
+  </data>
+  <data name="project.definition.introducction" xml:space="preserve">
+    <value>Introduccion</value>
+  </data>
+  <data name="project.definition.objetives" xml:space="preserve">
+    <value>Objetivos</value>
+  </data>
+  <data name="project.requirements.functionals" xml:space="preserve">
+    <value>Requerimientos Funcionales</value>
+  </data>
+  <data name="project.requirements.informations" xml:space="preserve">
+    <value>Requerimientos de información</value>
+  </data>
+  <data name="project.requirements.notfunctionals" xml:space="preserve">
+    <value>Requerimientos No Funcionales</value>
   </data>
 </root>

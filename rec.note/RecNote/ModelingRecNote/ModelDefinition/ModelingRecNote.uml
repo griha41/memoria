@@ -1,8 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="dac15c8d-62c7-41c7-a809-8bf9071e5657"
   name="ModelingRecNote" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <appliedStereotypesInternal>
+    <stereotypeInstance
+      Id="6f31251f-73c5-4055-b427-7c1ad28dbcb9"
+      name="namespace"
+      profile="CSharpProfile">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="7da07cc2-3135-4359-b812-7a7ef9224e70">
+          <propertyInstance
+            Id="7d6aa571-99fe-4507-9f7f-b6cff21b57c9"
+            name="BaseName" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="6c9083af-ad53-4db2-8b91-746b0ba4e9e6">
+          <propertyInstance
+            Id="ea0aa8b1-d92a-470b-9bcf-610b4eb03499"
+            name="ClrAttributes" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="71f00957-c233-4505-85f8-d2ad8f586191">
+          <propertyInstance
+            Id="6ca12bd7-fa18-46fd-b100-9e1f67d0d60f"
+            name="Usings" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance
+      Id="b5590450-eee1-49d5-8b30-f5a308cb633e"
+      name="TextTemplateBindings"
+      profile="TextTemplateBindings">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="58863f49-f8c5-4402-b5f1-226ecf681d2e">
+          <propertyInstance
+            Id="4f9949e5-dfca-43a3-847c-d69253f1e10f"
+            name="Alias"
+            value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="523bdfea-a550-496c-b5bd-8867404bed49">
+          <propertyInstance
+            Id="41665e3d-d024-4373-a141-3a1b9e9373f8"
+            name="TemplateFilePath"
+            value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="01f4becd-2cdd-4a41-a929-feed72fd4882">
+          <propertyInstance
+            Id="333e60b2-1646-4fd1-b5d4-79626e7c580b"
+            name="ProjectPath"
+            value="ClassTemplate=..\ModelingRecNoteLib\ModelingRecNoteLib.csproj|EnumTemplate=..\ModelingRecNoteLib\ModelingRecNoteLib.csproj|InterfaceTemplate=..\ModelingRecNoteLib\ModelingRecNoteLib.csproj|StructTemplate=..\ModelingRecNoteLib\ModelingRecNoteLib.csproj" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="510a3b4b-3bbb-4ca3-bbc1-c239d2335670">
+          <propertyInstance
+            Id="0cf95930-68a8-4b96-ac72-d31e84a133eb"
+            name="TargetDirectory"
+            value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="66c89829-4923-4bbf-85ac-57ba594501db">
+          <propertyInstance
+            Id="ef312865-a5f3-4264-9fb7-3702813fe21f"
+            name="TargetName"
+            value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="745db162-3a3f-4b85-9f4e-db90886d6963">
+          <propertyInstance
+            Id="4d43543d-7ad1-47ed-babe-8894a9a7bc63"
+            name="Overwrite"
+            value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="c62441bf-3ea1-4231-875b-37732447eb00">
+          <propertyInstance
+            Id="7181d07f-0911-4ad2-ba15-b8edbcb00729"
+            name="Parameters" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -22,19 +104,25 @@
         Id="f61c0a62-ee30-4798-9dee-8b66a6b7d0b9"
         name="CSharpProfile" />
     </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="64cc5867-24e1-4986-b7ae-ee357819d38a">
+      <profileInstance
+        Id="b7a3134b-7e46-4800-96d6-a75c6ff6336a"
+        name="TextTemplateBindings" />
+    </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
-    <packageHasNamedElement>
-      <packageMoniker
-        Id="39ed806a-18ab-4214-8e49-04f8d7ca9e4e"
-        LastKnownName="RecNote"
-        LastKnownLocation="Package_2031.uml" />
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <packageMoniker
         Id="f3c9fd0e-a4d8-4ca9-9370-17433573f2b3"
         LastKnownName="System"
         LastKnownLocation="Package3_2031.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="c6798014-0f8e-401f-826e-203517987eb8"
+        LastKnownName="RecNote"
+        LastKnownLocation="Package_1745.uml" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

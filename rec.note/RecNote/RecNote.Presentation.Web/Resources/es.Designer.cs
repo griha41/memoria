@@ -70,6 +70,15 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Agregar.
+        /// </summary>
+        internal static string addAudio {
+            get {
+                return ResourceManager.GetString("addAudio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Publicar Comentario.
         /// </summary>
         internal static string addComment {
@@ -88,7 +97,7 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Adjuntar Audio.
+        ///   Busca una cadena traducida similar a Buscar audio.
         /// </summary>
         internal static string attachAudio {
             get {
@@ -205,6 +214,15 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Contraseña enviada a su correo electronico.
+        /// </summary>
+        internal static string message_recoveryPasswordSent {
+            get {
+                return ResourceManager.GetString("message.recoveryPasswordSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nuevo Audio.
         /// </summary>
         internal static string newAudio {
@@ -282,6 +300,42 @@ namespace RecNote.Presentation.Web.Resources {
         internal static string project_definition {
             get {
                 return ResourceManager.GetString("project.definition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Participantes.
+        /// </summary>
+        internal static string project_definition_actors {
+            get {
+                return ResourceManager.GetString("project.definition.actors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sistema actual.
+        /// </summary>
+        internal static string project_definition_currentSystem {
+            get {
+                return ResourceManager.GetString("project.definition.currentSystem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Introduccion.
+        /// </summary>
+        internal static string project_definition_introducction {
+            get {
+                return ResourceManager.GetString("project.definition.introducction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Objetivos.
+        /// </summary>
+        internal static string project_definition_objetives {
+            get {
+                return ResourceManager.GetString("project.definition.objetives", resourceCulture);
             }
         }
         
@@ -394,6 +448,15 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Requerimientos Funcionales.
+        /// </summary>
+        internal static string project_requirements_functionals {
+            get {
+                return ResourceManager.GetString("project.requirements.functionals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Requisitos de información.
         /// </summary>
         internal static string project_requirements_information {
@@ -403,11 +466,29 @@ namespace RecNote.Presentation.Web.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Requerimientos de información.
+        /// </summary>
+        internal static string project_requirements_informations {
+            get {
+                return ResourceManager.GetString("project.requirements.informations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a No Funcionales.
         /// </summary>
         internal static string project_requirements_nofunctional {
             get {
                 return ResourceManager.GetString("project.requirements.nofunctional", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Requerimientos No Funcionales.
+        /// </summary>
+        internal static string project_requirements_notfunctionals {
+            get {
+                return ResourceManager.GetString("project.requirements.notfunctionals", resourceCulture);
             }
         }
         

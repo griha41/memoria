@@ -39,7 +39,7 @@
     <property name="AudioProvider" ref="AudioProvider" />
     <property name="FileProvider" ref="FileProvider" />
     <property name="InitialSecondsDelay" value="1" />
-    <property name="Similarity" value="0.4" />
+    <property name="Similarity" value="0.55" />
   </object>
 
   

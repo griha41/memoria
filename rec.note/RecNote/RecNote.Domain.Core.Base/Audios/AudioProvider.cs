@@ -77,8 +77,8 @@ namespace RecNote.Domain.Core.Base.Audios
             var audioCompare = new Files.AudioFileCompare();
 
             return audioCompare.Compare(
-                this.FileProvider.FindByID<Entities.Files.AudioFile>(audio.FileID),
-                this.FileProvider.FindByID<Entities.Files.AudioFile>(fileID) , 
+                (Entities.Files.AudioFile)this.FileProvider.FindByID(audio.FileID),
+                (Entities.Files.AudioFile)this.FileProvider.FindByID(fileID) , 
                 similarity);
 
         }
