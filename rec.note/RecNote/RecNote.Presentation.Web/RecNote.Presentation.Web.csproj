@@ -27,6 +27,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,6 +40,7 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>bin\RecNote.Presentation.Web.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -291,6 +294,10 @@
     <Content Include="Views\ProjectItem\ViewComment.cshtml" />
     <Content Include="Views\Audio\New.cshtml" />
     <Content Include="Content\Views\Project\ListMembers.less" />
+    <Content Include="Content\Views\Project\ViewLimited.less">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Views\Project\ListMembersLimited.less" />
     <None Include="Properties\PublishProfiles\Amazon.pubxml" />
     <None Include="Properties\PublishProfiles\Perfil1.pubxml" />
     <Content Include="Views\Audio\Play.cshtml" />
@@ -298,6 +305,11 @@
     <Content Include="Views\Audio\Result.cshtml" />
     <Content Include="Views\ProjectItem\New.cshtml" />
     <Content Include="Views\Report\Project.cshtml" />
+    <Content Include="Views\Project\ListActorsLimited.cshtml" />
+    <Content Include="Views\Project\ListMembersLimited.cshtml" />
+    <Content Include="Views\Project\ViewLimited.cshtml" />
+    <Content Include="Views\Audio\ListLimited.cshtml" />
+    <Content Include="Views\ProjectItem\ViewArrayLimited.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RecNote.Data.MongoDB\RecNote.Data.MongoDB.csproj">
@@ -367,7 +379,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>10663</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://recnote.cl</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
@@ -379,4 +391,5 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
 </Project>

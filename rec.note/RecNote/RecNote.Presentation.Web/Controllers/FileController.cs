@@ -8,6 +8,9 @@ using RecNote.Domain.Core.Files;
 
 namespace RecNote.Presentation.Web.Controllers
 {
+    /// <summary>
+    /// Controlador de archivos
+    /// </summary>
     public class FileController : Controller
     {
         //
@@ -15,7 +18,10 @@ namespace RecNote.Presentation.Web.Controllers
 
         IFileProvider FileProvider { get; set; }
 
-
+        /// <summary>
+        /// Pantalla de subida de un archivo / Carga un archivo al sistema
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Upload()
         {
             var currentFile = Request.Files[0];

@@ -3,7 +3,7 @@
 <section id="homeLogin">
     <header>@I18n.GetString("systemName")</header>
     <section class="form">
-        <form>
+        <form method="post">
             <label>@I18n.GetString("username")</label>
             @Html.TextBox("Username", Model.Username)
             <label>

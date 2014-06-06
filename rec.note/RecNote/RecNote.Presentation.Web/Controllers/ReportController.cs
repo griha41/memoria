@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-using RecNote.Entities.Audios;
+using RecNote.Entities.Audio;
 using RecNote.Domain.Core.Projects;
 using Model = RecNote.Presentation.Web.Models.Audio;
 
@@ -15,12 +15,20 @@ using System.IO;
 
 namespace RecNote.Presentation.Web.Controllers
 {
+    /// <summary>
+    /// Controla los reportes
+    /// </summary>
     public class ReportController : BaseController
     {
         //
         // GET: /Audio/
         IProjectProvider ProjectProvider { get; set; }
 
+        /// <summary>
+        /// Permite la descarga de la exportación de la información
+        /// </summary>
+        /// <param name="projectID"></param>
+        /// <returns></returns>
         public ActionResult Project(string projectID)
         {
 

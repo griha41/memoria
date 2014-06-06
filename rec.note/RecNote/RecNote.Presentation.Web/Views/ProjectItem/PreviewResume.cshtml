@@ -2,6 +2,8 @@
     Layout = "~/Views/Shared/Control.cshtml";
 }
 @model RecNote.Presentation.Web.Models.ProjectItem.Preview
+
+
 <section name="projectItemPreview" onclick="projectItem.viewArray('@Model.Project.ID', '@Model.Type')">
     <header>
         <h2>@I18n.GetString(Model.Type)</h2>

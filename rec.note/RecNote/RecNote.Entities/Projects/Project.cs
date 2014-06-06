@@ -6,33 +6,44 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace RecNote.Entities.Projects
 {
+    /// <summary>
+    /// Proyecto: Guarda la información relevante de un proyecto de elicitación de requisitos.
+    /// </summary>
     public class Project : Base
     {
         /// <summary>
-        /// Name of project
+        /// Nombre del proyecto
         /// </summary>
         public string Name { get; set; }
         
         /// <summary>
-        /// Indicate if this project is only a temporal project in edition
+        /// Indica si el proyecto es temporal
         /// </summary>
         public bool IsTemporal { get; set; }
 
         /// <summary>
-        /// User owner of this project
+        /// Usuario dueño del proyecto
         /// </summary>
         public Users.User Owner { get; set; }
 
         /// <summary>
-        /// Actors on this project
+        /// Actores integrantes del proyecto
         /// </summary>
         public Actor[] Actors { get; set; }
 
-
+        /// <summary>
+        /// Estado del proyecto
+        /// </summary>
         public ProjectStateType State { get; set; }
 
         #region Information 
+        /// <summary>
+        /// Región de definiciones del proyecto
+        /// </summary>
         public ProjectDefinition Definition { get; set; }
+        /// <summary>
+        /// Región de requisitos del proyecto
+        /// </summary>
         public ProjectRequirement Requirements {get;set;}
         #endregion
 

@@ -8,10 +8,17 @@ using Newtonsoft.Json;
 
 namespace RecNote.Presentation.Web.Controllers
 {
+    /// <summary>
+    /// Permite a javascript saber los códigos y valores del i18n
+    /// </summary>
     public class ResourcesController : BaseController
     {
         //
         // GET: /Resources/
+        /// <summary>
+        /// Listado de códigos, valores
+        /// </summary>
+        /// <returns></returns>
         public ActionResult I18n()
         {
             

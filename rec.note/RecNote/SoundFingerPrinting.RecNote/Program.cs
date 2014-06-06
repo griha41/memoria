@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Files = RecNote.Entities.Files;
-using Audios = RecNote.Entities.Audios;
+using Audio = RecNote.Entities.Audio;
 
 using Spring.Context;
 using Spring.Context.Support;
@@ -13,7 +13,7 @@ using Spring.Context.Support;
 using System.IO;
 
 using RecNote.Domain.Core.Files;
-using RecNote.Domain.Core.Audios;
+using RecNote.Domain.Core.Audio;
 
 using Soundfingerprinting.AudioProxies.Strides;
 using Soundfingerprinting.Hashing;
@@ -25,11 +25,18 @@ using System.Threading;
 
 namespace SoundFingerPrinting.RecNote
 {
+    /// <summary>
+    /// Programa que procesa los archivos de audio sin procesar
+    /// </summary>
     class Program
     {
         private static readonly IApplicationContext ctx = ContextRegistry.GetContext();
         private static IFileProvider FileProvider { get { return (IFileProvider)ctx.GetObject("FileProvider"); } }
         private static IAudioProvider AudioProvider { get { return (IAudioProvider)ctx.GetObject("AudioProvider"); } }
+        /// <summary>
+        /// Loop eterno para revisión de elementos sin procesar
+        /// </summary>
+        /// <param name="args">permite procesar prioritariamente un archivo</param>
         static void Main(string[] args)
         {
             if (args.Length > 0)

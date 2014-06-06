@@ -11,6 +11,9 @@ using Model = RecNote.Presentation.Web.Models.ProjectItem;
 
 namespace RecNote.Presentation.Web.Controllers
 {
+    /// <summary>
+    /// Controlador de conceptos del proyecto
+    /// </summary>
     public class ProjectItemController : BaseController
     {
         //
@@ -18,9 +21,24 @@ namespace RecNote.Presentation.Web.Controllers
         IProjectProvider ProjectProvider { get; set; }
         IUserProvider UserProvider { get; set; }
 
+        protected RoleType GetRole(string projectID)
+        {
+            return this.ProjectProvider.GetRole(projectID, MvcApplication.CurrentUser.ID);
+        }
 
+        /// <summary>
+        /// Ve el concepto en vista previa
+        /// </summary>
+        /// <param name="project">Proyecto</param>
+        /// <param name="items">Elemento</param>
+        /// <param name="type">Tipo de elemento</param>
+        /// <returns></returns>
         public ActionResult Preview(Project project, ProjectItem[] items, ProjectItemType type)
         {
+            if (this.GetRole(project.ID) != RoleType.Developer && !items.FirstOrDefault().IsPublic)
+                return null;
+
+
             return View(new Model.View
             {
                 Project = project,
@@ -29,7 +47,13 @@ namespace RecNote.Presentation.Web.Controllers
                 Role = this.ProjectProvider.GetRole(project.ID, MvcApplication.CurrentUser.ID)
             });
         }
-
+        /// <summary>
+        /// Resumen de vista previa (solo con conceptos que permitan multiplicidad)
+        /// </summary>
+        /// <param name="project">Proyecto</param>
+        /// <param name="items">Elemento</param>
+        /// <param name="type">Tipo de elemento</param>
+        /// <returns></returns>
         public ActionResult PreviewResume(Project project, ProjectItem[] items, ProjectItemType type)
         {
             var role = this.ProjectProvider.GetRole(project.ID, MvcApplication.CurrentUser.ID);
@@ -48,7 +72,13 @@ namespace RecNote.Presentation.Web.Controllers
                 
             });
         }
-
+        /// <summary>
+        /// Vista de un concepto
+        /// </summary>
+        /// <param name="project">Proyecto</param>
+        /// <param name="items">Elemento</param>
+        /// <param name="type">Tipo de elemento</param>
+        /// <returns></returns>
         public ActionResult View(string projectID, ProjectItemType type, string name)
         {
             var project = this.ProjectProvider.FindByID(projectID);
@@ -62,7 +92,13 @@ namespace RecNote.Presentation.Web.Controllers
                 Role = this.ProjectProvider.GetRole(project.ID, MvcApplication.CurrentUser.ID)
             });
         }
-
+        /// <summary>
+        /// Vista en arreglo de los conceptos
+        /// </summary>
+        /// <param name="project">Proyecto</param>
+        /// <param name="items">Elemento</param>
+        /// <param name="type">Tipo de elemento</param>
+        /// <returns></returns>
         public ActionResult ViewArray(string projectID, ProjectItemType type, string name)
         {
             var project = this.ProjectProvider.FindByID(projectID);
@@ -84,8 +120,8 @@ namespace RecNote.Presentation.Web.Controllers
                          where i.IsPublic
                          select i).ToArray();
             }
-
-            return View("ViewArray", new Model.Preview
+            var view = role == RoleType.Developer ? "ViewArray" : "ViewArrayLimited";
+            return View(view, new Model.Preview
             {
                 Project = project,
                 Items = items,
@@ -93,7 +129,13 @@ namespace RecNote.Presentation.Web.Controllers
             });
 
         }
-
+        /// <summary>
+        /// Nuevo concepto
+        /// </summary>
+        /// <param name="project">Proyecto</param>
+        /// <param name="items">Elemento</param>
+        /// <param name="type">Tipo de elemento</param>
+        /// <returns></returns>
         public ActionResult New(string projectID, ProjectItemType type, string name)
         {
             var project = this.ProjectProvider.FindByID(projectID);
@@ -103,14 +145,27 @@ namespace RecNote.Presentation.Web.Controllers
             });
             return Json(true, JsonRequestBehavior.AllowGet);
         }
-
+        /// <summary>
+        /// Indica si se permite su edición
+        /// </summary>
+        /// <param name="projectID">Identificador del proyecto</param>
+        /// <param name="type">Tipo de concepto</param>
+        /// <param name="name">Nombre</param>
+        /// <returns></returns>
         [ValidateInput(false)]
         public ActionResult AllowEdit(string projectID, ProjectItemType type, string name)
         {
             var item = this.ProjectProvider.BlockItem(projectID, type, name, MvcApplication.CurrentUser);
             return Json(item, JsonRequestBehavior.AllowGet);
         }
-
+        /// <summary>
+        /// Guarda el concepto
+        /// </summary>
+        /// <param name="projectID">Identificador del proyecto</param>
+        /// <param name="type">Tipo del concepto</param>
+        /// <param name="name">Nombre</param>
+        /// <param name="item">Elemento a guardar</param>
+        /// <returns></returns>
         [ValidateInput(false)]
         public ActionResult SaveItem(string projectID, ProjectItemType type,string name, ProjectItem item)
         {
@@ -120,14 +175,27 @@ namespace RecNote.Presentation.Web.Controllers
             oldItem.Data = item.Data;
             return Json(this.ProjectProvider.SaveItem(projectID, type, oldItem), JsonRequestBehavior.AllowGet);
         }
-
+        /// <summary>
+        /// Publica un concepto
+        /// </summary>
+        /// <param name="projectID">Identificador del proyecto</param>
+        /// <param name="type">Tipo del concepto</param>
+        /// <param name="name">Nombre</param>
+        /// <param name="publish">Indica si debe publicar</param>
+        /// <returns></returns>
         [ValidateInput(false)]
         public ActionResult Publish(string projectID, ProjectItemType type, string name, bool publish)
         {
             return Json(this.ProjectProvider.PublishItem(projectID, type, name, publish), JsonRequestBehavior.AllowGet);
         }
 
-
+        /// <summary>
+        /// Lista los comentarios
+        /// </summary>
+        /// <param name="projectID">Identificador del proyecto</param>
+        /// <param name="type">Tipo del concepto</param>
+        /// <param name="name">Nombre</param>
+        /// <returns></returns>
         public ActionResult ListComments(string projectID, ProjectItemType type, string name)
         {
             var item = this.ProjectProvider.GetItem(projectID, type, name);
@@ -154,6 +222,13 @@ namespace RecNote.Presentation.Web.Controllers
                 }
                 );
         }
+        /// <summary>
+        /// Vista de nuevo comentario
+        /// </summary>
+        /// <param name="projectID">Identificador del proyecto</param>
+        /// <param name="type">Tipo del concepto</param>
+        /// <param name="name">Nombre</param>
+        /// <returns></returns>
         [ValidateInput(false)]
         public ActionResult NewComment(string projectID, ProjectItemType type, string name)
         {
@@ -164,7 +239,14 @@ namespace RecNote.Presentation.Web.Controllers
             };
             return View(model);
         }
-
+        /// <summary>
+        /// Ver comentario
+        /// </summary>
+        /// <param name="projectID">Identificador del proyecto</param>
+        /// <param name="type">Tipo del concepto</param>
+        /// <param name="name">Nombre</param>
+        /// <param name="timeTicks">Tiempo en que se ingresó</param>
+        /// <returns></returns>
         [ValidateInput(false)]
         public ActionResult ViewComment(string projectID, ProjectItemType type, string name, long timeTicks)
         {
@@ -195,7 +277,14 @@ namespace RecNote.Presentation.Web.Controllers
             return View(model);
         }
 
-
+        /// <summary>
+        /// Agregar nuevo comentario
+        /// </summary>
+        /// <param name="projectID">Identificador del proyecto</param>
+        /// <param name="type">Tipo del concepto</param>
+        /// <param name="name">Nombre</param>
+        /// <param name="message">Mensaje</param>
+        /// <returns></returns>
         public ActionResult AddComment(string projectID, ProjectItemType type, string name, string message)
         {
             this.ProjectProvider.AddComment(projectID, type, name, message, MvcApplication.CurrentUser);

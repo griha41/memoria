@@ -204,14 +204,28 @@ var audio = {
         .attr('onselectstart', 'return false;')
         .attr('onclick', 'audio.play($(this).attr("id"), $(this).attr("init"), $(this).attr("end"));');
 
+        recnote.append("&nbsp;");
         
-        //var recnote = '<recnote id="' + audioID + '" init="' + init + '" end="' + end + '" onclick="audio.play($(this).attr(\'id\'), $(this).attr(\'init\'), $(this).attr(\'end\'));" />';
         $('#audioSearch').remove();
+
+        if (window.currentEditElement.length > 0)
+        {
+            var range = window.saveRange;
+            var editorField = window.saveSelected;
+            editorField = window.editor;
+            value = editorField.getContent();
+            value = value.substring(0, range.startOffset) +
+                                    recnote[0].outerHTML +
+                                    value.substring(range.endOffset, value.length);
+            console.log(value);
+            editorField.setContent(value);
+            return;
+        }
+
         if ($('.nicEdit-main div').last().length > 0)
             $('.nicEdit-main div').last().append(recnote);
         else
             $('.nicEdit-main').append(recnote);
-        //$('.nicEdit-main').append($('<div>'));
     }
 };
 

@@ -10,12 +10,18 @@ using RecNote.Domain.Core.Session;
 
 namespace RecNote.Presentation.Web.Controllers
 {
+    /// <summary>
+    /// Controlador inicial del ambiente
+    /// </summary>
     public class HomeController : BaseController
     {
         //
         // GET: /Home/
         IUserProvider UserProvider { get; set; }
-
+        /// <summary>
+        /// Muestra pantalla de inicio del sistema, cuando está logeado o no
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             if (MvcApplication.CurrentUser == null)
@@ -23,7 +29,11 @@ namespace RecNote.Presentation.Web.Controllers
 
             return View();
         }
-
+        /// <summary>
+        /// Servicio de cambio de contraseña
+        /// </summary>
+        /// <param name="mail">Correo de usuario a cambiar contraseña</param>
+        /// <returns></returns>
         public ActionResult RecoveryPassword(string mail)
         {
             var user = this.UserProvider.FindByEmail(mail);
@@ -31,7 +41,11 @@ namespace RecNote.Presentation.Web.Controllers
                 this.UserProvider.NewPassword(user);
             return Json(true, JsonRequestBehavior.DenyGet);
         }
-
+        /// <summary>
+        /// Inicio de sesión de usuario
+        /// </summary>
+        /// <param name="model">Información de usuario</param>
+        /// <returns></returns>
         public ActionResult Login(Model.Login model)
         {
             if (model == null) model = new Model.Login { };
@@ -49,7 +63,10 @@ namespace RecNote.Presentation.Web.Controllers
 
             return View("Login", model);
         }
-
+        /// <summary>
+        /// Cierra sesión
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Close()
         {
             MvcApplication.CurrentUser = null;

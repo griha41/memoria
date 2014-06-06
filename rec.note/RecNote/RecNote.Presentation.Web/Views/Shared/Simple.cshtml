@@ -63,7 +63,11 @@
             mouseClick: function () {
                 window.currentEditElement = null;
                 window.currentEditElement = $('.nicEdit-main:focus');
+                
                 if (window.currentEditElement.length > 0) {
+                    window.editor = Util.editor.selectedInstance;
+                    window.saveRange = Util.editor.selectedInstance.getRng();
+                    window.saveSelected = Util.editor.selectedInstance.selElm();
                     Util.post('Audio/Search', { projectID: project.currentID() }, function (html) {
                         $('body').append(html);
                         $('#Audio_File').fileupload({
@@ -96,7 +100,6 @@
                 function () {
 
                     nicEditors.registerPlugin(nicPlugin, customButtons);
-
                     Util.editor = new nicEditor({ iconsPath: '@Url.Content("~/Content/themes/NicEdit/nicEditorIcons.gif")', buttonList: ['bold', 'italic', 'underline', 'ol', 'ul','addAudio'] });
 
                 }

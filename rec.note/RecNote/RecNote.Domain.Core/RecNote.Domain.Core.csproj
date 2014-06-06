@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\RecNote.Domain.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -47,7 +48,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Projects\IProjectProvider.cs" />
     <Compile Include="Session\ISessionProvider.cs" />
-    <Compile Include="Session\SessionProvider.cs" />
     <Compile Include="Users\IUserProvider.cs" />
   </ItemGroup>
   <ItemGroup />

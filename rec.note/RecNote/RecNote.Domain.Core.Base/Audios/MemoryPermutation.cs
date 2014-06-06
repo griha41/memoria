@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace RecNote.Domain.Core.Base.Audios
+namespace RecNote.Domain.Core.Base.Audio
 {
     public class MemoryPermutation : Soundfingerprinting.Hashing.IPermutations
     {

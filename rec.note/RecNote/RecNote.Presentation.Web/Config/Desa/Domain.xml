@@ -24,11 +24,11 @@
   </object>
 
   <object id="FileProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Files.FileProvider, RecNote.Domain.Core.Base">
-    <property name="PartialPath" value="C:\RecNoteAudios\" />
+    <property name="PartialPath" value="C:\RecNoteAudio\" />
     <property name="FileData" ref="FileData" />
   </object>
 
-  <object id="AudioProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Audios.AudioProvider, RecNote.Domain.Core.Base">
+  <object id="AudioProvider" parent="ProviderBase" type="RecNote.Domain.Core.Base.Audio.AudioProvider, RecNote.Domain.Core.Base">
     <property name="AudioData" ref="AudioData" />
     <property name="FileProvider" ref="FileProvider" />
     <property name="FileName" value="SoundFingerPrinting.RecNote.exe" />

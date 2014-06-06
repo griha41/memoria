@@ -412,7 +412,7 @@ namespace SoundFingerPrinting.RecNote {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Audios Asociados.
+        ///   Busca una cadena traducida similar a Audio Asociados.
         /// </summary>
         internal static string project_view_audios {
             get {

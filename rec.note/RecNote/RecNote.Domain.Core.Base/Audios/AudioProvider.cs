@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using RecNote.Data.Audios;
+using RecNote.Data.Audio;
 
 
 
@@ -12,9 +12,9 @@ using System.Threading;
 using Files = RecNote.Entities.Files;
 using System.Diagnostics;
 
-namespace RecNote.Domain.Core.Base.Audios
+namespace RecNote.Domain.Core.Base.Audio
 {
-    public class AudioProvider : ProviderBase<Entities.Audios.Audio>, Core.Audios.IAudioProvider
+    public class AudioProvider : ProviderBase<Entities.Audio.Audio>, Core.Audio.IAudioProvider
     {
         IAudioData AudioData { get; set; }
         Core.Files.IFileProvider FileProvider { get; set; }
@@ -85,9 +85,9 @@ namespace RecNote.Domain.Core.Base.Audios
 
 
 
-        public IList<Entities.Audios.Audio> FindByProjectID(string projectID)
+        public IList<Entities.Audio.Audio> FindByProjectID(string projectID)
         {
-            return this.AudioData.GetAudiosByProject(projectID);
+            return this.AudioData.GetAudioByProject(projectID);
         }
 
         

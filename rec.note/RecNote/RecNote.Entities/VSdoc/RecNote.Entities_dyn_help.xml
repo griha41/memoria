@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DynamicHelp xmlns="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://msdn.microsoft.com/vsdata/xsd/vsdh.xsd">	
+   <LINKGROUP ID="RecNote.Entities" Title="RecNote.Entities Reference Help" Priority="2100">
+      <GLYPH Expanded="vs:/ctxhelp_show.gif" Collapsed="vs:/ctxhelp_hide.gif"/>
+   </LINKGROUP>
+
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.Actor" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000001E.html" LinkGroup="RecNote.Entities">Actor Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectDefinition.Actors" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000002A.html" LinkGroup="RecNote.Entities">Actors Property {RecNote.Entities.Projects.ProjectDefinition}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.Project.Actors" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000024.html" LinkGroup="RecNote.Entities">Actors Property {RecNote.Entities.Projects.Project}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.AudioFile.AlterPath" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000000B.html" LinkGroup="RecNote.Entities">AlterPath Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Audios.Audio" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000001.html" LinkGroup="RecNote.Entities">Audio Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.Compared.AudioComparedResult" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000000F.html" LinkGroup="RecNote.Entities">AudioComparedResult Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.Compared.AudioComparedResultItem" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000013.html" LinkGroup="RecNote.Entities">AudioComparedResultItem Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.AudioFile" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000000A.html" LinkGroup="RecNote.Entities">AudioFile Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.AudioFile.AudioID" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000000D.html" LinkGroup="RecNote.Entities">AudioID Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Base" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000007.html" LinkGroup="RecNote.Entities">Base Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItem.Comments" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000033.html" LinkGroup="RecNote.Entities">Comments Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.File.ContentType" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000001C.html" LinkGroup="RecNote.Entities">ContentType Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectDefinition.CurrentSystem" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000002B.html" LinkGroup="RecNote.Entities">CurrentSystem Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItem.Data" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000002E.html" LinkGroup="RecNote.Entities">Data Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Audios.Audio.Date" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000005.html" LinkGroup="RecNote.Entities">Date Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.Project.Definition" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000026.html" LinkGroup="RecNote.Entities">Definition Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItem.EditorID" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000031.html" LinkGroup="RecNote.Entities">EditorID Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Users.User.Email" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000049.html" LinkGroup="RecNote.Entities">Email Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.File" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000017.html" LinkGroup="RecNote.Entities">File Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.Compared.AudioComparedResult.File1" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000010.html" LinkGroup="RecNote.Entities">File1 Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.Compared.AudioComparedResult.File2" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000011.html" LinkGroup="RecNote.Entities">File2 Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Audios.Audio.FileID" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000003.html" LinkGroup="RecNote.Entities">FileID Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.AudioFile.Finger" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000000C.html" LinkGroup="RecNote.Entities">Finger Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.File.FullPath" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000018.html" LinkGroup="RecNote.Entities">FullPath Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectRequirement.Functionals" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000003C.html" LinkGroup="RecNote.Entities">Functionals Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Base.ID" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000008.html" LinkGroup="RecNote.Entities">ID Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectRequirement.Informations" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000003B.html" LinkGroup="RecNote.Entities">Informations Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectDefinition.Introducction" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000029.html" LinkGroup="RecNote.Entities">Introducction Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.RestrictedProject.IsOwner" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000040.html" LinkGroup="RecNote.Entities">IsOwner Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItem.IsPublic" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000002F.html" LinkGroup="RecNote.Entities">IsPublic Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.Project.IsTemporal" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000022.html" LinkGroup="RecNote.Entities">IsTemporal Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItemComment.Message" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000038.html" LinkGroup="RecNote.Entities">Message Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.Compared.AudioComparedResultItem.MillisecondFile1" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000014.html" LinkGroup="RecNote.Entities">MillisecondFile1 Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.Compared.AudioComparedResultItem.MillisecondFile2" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000015.html" LinkGroup="RecNote.Entities">MillisecondFile2 Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Audios.Audio.Name" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000004.html" LinkGroup="RecNote.Entities">Name Property {RecNote.Entities.Audios.Audio}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.File.Name" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000019.html" LinkGroup="RecNote.Entities">Name Property {RecNote.Entities.Files.File}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItem.Name" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000030.html" LinkGroup="RecNote.Entities">Name Property {RecNote.Entities.Projects.ProjectItem}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.Project.Name" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000021.html" LinkGroup="RecNote.Entities">Name Property {RecNote.Entities.Projects.Project}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Users.User.Name" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000004A.html" LinkGroup="RecNote.Entities">Name Property {RecNote.Entities.Users.User}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectRequirement.NotFunctionals" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000003D.html" LinkGroup="RecNote.Entities">NotFunctionals Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectDefinition.Objetives" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000002C.html" LinkGroup="RecNote.Entities">Objetives Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.Project.Owner" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000023.html" LinkGroup="RecNote.Entities">Owner Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Users.User.Password" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000004B.html" LinkGroup="RecNote.Entities">Password Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.Project" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000020.html" LinkGroup="RecNote.Entities">Project Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.RestrictedProject.Project" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000041.html" LinkGroup="RecNote.Entities">Project Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectDefinition" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000028.html" LinkGroup="RecNote.Entities">ProjectDefinition Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Audios.Audio.ProjectID" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000002.html" LinkGroup="RecNote.Entities">ProjectID Property</LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItem.ProjectItem" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000035_overloads--.html" LinkGroup="RecNote.Entities">ProjectItem </LItem>
+      </Links>
+   </Context>
+   
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItem.ProjectItem" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000034_overloads--.html" LinkGroup="RecNote.Entities">ProjectItem </LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItem" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000002D.html" LinkGroup="RecNote.Entities">ProjectItem Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItemComment" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000036.html" LinkGroup="RecNote.Entities">ProjectItemComment Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectRequirement" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000003A.html" LinkGroup="RecNote.Entities">ProjectRequirement Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000006.html" LinkGroup="RecNote.Entities">RecNote.Entities Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities Reference" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000004C.html" LinkGroup="RecNote.Entities">RecNote.Entities Reference</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Audios" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000000.html" LinkGroup="RecNote.Entities">RecNote.Entities.Audios Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000009.html" LinkGroup="RecNote.Entities">RecNote.Entities.Files Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.Compared" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000000E.html" LinkGroup="RecNote.Entities">RecNote.Entities.Files.Compared Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000001D.html" LinkGroup="RecNote.Entities">RecNote.Entities.Projects Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Session" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000043.html" LinkGroup="RecNote.Entities">RecNote.Entities.Session Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Users" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000047.html" LinkGroup="RecNote.Entities">RecNote.Entities.Users Namespace</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.Project.Requirements" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000027.html" LinkGroup="RecNote.Entities">Requirements Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.RestrictedProject" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000003E.html" LinkGroup="RecNote.Entities">RestrictedProject Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.Actor.Role" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000001F.html" LinkGroup="RecNote.Entities">Role Property {RecNote.Entities.Projects.Actor}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.RestrictedProject.Role" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000003F.html" LinkGroup="RecNote.Entities">Role Property {RecNote.Entities.Projects.RestrictedProject}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Session.Session" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000044.html" LinkGroup="RecNote.Entities">Session Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.Compared.AudioComparedResultItem.Similitary" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000016.html" LinkGroup="RecNote.Entities">Similitary Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.File.Size" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000001B.html" LinkGroup="RecNote.Entities">Size Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItem.State" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000032.html" LinkGroup="RecNote.Entities">State Property {RecNote.Entities.Projects.ProjectItem}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.Project.State" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000025.html" LinkGroup="RecNote.Entities">State Property {RecNote.Entities.Projects.Project}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItemComment.Time" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000039.html" LinkGroup="RecNote.Entities">Time Property {RecNote.Entities.Projects.ProjectItemComment}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Session.Session.Time" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000046.html" LinkGroup="RecNote.Entities">Time Property {RecNote.Entities.Session.Session}</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.File.Url" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_000000000000001A.html" LinkGroup="RecNote.Entities">Url Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Users.User" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000048.html" LinkGroup="RecNote.Entities">User Class</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Session.Session.User" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000045.html" LinkGroup="RecNote.Entities">User Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.RestrictedProject.UserAllow" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000042.html" LinkGroup="RecNote.Entities">UserAllow Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Projects.ProjectItemComment.UserID" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000037.html" LinkGroup="RecNote.Entities">UserID Property</LItem>
+      </Links>
+   </Context>
+   
+
+   <Context>
+      <Keywords>
+         <KItem Name="RecNote.Entities.Files.Compared.AudioComparedResult.items" />
+      </Keywords>
+      <Links>
+         <LItem URL="ms-its:RecNote.Entities.chm::/topic_0000000000000012.html" LinkGroup="RecNote.Entities">items Property</LItem>
+      </Links>
+   </Context>
+   
+
+</DynamicHelp>
+

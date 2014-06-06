@@ -8,6 +8,9 @@ using System.Net.Mail;
 
 namespace RecNote.Services.Mailing
 {
+    /// <summary>
+    /// Interface de envió de correos
+    /// </summary>
     public interface ISender
     {
         void Send(MailAddress from, MailAddress to, string subject, ContentType type, string message);

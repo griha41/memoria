@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.Project.Project
+<section id="projectView">
+    @Html.HiddenFor(p => p.CurrentProject.ID)
+    <header>
+        <h2>@Model.CurrentProject.Name
+        <menu>
+            <button type="button" class="link" onclick="project.viewMembers('@Model.CurrentProject.ID');" id="countMembers" >@I18n.GetString("members", new { count = Model.CurrentProject.Actors.Length })</button>
+            <section id="memberSection" >
+                <section id="memberSectionBody"></section>
+            </section>
+        </menu>
+        </h2>
+    </header>
+    <section class="body">
+        <section class="init">
+            <section class="option">
+                <h2>@I18n.GetString("project.definition")</h2>
+                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Introducction, type = RecNote.Entities.Projects.ProjectItemType.Introduction })
+                @Html.Action("PreviewResume", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Actors, type = RecNote.Entities.Projects.ProjectItemType.Actors })
+                @Html.Action("Preview", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.CurrentSystem, type = RecNote.Entities.Projects.ProjectItemType.CurrentSystem })
+                @Html.Action("PreviewResume", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Definition.Objetives, type = RecNote.Entities.Projects.ProjectItemType.Objetives })
+            </section>
+
+            <section class="option">
+                <h2>@I18n.GetString("project.requirements")</h2>
+                @Html.Action("PreviewResume", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Informations, type = RecNote.Entities.Projects.ProjectItemType.ReqInformations })
+                @Html.Action("PreviewResume", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.Functionals, type = RecNote.Entities.Projects.ProjectItemType.ReqFunctionals })
+                @Html.Action("PreviewResume", "ProjectItem", new { Project = Model.CurrentProject, Items = Model.CurrentProject.Requirements.NotFunctionals, type = RecNote.Entities.Projects.ProjectItemType.ReqNotFunctionals })
+            </section>
+        </section>
+        <section class="right">
+            <h2>
+                @I18n.GetString("project.view.audios")
+            </h2>
+            @Html.Action("List", "Audio", new { projectID = Model.CurrentProject.ID })
+        </section>
+    </section>
+   
+    <section id="newMember">
+        <h2>@I18n.GetString("newMember")</h2>
+        @Html.Action("NewActor", "Project", new { projectID = Model.CurrentProject.ID })
+    </section>
+    <footer>
+    </footer>
+</section>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.20827.3
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{D5E7AC94-48ED-46EA-A55E-5EFC47127BC3}"
 EndProject
@@ -14,11 +14,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{862E9AF2-3AE6-4ABC-A03E-EC79F4F91621}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Soundfingerprinting", "Soundfingerprinting", "{4C625454-2709-424D-81D8-9BF685DD57E7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentación", "Documentación", "{BB10E744-AE26-4121-923A-56A052704578}"
-	ProjectSection(SolutionItems) = preProject
-		Base.sequencediagram = Base.sequencediagram
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Presentation.Web", "RecNote.Presentation.Web\RecNote.Presentation.Web.csproj", "{092FB7E8-5C7C-42C3-AF61-306C8F37CAAE}"
 EndProject
@@ -51,8 +46,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Services.Mailing", "RecNote.Services.Mailing\RecNote.Services.Mailing.csproj", "{5B0488F1-6305-4667-96A7-D164009A1DAB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecNote.Services.Mailing.Gmail", "RecNote.Services.Mailing.Gmail\RecNote.Services.Mailing.Gmail.csproj", "{17436BB3-83F3-4CBB-9072-92896BB5BC4E}"
-EndProject
-Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "ModelingRecNote", "ModelingRecNote\ModelingRecNote.modelproj", "{4EE9F033-5A0D-4184-A048-5B1959825B0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -224,16 +217,6 @@ Global
 		{17436BB3-83F3-4CBB-9072-92896BB5BC4E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{17436BB3-83F3-4CBB-9072-92896BB5BC4E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{17436BB3-83F3-4CBB-9072-92896BB5BC4E}.Release|x86.ActiveCfg = Release|Any CPU
-		{4EE9F033-5A0D-4184-A048-5B1959825B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EE9F033-5A0D-4184-A048-5B1959825B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EE9F033-5A0D-4184-A048-5B1959825B0C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{4EE9F033-5A0D-4184-A048-5B1959825B0C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{4EE9F033-5A0D-4184-A048-5B1959825B0C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4EE9F033-5A0D-4184-A048-5B1959825B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EE9F033-5A0D-4184-A048-5B1959825B0C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EE9F033-5A0D-4184-A048-5B1959825B0C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{4EE9F033-5A0D-4184-A048-5B1959825B0C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{4EE9F033-5A0D-4184-A048-5B1959825B0C}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

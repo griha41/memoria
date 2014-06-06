@@ -187,7 +187,7 @@
     <value>No Funcionales</value>
   </data>
   <data name="project.view.audios" xml:space="preserve">
-    <value>Audios Asociados</value>
+    <value>Audio Asociados</value>
   </data>
   <data name="ProjectItemType.Actors" xml:space="preserve">
     <value>Actores</value>
@@ -252,14 +252,14 @@
   <data name="explore" xml:space="preserve">
     <value>Explorar</value>
   </data>
-  <data name="Search" xml:space="preserve">
-    <value>¿Que terminos estás buscando?</value>
+  <data name="search" xml:space="preserve">
+    <value>¿Que términos estás buscando?</value>
   </data>
   <data name="Boolean.False" xml:space="preserve">
-    <value>Despublicado</value>
+    <value>Privado</value>
   </data>
   <data name="Boolean.True" xml:space="preserve">
-    <value>Publicado</value>
+    <value>Publico</value>
   </data>
   <data name="mail.password" xml:space="preserve">
     <value>Contraseña RecNote</value>
@@ -305,5 +305,20 @@
   </data>
   <data name="project.requirements.notfunctionals" xml:space="preserve">
     <value>Requerimientos No Funcionales</value>
+  </data>
+  <data name="publish" xml:space="preserve">
+    <value>Privado</value>
+  </data>
+  <data name="unpublish" xml:space="preserve">
+    <value>Publico</value>
+  </data>
+  <data name="placeholder.project.name" xml:space="preserve">
+    <value>Nombre del proyecto</value>
+  </data>
+  <data name="RoleType.0" xml:space="preserve">
+    <value>Seleccione rol</value>
+  </data>
+  <data name="message.audioAdded" xml:space="preserve">
+    <value>Audio agregado</value>
   </data>
 </root>

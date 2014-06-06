@@ -9,7 +9,7 @@ namespace RecNote.Presentation.Web.Models.Audio
     {
         public int Init { get; set; }
         public int End { get; set; }
-        public Entities.Audios.Audio Audio { get; set; }
+        public Entities.Audio.Audio Audio { get; set; }
         public double Similitary { get; set; }
     }
 }

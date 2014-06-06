@@ -5,13 +5,16 @@ using System.Text;
 
 using MongoDB.Driver.Linq;
 
-using RecNote.Data.Audios;
+using RecNote.Data.Audio;
 
-namespace RecNote.Data.MongoDB.Audios
+namespace RecNote.Data.MongoDB.Audio
 {
-    public class AudioData : DataBase<Entities.Audios.Audio>, IAudioData
+    /// <summary>
+    /// Implementación en mongo de clase
+    /// </summary>
+    public class AudioData : DataBase<Entities.Audio.Audio>, IAudioData
     {
-        public IList<Entities.Audios.Audio> GetAudiosByProject(string projectID)
+        public IList<Entities.Audio.Audio> GetAudioByProject(string projectID)
         {
             return (from e in this.GetCollection().AsQueryable()
                     where e.ProjectID == projectID
@@ -20,9 +23,9 @@ namespace RecNote.Data.MongoDB.Audios
         }
 
 
-        public Entities.Audios.Audio Append(string projectID, string fileID, string audioName)
+        public Entities.Audio.Audio Append(string projectID, string fileID, string audioName)
         {
-            return this.Save(new Entities.Audios.Audio
+            return this.Save(new Entities.Audio.Audio
             {
                 Date = new DateTime(),
                 FileID = fileID,

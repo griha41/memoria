@@ -40,6 +40,7 @@
     <property name="FileProvider" ref="FileProvider" />
     <property name="InitialSecondsDelay" value="1" />
     <property name="Similarity" value="0.55" />
+    <property name="ProjectProvider" ref="ProjectProvider" />
   </object>
 
   

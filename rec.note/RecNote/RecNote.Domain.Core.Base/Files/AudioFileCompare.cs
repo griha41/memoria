@@ -15,7 +15,7 @@ namespace RecNote.Domain.Core.Base.Files
         public Entities.Files.Compared.AudioComparedResult Compare(Entities.Files.AudioFile file1, Entities.Files.AudioFile file2, float similarity)
         {
             var sem = file1.Finger.Select(p => p.Select(a => a ? 1 : 0).ToArray()).ToArray();
-            var hasMin = new MinHash(new Audios.MemoryPermutation(sem));
+            var hasMin = new MinHash(new Audio.MemoryPermutation(sem));
             var dic = new List<Entities.Files.Compared.AudioComparedResultItem>();
 
             for (var if1 = 0; if1 < file1.Finger.Length; if1++)

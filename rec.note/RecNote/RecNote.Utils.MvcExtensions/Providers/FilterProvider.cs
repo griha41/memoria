@@ -9,6 +9,9 @@ using Spring.Context.Support;
 
 namespace RecNote.Utils.MvcExtensions.Providers
 {
+    /// <summary>
+    /// Permite generar inyección dinamica de propiedades en los filtros
+    /// </summary>
     class FilterProvider : FilterAttributeFilterProvider, IApplicationContextAware
     {
         public IApplicationContext ApplicationContext { get; set; }

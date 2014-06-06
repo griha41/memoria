@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/Control.cshtml";
+}
+@model RecNote.Presentation.Web.Models.Project.Project
+<ul>
+    @foreach (var member in Model.CurrentProject.Actors)
+    {
+        <li>@member.Name (@I18n.GetString(member.Role)) 
+            @Html.Hidden("Actor.ID", member.ID)
+        </li>
+    }
+</ul>

@@ -9,6 +9,9 @@ using RecNote.Utils.I18n;
 
 namespace RecNote.Presentation.Web.Controllers
 {
+    /// <summary>
+    /// Funciones básicas para los controladores
+    /// </summary>
     [Filters.SessionCookie]
     public class BaseController : Controller
     {
